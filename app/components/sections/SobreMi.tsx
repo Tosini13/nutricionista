@@ -88,6 +88,14 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
             <img className="pl-4" src={esther} alt="Nutricionista Esther" />
           </div>
         </div>
+        <div className="my-10 grid grid-cols-12 border-y-2 p-10 text-xl text-gray-400">
+          <p className="col-start-2 col-end-6">
+            Farmacéutica colegiada nº 18858
+          </p>
+          <p className="col-start-7 col-end-12">
+            Nutricionista colegiada nº CAT 001827
+          </p>
+        </div>
       </div>
     </section>
   );
