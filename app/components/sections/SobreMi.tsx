@@ -1,6 +1,8 @@
 import wavingHand from "../../../public/images/wavingHand.svg";
 import esther from "../../../public/images/esther_image.png";
 import React from "react";
+import SectionTitle from "./SectionTitle";
+import Paragraph from "./Paragraph";
 
 const style = {
   holaContainer: {
@@ -28,12 +30,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
   return (
     <section id="#sobreMi">
       <div className="mx-20 flex flex-col">
-        <h2
-          className="title fontSemiBold pb-8 text-4xl font-bold"
-          data-testid="sobremi_title"
-        >
-          Sobre mi
-        </h2>
+        <SectionTitle>Sobre mi</SectionTitle>
         <div className="grid grid-cols-12 gap-4">
           <div data-testid="sobremi_description" className="col-span-7">
             <div
@@ -41,7 +38,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
                 readAll ? "bottomInsetShadow uncovered" : "bottomInsetShadow"
               }
             >
-              <p className="fontLight pb-10 pb-8 text-lg leading-10 tracking-wide">
+              <Paragraph>
                 <span className="fontSemiBold">Dietista-Nutricionista</span>{" "}
                 especializada en nutrición clínica y graduada por la Universidad
                 de Valencia. Cursé un año de mis estudios en la universidad de
@@ -65,7 +62,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
                 seguirlos a largo plazo. Tengo un especial interés en la cocina,
                 la gastronomía y el estilo de vida saludable. Me gusta seguir
                 formándome cada día para estar actualizada.
-              </p>
+              </Paragraph>
               {readAll ? null : (
                 <button
                   className="link"
