@@ -1,19 +1,14 @@
 import React from "react";
 
-type TButtonProps = {
-  children: React.ReactNode;
-  disabled?: boolean;
-  onClick: React.DOMAttributes<HTMLButtonElement>["onClick"];
-};
-
-const Button: React.FC<TButtonProps> = ({ children, disabled, onClick }) => {
+const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
+  children,
+  className = "",
+  ...props
+}) => {
   return (
     <button
-      className={
-        "button flex flex-row items-center justify-center rounded-md px-8 py-3 font-medium uppercase"
-      }
-      onClick={onClick}
-      disabled={disabled}
+      className={`${className} button fontSemiBold flex flex-row items-center justify-center rounded-md px-8 py-3 font-medium lowercase tracking-wide`}
+      {...props}
     >
       {children}
     </button>

@@ -1,11 +1,139 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('../../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url('../../fonts/Montserrat-Black.ttf');
+}
+
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url('../../fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'montserrat-semi-bold';
+    src: url('../../fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'montserrat-light';
+    src: url('../../fonts/Montserrat-Light.ttf');
+}
+
+
+.fontRegular{
+    font-family: 'montserrat', 'inherit';    
+}
+
+.fontMedium{
+    font-family: 'montserrat-medium', 'inherit';    
+}
+
+.fontLight{
+    font-family: 'montserrat-light', 'inherit';    
+}
+
+.fontSemiBold{
+    font-family: 'montserrat-semi-bold', 'inherit';    
+}
+
+.fontBold{
+    font-family: 'montserrat-bold', 'inherit';    
+}
+
+h1.title{
+    font-family: 'montserrat-bold', 'inherit';    
+    line-height: 1.2em;
+}
+
+
+p{
+    font-family: 'montserrat-semi-bold', 'inherit';
+    letter-spacing: 0.05em;
+}
+
+header{
+    position: sticky;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;
+}
+
+main{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    font-family: 'montserrat', 'inherit';
+}
+
+:root{
+    --mainColor: #67a957
+}
+
+.mainColor {
+    color: var(--mainColor);
+}
+
 .button {
     background: linear-gradient(96.14deg, #68A957 0%, #74B463 100%);
     box-shadow: 0px 10px 22px rgba(172, 180, 159, 0.2);
-    color: #FFF
+    filter: drop-shadow(0px 15px 30px rgba(106, 170, 89, 0.3));
+    color: #FFF;
 }
 
 .button:disabled {
     background: rgba(104, 169, 87, 0.2);
     color: rgba(103, 169, 87, 0.5);
     box-shadow: none;
+    filter: none;
+
+}
+
+.bottomInsetShadow {
+    position: relative;
+    overflow: hidden;
+    max-height: 40em;
+    transition: max-height 0.3s;
+}
+
+.bottomInsetShadow.uncovered {
+    max-height: 100%;
+}
+
+.bottomInsetShadow:after{
+    content: "";
+    position: absolute; top: 0; bottom: 0; left: -15px; right: -15px;
+    box-shadow: inset white 0 -70px 25px 0px;
+    transition: "box-shadow 0.3s",
+}
+
+.bottomInsetShadow.uncovered:after{
+    box-shadow: inset white 0 0px 0px 0px;
+}
+
+
+
+
+.link::after{
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+}
+
+.link:hover::after{
+    width: 100%;
 }

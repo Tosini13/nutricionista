@@ -5,7 +5,6 @@ import Button from "../form/Button";
 type THeaderProps = {};
 
 const Header: React.FC<THeaderProps> = () => {
-  const [disabled, setDisabled] = React.useState(false);
   return (
     <header className="pt-10">
       <div className="space-between flex items-center justify-between">
@@ -18,17 +17,7 @@ const Header: React.FC<THeaderProps> = () => {
           <MenuItem href="#faq" title="FAQ" />
           <MenuItem href="#contacto" title="contacto" />
         </ul>
-        <Button
-          disabled={disabled}
-          onClick={() =>
-            setDisabled((d) => {
-              console.log("d", d);
-              return !d;
-            })
-          }
-        >
-          pide cita
-        </Button>
+        <Button disabled>pide cita</Button>
       </div>
     </header>
   );
@@ -41,12 +30,8 @@ type TMenuItemProps = {
 
 const MenuItem: React.FC<TMenuItemProps> = ({ title, href }) => {
   return (
-    <li className="px-8">
-      <a
-        className="border-black text-black hover:border-b"
-        href={href}
-        style={{ fontWeight: 400 }}
-      >
+    <li className="px-9">
+      <a className="link" href={href} style={{ fontWeight: 400 }}>
         {title}
       </a>
     </li>
