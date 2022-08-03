@@ -7,17 +7,19 @@ type THeaderProps = {};
 const Header: React.FC<THeaderProps> = () => {
   return (
     <header className="pt-10">
-      <div className="space-between flex items-center justify-between">
-        <img src={logo} alt={"logo"} />
-        <ul className="flex pl-3">
-          <MenuItem href="#home" title="home" />
-          <MenuItem href="#sobreMi" title="sobre mi" />
-          <MenuItem href="#servicios" title="servicios" />
-          <MenuItem href="#packs" title="packs" />
-          <MenuItem href="#faq" title="FAQ" />
-          <MenuItem href="#contacto" title="contacto" />
-        </ul>
-        <Button disabled>pide cita</Button>
+      <div id="headerContent">
+        <div className="space-between flex items-center justify-between">
+          <img src={logo} alt={"logo"} />
+          <ul className="flex pl-3">
+            <MenuItem href="#home" title="home" />
+            <MenuItem href="#sobreMi" title="sobre mi" />
+            <MenuItem href="#servicios" title="servicios" />
+            <MenuItem href="#packs" title="packs" />
+            <MenuItem href="#faq" title="FAQ" />
+            <MenuItem href="#contacto" title="contacto" />
+          </ul>
+          <Button disabled>pide cita</Button>
+        </div>
       </div>
     </header>
   );

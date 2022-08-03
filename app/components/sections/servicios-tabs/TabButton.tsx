@@ -11,7 +11,10 @@ const TabButton: React.FC<TTabButtonProps> = ({
   ...props
 }) => {
   const className = React.useMemo(
-    () => `uppercase transition duration-300 ${isActive ? "fontBold" : ""}`,
+    () =>
+      `uppercase transition duration-300 text-2xl ${
+        isActive ? "fontBold" : ""
+      }`,
     [isActive]
   );
 

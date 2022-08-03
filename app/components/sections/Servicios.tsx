@@ -2,6 +2,7 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 import BodyComposition from "./servicios-tabs/BodyComposition";
 import DietTherapy from "./servicios-tabs/DietTherapy";
+import PregnancyAndLactation from "./servicios-tabs/PregnancyAndLactation";
 import TabButton from "./servicios-tabs/TabButton";
 
 type TServiciosProps = {};
@@ -14,7 +15,7 @@ const Servicios: React.FC<TServiciosProps> = () => {
       case 1:
         return <DietTherapy />;
       case 2:
-        return <DietTherapy />;
+        return <PregnancyAndLactation />;
       default:
         return <BodyComposition />;
     }
@@ -25,7 +26,8 @@ const Servicios: React.FC<TServiciosProps> = () => {
       <SectionTitle>Servicios</SectionTitle>
       <div className="mb-20 grid grid-cols-3">
         <TabButton onClick={() => setActiveTab(0)} isActive={activeTab === 0}>
-          mejora de la composición corporal
+          mejora de la <br />
+          composición corporal
         </TabButton>
         <TabButton onClick={() => setActiveTab(1)} isActive={activeTab === 1}>
           dietoterapia
