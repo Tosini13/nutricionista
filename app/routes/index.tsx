@@ -1,5 +1,6 @@
 import Header from "~/components/header/Header";
 import Home from "~/components/sections/Home";
+import OnlineVisits from "~/components/sections/OnlineVisits";
 import Servicios from "~/components/sections/Servicios";
 import SobreMi from "~/components/sections/SobreMi";
 
@@ -11,6 +12,7 @@ export default function Index() {
         <Home />
         <SobreMi />
         <Servicios />
+        <OnlineVisits />
       </main>
     </>
   );

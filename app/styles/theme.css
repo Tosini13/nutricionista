@@ -23,6 +23,10 @@
     src: url('../../fonts/Montserrat-Light.ttf');
 }
 
+:root{
+    --mainColor: #67a957
+}
+
 
 .fontRegular{
     font-family: 'montserrat', 'inherit';    
@@ -81,10 +85,6 @@ body{
     font-family: 'montserrat', 'inherit';
 }
 
-:root{
-    --mainColor: #67a957
-}
-
 .mainColor {
     color: var(--mainColor);
 }
@@ -125,8 +125,6 @@ body{
 .bottomInsetShadow.uncovered:after{
     box-shadow: inset white 0 0px 0px 0px;
 }
-
-
 
 
 .link::after{
