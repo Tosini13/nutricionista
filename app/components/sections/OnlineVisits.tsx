@@ -68,7 +68,6 @@ type TOnlineVisitsProps = {};
 const OnlineVisits: React.FC<TOnlineVisitsProps> = () => {
   return (
     <section
-      id="#servicios"
       className="bg-contain bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${vector_large_width})`,

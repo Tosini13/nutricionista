@@ -1,4 +1,5 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 type TTabButtonProps = {
   children: React.ReactNode;
@@ -8,18 +9,21 @@ type TTabButtonProps = {
 const TabButton: React.FC<TTabButtonProps> = ({
   children,
   isActive,
+  className,
   ...props
 }) => {
-  const className = React.useMemo(
+  const mergedClassName = React.useMemo(
     () =>
-      `uppercase transition duration-300 text-2xl ${
-        isActive ? "fontBold" : ""
-      }`,
-    [isActive]
+      twMerge(
+        `uppercase transition duration-300 text-2xl ${
+          isActive ? "fontBold" : ""
+        }`,
+        className
+      ),
+    [className, isActive]
   );
-
   return (
-    <button className={className} {...props}>
+    <button className={mergedClassName} {...props}>
       {children}
     </button>
   );

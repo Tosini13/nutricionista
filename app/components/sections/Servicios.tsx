@@ -22,9 +22,9 @@ const Servicios: React.FC<TServiciosProps> = () => {
   }, [activeTab]);
 
   return (
-    <section id="#servicios" className="mx-20">
-      <SectionTitle>Servicios</SectionTitle>
-      <div className="mb-20 grid grid-cols-3">
+    <section id="#servicios" className="mx-20 min-h-[75vh]">
+      <SectionTitle className="mb-10">Servicios</SectionTitle>
+      <div className="mb-10 grid grid-cols-3">
         <TabButton onClick={() => setActiveTab(0)} isActive={activeTab === 0}>
           mejora de la <br />
           composición corporal
