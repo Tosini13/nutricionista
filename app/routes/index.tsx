@@ -4,6 +4,7 @@ import OnlineVisits from "~/components/sections/OnlineVisits";
 import Packs from "~/components/sections/Packs";
 import Servicios from "~/components/sections/Servicios";
 import SobreMi from "~/components/sections/SobreMi";
+import Visits from "~/components/sections/Visits";
 
 export default function Index() {
   return (
@@ -15,6 +16,7 @@ export default function Index() {
         <Servicios />
         <OnlineVisits />
         <Packs />
+        <Visits />
       </main>
     </>
   );
