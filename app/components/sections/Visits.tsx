@@ -55,7 +55,7 @@ const Visits: React.FC<TVisitsProps> = () => {
   );
 
   return (
-    <section id="#servicios" className="mx-20 min-h-[75vh]">
+    <section id="#servicios" className="mx-20">
       <SectionTitle className="mb-10 text-center">Visita normal</SectionTitle>
       <div className="mx-20 mb-10 grid grid-cols-12 rounded-3xl bg-white/75 p-10 shadow-xl">
         <div className="col-span-5">{leftColumn}</div>
