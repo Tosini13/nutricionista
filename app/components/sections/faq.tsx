@@ -80,7 +80,7 @@ const Faq: React.FC<TFaqProps> = ({ faq }) => {
   );
 
   const classNameAnswer = React.useMemo(
-    () => (open ? "max-h-[10vh] pt-2 pb-4" : ""),
+    () => (open ? "max-h-[100vh] pt-2 pb-4" : ""),
     [open]
   );
 
@@ -115,5 +115,9 @@ const Answer: React.FC<React.ButtonHTMLAttributes<HTMLParagraphElement>> = ({
       ),
     [className]
   );
+  /**
+   * @todo
+   * add overflow-y-auto without scroll's splash
+   */
   return <p className={mergedClassName} {...props} />;
 };
