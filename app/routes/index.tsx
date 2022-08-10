@@ -1,4 +1,5 @@
 import Header from "~/components/header/Header";
+import Contact from "~/components/sections/Contact";
 import Faqs from "~/components/sections/faq";
 import Home from "~/components/sections/Home";
 import OnlineVisits from "~/components/sections/OnlineVisits";
@@ -19,6 +20,7 @@ export default function Index() {
         <Packs />
         <Visits />
         <Faqs />
+        <Contact />
       </main>
     </>
   );
