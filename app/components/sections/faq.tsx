@@ -2,6 +2,7 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 import arrowRight from "../../../public/images/arrow_right_icon_dark.png";
 import { twMerge } from "tailwind-merge";
+import Paragraph from "./Paragraph";
 
 type FAQType = {
   id: string;
@@ -110,7 +111,7 @@ const Answer: React.FC<React.ButtonHTMLAttributes<HTMLParagraphElement>> = ({
   const mergedClassName = React.useMemo(
     () =>
       twMerge(
-        "max-h-0 px-8 py-0 transition-all duration-150 ease-in-out overflow-hidden box-content",
+        "max-h-0 px-8 py-0 transition-all duration-150 ease-in-out overflow-hidden box-content text-md",
         className
       ),
     [className]
@@ -119,5 +120,5 @@ const Answer: React.FC<React.ButtonHTMLAttributes<HTMLParagraphElement>> = ({
    * @todo
    * add overflow-y-auto without scroll's splash
    */
-  return <p className={mergedClassName} {...props} />;
+  return <Paragraph className={mergedClassName} {...props} />;
 };

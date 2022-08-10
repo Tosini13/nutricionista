@@ -89,6 +89,10 @@ body{
     color: var(--mainColor);
 }
 
+.mainBgColor {
+    background-color: #2C641E;
+}
+
 .button {
     background: linear-gradient(96.14deg, #68A957 0%, #74B463 100%);
     box-shadow: 0px 10px 22px rgba(172, 180, 159, 0.2);

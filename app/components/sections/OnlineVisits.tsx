@@ -81,7 +81,7 @@ const OnlineVisits: React.FC<TOnlineVisitsProps> = () => {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="mx-4 flex flex-col items-center rounded-3xl bg-white px-4 shadow-xl"
+              className="mx-4 flex flex-col items-center rounded-3xl bg-white px-4 pb-8 shadow-xl"
             >
               <img
                 src={card.icon.url}

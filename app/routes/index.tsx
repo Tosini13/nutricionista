@@ -1,3 +1,4 @@
+import Footer from "~/components/footer/Footer";
 import Header from "~/components/header/Header";
 import Contact from "~/components/sections/Contact";
 import Faqs from "~/components/sections/faq";
@@ -22,6 +23,7 @@ export default function Index() {
         <Faqs />
         <Contact />
       </main>
+      <Footer />
     </>
   );
 }
