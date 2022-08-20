@@ -80,7 +80,7 @@ const Footer: React.FC<TFooterProps> = () => {
         <div className="h-{50} border-r border-gray-200" />
         <a href="#privacy">Privacy</a>
         <div className="h-{50} border-r border-gray-200" />
-        <a href="#privacy">Privacy</a>
+        <a href="#cookies">Cookies</a>
         <div className="h-{50} border-r border-gray-200" />
         <h6>Crafted by Bartosik Bros</h6>
       </div>
