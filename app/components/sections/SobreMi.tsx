@@ -29,52 +29,59 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
 
   return (
     <section id="#sobreMi">
-      <div className="mx-20 flex flex-col">
-        <SectionTitle>Sobre mi</SectionTitle>
+      <div className="mx-20">
         <div className="grid grid-cols-12 gap-4">
-          <div data-testid="sobremi_description" className="col-span-7">
-            <div
-              className={
-                readAll ? "bottomInsetShadow uncovered" : "bottomInsetShadow"
-              }
-            >
-              <Paragraph>
-                <span className="fontSemiBold">Dietista-Nutricionista</span>{" "}
-                especializada en nutrición clínica y graduada por la Universidad
-                de Valencia. Cursé un año de mis estudios en la universidad de
-                Milán, Italia (Università degli studi di Milano) donde tuve la
-                oportunidad de recibir formación en materias de gran interés,
-                particularmente los aspectos celulares y moleculares de la
-                nutrición. Posteriormente realicé las prácticas en el servicio
-                de endocrinología del hospital de Denia. Cuando terminé la
-                universidad empecé a interesarme por la nutrición clínica y el
-                tratamiento nutricional en las distintas patologías así como su
-                prevención. Desde entonces he estado realizando varios cursos
-                formativos en este campo y he trabajado en clínicas de nutrición
-                abordando distintos objetivos. Para mí es importante el abordaje
-                desde un punto de vista holístico y tener en cuenta todos los
-                ámbitos de la vida de una persona para poder mejorar su salud, y
-                estar en contacto con otros profesionales de la salud si fuera
-                necesario un tratamiento multidisciplinar: psicólogos,
-                entrenadores personales, médicos, etc. También creo que es
-                necesario ir adquiriendo cambios de una manera paulatina, con
-                objetivos reales y que se disfrute del proceso para poder
-                seguirlos a largo plazo. Tengo un especial interés en la cocina,
-                la gastronomía y el estilo de vida saludable. Me gusta seguir
-                formándome cada día para estar actualizada.
-              </Paragraph>
-              {readAll ? null : (
-                <button
-                  className="link"
-                  style={style.leerMasButton}
-                  onClick={handleReadMore}
-                >
-                  Leer mas
-                </button>
-              )}
+          <div className="order-2 col-span-12 md:order-1 md:col-span-7">
+            <SectionTitle>Sobre mi</SectionTitle>
+            <div data-testid="sobremi_description">
+              <div
+                className={
+                  readAll ? "bottomInsetShadow uncovered" : "bottomInsetShadow"
+                }
+              >
+                <Paragraph>
+                  <span className="fontSemiBold">Dietista-Nutricionista</span>{" "}
+                  especializada en nutrición clínica y graduada por la
+                  Universidad de Valencia. Cursé un año de mis estudios en la
+                  universidad de Milán, Italia (Università degli studi di
+                  Milano) donde tuve la oportunidad de recibir formación en
+                  materias de gran interés, particularmente los aspectos
+                  celulares y moleculares de la nutrición. Posteriormente
+                  realicé las prácticas en el servicio de endocrinología del
+                  hospital de Denia. Cuando terminé la universidad empecé a
+                  interesarme por la nutrición clínica y el tratamiento
+                  nutricional en las distintas patologías así como su
+                  prevención. Desde entonces he estado realizando varios cursos
+                  formativos en este campo y he trabajado en clínicas de
+                  nutrición abordando distintos objetivos. Para mí es importante
+                  el abordaje desde un punto de vista holístico y tener en
+                  cuenta todos los ámbitos de la vida de una persona para poder
+                  mejorar su salud, y estar en contacto con otros profesionales
+                  de la salud si fuera necesario un tratamiento
+                  multidisciplinar: psicólogos, entrenadores personales,
+                  médicos, etc. También creo que es necesario ir adquiriendo
+                  cambios de una manera paulatina, con objetivos reales y que se
+                  disfrute del proceso para poder seguirlos a largo plazo. Tengo
+                  un especial interés en la cocina, la gastronomía y el estilo
+                  de vida saludable. Me gusta seguir formándome cada día para
+                  estar actualizada.
+                </Paragraph>
+                {readAll ? null : (
+                  <button
+                    className="link"
+                    style={style.leerMasButton}
+                    onClick={handleReadMore}
+                  >
+                    Leer mas
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-          <div data-testid="sobremi_images" className="col-span-5">
+          <div
+            data-testid="sobremi_images"
+            className="order-1 col-span-12 md:order-2 md:col-span-5 md:mt-20"
+          >
             <div
               className="flex w-fit items-center rounded-3xl border border-gray-200 py-4 px-6 text-lg"
               style={style.holaContainer}
@@ -85,11 +92,11 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
             <img className="pl-4" src={esther} alt="Nutricionista Esther" />
           </div>
         </div>
-        <div className="my-10 grid grid-cols-12 border-y-2 p-10 text-xl text-gray-400">
-          <p className="col-start-2 col-end-6">
+        <div className="my-10 grid grid-cols-12 gap-2 border-y-2 p-10 text-xl text-gray-400">
+          <p className="col-span-12 md:col-start-2 md:col-end-6">
             Farmacéutica colegiada nº 18858
           </p>
-          <p className="col-start-7 col-end-12">
+          <p className="col-span-12 md:col-start-7 md:col-end-12">
             Nutricionista colegiada nº CAT 001827
           </p>
         </div>
