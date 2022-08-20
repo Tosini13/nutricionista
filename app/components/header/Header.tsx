@@ -6,7 +6,7 @@ type THeaderProps = {};
 
 const Header: React.FC<THeaderProps> = () => {
   return (
-    <header className="px-24 pt-10">
+    <header className="px-24 py-4 shadow-md">
       <div id="headerContent">
         <div className="space-between flex items-center justify-between">
           <img src={logo} alt={"logo"} />
