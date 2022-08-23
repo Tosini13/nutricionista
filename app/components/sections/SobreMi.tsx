@@ -28,7 +28,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
   const handleReadMore = React.useCallback(() => setReadAll(true), []);
 
   return (
-    <section id="#sobreMi">
+    <section id="#sobreMi" className="sectionContainer">
       <div className="mx-20">
         <div className="grid grid-cols-12 gap-4">
           <div className="order-2 col-span-12 md:order-1 md:col-span-7">
@@ -36,7 +36,9 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
             <div data-testid="sobremi_description">
               <div
                 className={
-                  readAll ? "bottomInsetShadow uncovered" : "bottomInsetShadow"
+                  readAll
+                    ? "bottomInsetShadow uncovered"
+                    : "bottomInsetShadow max-h-[30em] md:max-h-[40em]"
                 }
               >
                 <Paragraph>
@@ -83,7 +85,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
             className="order-1 col-span-12 md:order-2 md:col-span-5 md:mt-20"
           >
             <div
-              className="flex w-fit items-center rounded-3xl border border-gray-200 py-4 px-6 text-lg"
+              className="mx-auto flex w-fit items-center rounded-3xl border border-gray-200 py-4 px-6 text-lg md:ml-0"
               style={style.holaContainer}
             >
               <p className="fontSemiBold">¡Hola! Soy Esther Zamora.</p>
@@ -92,11 +94,11 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
             <img className="pl-4" src={esther} alt="Nutricionista Esther" />
           </div>
         </div>
-        <div className="my-10 grid grid-cols-12 gap-2 border-y-2 p-10 text-xl text-gray-400">
-          <p className="col-span-12 md:col-start-2 md:col-end-6">
+        <div className="my-10 grid grid-cols-12 gap-4 border-y-2 py-8 text-center text-lg text-gray-400 lg:py-10 lg:text-lg xl:text-xl">
+          <p className="col-span-12 w-full lg:col-span-6">
             Farmacéutica colegiada nº 18858
           </p>
-          <p className="col-span-12 md:col-start-7 md:col-end-12">
+          <p className="col-span-12 w-full lg:col-span-6">
             Nutricionista colegiada nº CAT 001827
           </p>
         </div>

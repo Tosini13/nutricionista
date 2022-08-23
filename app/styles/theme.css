@@ -115,7 +115,7 @@ body{
 .bottomInsetShadow {
     position: relative;
     overflow: hidden;
-    max-height: 40em;
+    /* max-height: 40em; */
     transition: max-height 0.3s;
 }
 
