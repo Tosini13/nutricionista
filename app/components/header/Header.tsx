@@ -9,17 +9,21 @@ const Header: React.FC<THeaderProps> = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
   return (
     <>
-      <header className="py-4 px-8 shadow-md lg:px-24">
+      <header className="py-4 px-4 shadow-md 2xl:px-24">
         <div id="headerContent">
           <div className="space-between flex items-center justify-between">
-            <img src={logo} alt={"logo"} />
-            <ul className="flex hidden pl-3 lg:relative">
+            <img
+              src={logo}
+              alt={"logo"}
+              className="max-h-10 transition-[max-height] md:max-h-5 lg:max-h-10"
+            />
+            <ul className="hidden pl-3 md:flex">
               <MenuItems />
             </ul>
-            <Button className="hidden lg:relative" disabled>
+            <Button className="hidden whitespace-nowrap md:block" disabled>
               pide cita
             </Button>
-            <div className="relative" style={{ zIndex: "102" }}>
+            <div className="block md:hidden" style={{ zIndex: "102" }}>
               <Hamburger
                 onClick={() => setOpenMenu((open) => !open)}
                 open={openMenu}
@@ -60,9 +64,9 @@ type TMenuItemProps = {
 
 const MenuItem: React.FC<TMenuItemProps> = ({ title, href, onClick }) => {
   return (
-    <li className="px-9">
+    <li className="w-fit transition-[padding] duration-300 ease-out md:px-2 lg:px-4 xl:px-9">
       <a
-        className="link"
+        className="link whitespace-nowrap"
         href={href}
         style={{ fontWeight: 400 }}
         onClick={onClick}

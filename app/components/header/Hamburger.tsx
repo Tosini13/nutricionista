@@ -23,7 +23,7 @@ const Hamburger: React.FC<THamburgerProps> = ({ onClick, open = false }) => {
 
   return (
     <>
-      <div onClick={onClick} className="w-[20px] space-y-1">
+      <div onClick={onClick} className="w-[20px] cursor-pointer space-y-1">
         <div className={topStyle} />
         <div className={centerStyle} />
         <div className={bottomStyle} />
