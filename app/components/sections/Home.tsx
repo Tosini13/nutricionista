@@ -21,24 +21,21 @@ type THomeProps = {};
 const Home: React.FC<THomeProps> = () => {
   return (
     <section id="#home" className="relative mb-20 py-10 lg:pt-24">
-      <div className="mx-20 mb-20">
-        <div className="flex flex-col items-center pb-20 text-center">
-          <h1 className="title pb-8 pt-6 text-6xl font-bold">
+      <div className="mb-20 md:mx-20">
+        <div className="flex flex-col items-center pb-20 md:text-center">
+          <h1 className="title pb-8 pt-6 text-3xl font-bold sm:text-6xl ">
             ¿Quieres empezar
             <br /> a cuidar de tu <span className="mainColor">salud</span>?
           </h1>
-          <div className="relative w-full">
-            <img
-              className="absolute right-0 top-0"
-              src={ImgWatermelon}
-              alt="watermelon"
-            />
-          </div>
           <p className="pb-10 pb-8 text-xl">
             Puedo ayudarte a mejorar tu salud y a sentirte mejor
-            <br /> gracias al cambio de hábitos en tu alimentación
+            <br className="hidden md:inline" /> gracias al cambio de hábitos en
+            tu alimentación
           </p>
-          <Button className={"fontSemiBold"} style={style.button}>
+          <Button
+            className={"fontSemiBold w-full sm:w-fit"}
+            style={style.button}
+          >
             Pide Cita
           </Button>
           {/**
@@ -47,6 +44,11 @@ const Home: React.FC<THomeProps> = () => {
           /* <img src={ImgFruits} alt="fruits" style={style.leftImage} /> */}
         </div>
       </div>
+      {/* <img
+        className="absolute right-0 bottom-0"
+        src={ImgWatermelon}
+        alt="watermelon"
+      /> */}
     </section>
   );
 };
