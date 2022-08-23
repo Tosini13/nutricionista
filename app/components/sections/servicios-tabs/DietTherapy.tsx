@@ -8,12 +8,21 @@ type TDietTherapyProps = {};
 const DietTherapy: React.FC<TDietTherapyProps> = () => {
   return (
     <div className="grid grid-cols-12">
-      <div className="col-span-5">
-        <img src={diet} alt="man and woman having diet" />
+      <div className="col-span-12 mx-auto flex md:col-span-6 md:col-start-4 lg:col-span-4 lg:col-start-1 xl:col-span-5">
+        <div>
+          <img src={diet} alt="man and woman having diet" />
+        </div>
+        <div className="block md:hidden">
+          <img
+            src={badge}
+            alt="fruits vegetables nutritionist diet"
+            className="h-fit"
+          />
+        </div>
       </div>
-      <div className="col-span-7">
-        <div className="flex items-start justify-between">
-          <div className="md:mr-6">
+      <div className="col-span-12 lg:col-span-8 xl:col-span-7">
+        <div className="flex flex-col items-start justify-between md:flex-row">
+          <div className="mb-6 md:mr-6 md:mb-0">
             <h3 className="fontBold mb-4 text-xl">
               Tratamiento de tu patología a través de la alimentación.
             </h3>
@@ -38,9 +47,15 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
             </ul>
           </div>
         </div>
-        <div className="flex items-end justify-between">
-          <Button>pide cita</Button>
-          <img src={badge} alt="fruits vegetables nutritionist diet" />
+        <div className="flex items-end md:justify-evenly lg:justify-between">
+          <Button className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0">
+            pide cita
+          </Button>
+          <img
+            src={badge}
+            alt="fruits vegetables nutritionist diet"
+            className="hidden md:block"
+          />
         </div>
       </div>
     </div>

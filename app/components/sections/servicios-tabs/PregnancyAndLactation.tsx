@@ -6,8 +6,10 @@ type TPregnancyAndLactationProps = {};
 
 const PregnancyAndLactation: React.FC<TPregnancyAndLactationProps> = () => {
   return (
-    <div className="flex justify-between">
-      <img src={pregnancy} alt="pregnancy diet" />
+    <div className="flex flex-col justify-between md:flex-row">
+      <div>
+        <img src={pregnancy} alt="pregnancy diet" />
+      </div>
       <div>
         <h4 className="fontBold mb-2 w-fit whitespace-nowrap border-b-2 text-xl">
           Nutricion óptima
@@ -20,8 +22,14 @@ const PregnancyAndLactation: React.FC<TPregnancyAndLactationProps> = () => {
           <li>Migrañas</li>
         </ul>
         <div className="flex items-end justify-between">
-          <Button>pide cita</Button>
-          <img src={badge} alt="fruits vegetables nutritionist diet" />
+          <Button className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0">
+            pide cita
+          </Button>
+          <img
+            src={badge}
+            alt="fruits vegetables nutritionist diet"
+            className="hidden md:block"
+          />
         </div>
       </div>
     </div>

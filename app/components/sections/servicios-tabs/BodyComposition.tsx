@@ -8,8 +8,19 @@ type TBodyCompositionProps = {};
 
 const BodyComposition: React.FC<TBodyCompositionProps> = () => {
   return (
-    <div className="flex justify-between">
-      <img src={nutritionist} alt="fruits vegetables nutritionist diet" />
+    <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="relative flex">
+        <div>
+          <img src={nutritionist} alt="fruits vegetables nutritionist diet" />
+        </div>
+        <div className="block md:hidden">
+          <img
+            src={badge}
+            alt="fruits vegetables nutritionist diet"
+            className="h-fit"
+          />
+        </div>
+      </div>
       <div>
         <Paragraph>
           Aprende a comer y a disfrutar de la comida sin poner en riesgo tu
@@ -17,9 +28,15 @@ const BodyComposition: React.FC<TBodyCompositionProps> = () => {
           puedas cumplir tu objetivo de una manera fácil y agradable. Sin
           efectos rebotes, aprenderás para toda la vida.
         </Paragraph>
-        <div className="flex items-end justify-between">
-          <Button>pide cita</Button>
-          <img src={badge} alt="fruits vegetables nutritionist diet" />
+        <div className="mt-8 flex items-end justify-between md:mt-0">
+          <Button className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0">
+            pide cita
+          </Button>
+          <img
+            src={badge}
+            alt="fruits vegetables nutritionist diet"
+            className="hidden md:block"
+          />
         </div>
       </div>
     </div>

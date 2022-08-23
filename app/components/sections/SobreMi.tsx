@@ -29,7 +29,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
 
   return (
     <section id="#sobreMi" className="sectionContainer">
-      <div className="mx-20">
+      <div className="lg:mx-20">
         <div className="grid grid-cols-12 gap-4">
           <div className="order-2 col-span-12 md:order-1 md:col-span-7">
             <SectionTitle>Sobre mi</SectionTitle>
