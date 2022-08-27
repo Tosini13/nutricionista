@@ -3,6 +3,7 @@ import checkList from "../../../public/images/onlineVisits/checkList.png";
 import house from "../../../public/images/onlineVisits/house.png";
 import search from "../../../public/images/onlineVisits/search.png";
 import vector_large_width from "../../../public/images/onlineVisits/vector_large_width.png";
+import vector_mobile_width from "../../../public/images/onlineVisits/bg_track_mobile.svg";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 
@@ -68,20 +69,20 @@ type TOnlineVisitsProps = {};
 const OnlineVisits: React.FC<TOnlineVisitsProps> = () => {
   return (
     <section
-      className="bg-contain bg-center bg-no-repeat"
+      className={`bg-contain bg-center bg-no-repeat`}
       style={{
         backgroundImage: `url(${vector_large_width})`,
       }}
     >
-      <div className="mx-20">
+      <div className="md:mx-20">
         <SectionTitle className="mb-20 text-center">
           ¿Como funcionan las visitas Online?
         </SectionTitle>
-        <div className="mb-20 grid grid-cols-4">
+        <div className="mb-20 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
           {cards.map((card) => (
             <div
               key={card.id}
-              className="mx-4 flex flex-col items-center rounded-3xl bg-white px-4 pb-8 shadow-xl"
+              className="mx-auto flex max-w-sm flex-col items-center rounded-3xl bg-white px-4 pb-8 shadow-xl"
             >
               <img
                 src={card.icon.url}
