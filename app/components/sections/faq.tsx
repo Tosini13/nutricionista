@@ -55,9 +55,9 @@ type TFaqsProps = {};
 
 const Faqs: React.FC<TFaqsProps> = () => {
   return (
-    <section id="#servicios" className="mx-20 min-h-[75vh]">
+    <section id="#servicios" className="min-h-[75vh] md:mx-20">
       <SectionTitle className="mb-10 text-center">FAQ</SectionTitle>
-      <div className="mx-20">
+      <div className="lg:mx-20">
         {faqs.map((faq) => (
           <Faq key={faq.id} faq={faq} />
         ))}
