@@ -48,18 +48,18 @@ type TPacksProps = {};
 const Packs: React.FC<TPacksProps> = () => {
   return (
     <section id="#packs">
-      <div className="mx-20">
+      <div className="md:mx-20">
         <SectionTitle className="text-center">Packs</SectionTitle>
         <Paragraph className="fontSemiBold mx-20 text-center leading-6 text-gray-400">
           Elige tu dieta favorita y contáctame. No hay oferta de descuento para
           “embarazo y lactancia”. Si quieres contactar en este caso te
           recomiendo visita normal.
         </Paragraph>
-        <div className="mb-20 mt-8 grid grid-cols-3 gap-x-12">
+        <div className="mb-20 mt-8 grid grid-cols-1 gap-4 gap-x-12 lg:grid-cols-2 xl:grid-cols-3">
           {cards.map((card) => (
             <div
               key={card.id}
-              className="relative mx-4 grid auto-rows-fr gap-y-4 rounded-3xl bg-white px-4 shadow-xl"
+              className="relative grid auto-rows-fr gap-y-4 rounded-3xl bg-white px-4 shadow-xl"
             >
               {card.vegetarian && (
                 <img
