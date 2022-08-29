@@ -10,7 +10,7 @@ const Header: React.FC<THeaderProps> = () => {
   return (
     <>
       <header className="py-4 px-4 shadow-md 2xl:px-24">
-        <div id="headerContent">
+        <div className="headerContent">
           <div className="space-between flex items-center justify-between">
             <img
               src={logo}

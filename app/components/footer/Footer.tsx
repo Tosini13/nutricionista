@@ -3,6 +3,9 @@ import dinner from "../../../public/images/footer/dinner.png";
 import cooking from "../../../public/images/footer/cooking.png";
 import cooking2 from "../../../public/images/footer/cooking2.png";
 import meal from "../../../public/images/footer/meal.png";
+import fb_icon from "../../../public/images/media/fb_icon.svg";
+import insta_icon from "../../../public/images/media/insta_icon.svg";
+import whatsapp_icon from "../../../public/images/media/whatsapp_icon.svg";
 import Paragraph from "../sections/Paragraph";
 
 type TFooterProps = {};
@@ -27,47 +30,60 @@ const Footer: React.FC<TFooterProps> = () => {
           </defs>
           <polygon points="0 100 100 0 100 100" fill="url(#triangleGradient)" />
         </svg>
-        <div className="relative mx-24 flex justify-between py-10">
-          <address className="not-italic">
-            <img src={logo} alt={"logo"} />
-            <Paragraph className="mt-6">
-              Numero de telefono:
-              <br />
-              <span className="fontSemiBold">+48 0000000000</span>
-            </Paragraph>
-            <Paragraph className="mt-6">
-              Correo electronico:
-              <br />
-              <a className="fontSemiBold" href="mailto:Esther@gmail.com">
-                Esther@gmail.com
-              </a>
-            </Paragraph>
-          </address>
-          <div>
-            <h6 className="pb-6">Mapa del sitio</h6>
-            <ul>
-              <MapLink href="#home" title="home" />
-              <MapLink href="#sobreMi" title="sobre mi" />
-              <MapLink href="#servicios" title="servicios" />
-              <MapLink href="#packs" title="packs" />
-              <MapLink href="#faq" title="FAQ" />
-              <MapLink href="#contacto" title="contacto" />
-            </ul>
-          </div>
-          <div className="flex">
-            <div>
-              <img src={cooking2} alt="cooking" />
+        <div className="headerContent">
+          <div className="relative flex flex-wrap items-stretch justify-around py-10 md:mx-24 md:items-center">
+            <address className="hidden min-w-max not-italic md:mx-4 md:block">
+              <img src={logo} alt={"logo"} />
+              <Paragraph className="mt-6">
+                Numero de telefono:
+                <br />
+                <span className="fontSemiBold">+48 0000000000</span>
+              </Paragraph>
+              <Paragraph className="mt-6">
+                Correo electronico:
+                <br />
+                <a className="fontSemiBold" href="mailto:Esther@gmail.com">
+                  Esther@gmail.com
+                </a>
+              </Paragraph>
+            </address>
+            <div className="min-w-max md:mx-4">
+              <h6 className="hidden pb-6 md:block">Mapa del sitio</h6>
+              <ul>
+                <MapLink href="#home" title="home" />
+                <MapLink href="#sobreMi" title="sobre mi" />
+                <MapLink href="#servicios" title="servicios" />
+                <MapLink href="#packs" title="packs" />
+                <MapLink href="#faq" title="FAQ" />
+                <MapLink href="#contacto" title="contacto" />
+              </ul>
             </div>
-            <div className="mx-2">
-              <div className="mb-2">
-                <img src={dinner} alt="dinner" />
+            <div className="grid grid-rows-3 lg:hidden">
+              <div className="flex items-center justify-center">
+                <img src={fb_icon} alt="facebook icon" />
+              </div>
+              <div className="flex items-center justify-center">
+                <img src={insta_icon} alt="instagram icon" />
+              </div>
+              <div className="flex items-center justify-center">
+                <img src={whatsapp_icon} alt="WhatsApp icon" />
+              </div>
+            </div>
+            <div className="hidden min-w-max py-8 md:flex">
+              <div>
+                <img src={cooking2} alt="cooking" />
+              </div>
+              <div className="mx-2">
+                <div className="mb-2">
+                  <img src={dinner} alt="dinner" />
+                </div>
+                <div>
+                  <img src={meal} alt="meal" />
+                </div>
               </div>
               <div>
-                <img src={meal} alt="meal" />
+                <img src={cooking} alt="cooking" />
               </div>
-            </div>
-            <div>
-              <img src={cooking} alt="cooking" />
             </div>
           </div>
         </div>
@@ -97,7 +113,7 @@ type TMapLinkmProps = {
 
 const MapLink: React.FC<TMapLinkmProps> = ({ title, href }) => {
   return (
-    <li className="pb-2">
+    <li className="pb-6 last:pb-0 md:pb-2">
       <a
         className="border-b border-current"
         href={href}
