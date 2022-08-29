@@ -89,15 +89,17 @@ const Footer: React.FC<TFooterProps> = () => {
         </div>
       </div>
       <div
-        className="flex justify-center space-x-4 p-3 text-sm"
+        className="flex flex-wrap justify-center space-x-4 p-3 text-sm"
         style={{ backgroundColor: "#123708" }}
       >
-        <h6>Copyright 2022 by Esther Zamora All rights reserved</h6>
-        <div className="h-{50} border-r border-gray-200" />
+        <h6 className="order-last mt-2 min-w-full text-center md:order-first md:mt-0 md:min-w-max">
+          Copyright 2022 by Esther Zamora All rights reserved
+        </h6>
+        <div className="h-{50} hidden border-r border-gray-200 md:block" />
         <a href="#privacy">Privacy</a>
-        <div className="h-{50} border-r border-gray-200" />
+        <div className="h-{50} hidden border-r border-gray-200 md:block" />
         <a href="#cookies">Cookies</a>
-        <div className="h-{50} border-r border-gray-200" />
+        <div className="h-{50} hidden border-r border-gray-200 md:block" />
         <h6>Crafted by Bartosik Bros</h6>
       </div>
     </footer>
