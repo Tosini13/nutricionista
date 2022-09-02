@@ -45,7 +45,7 @@ const Contact: React.FC<TContactProps> = () => {
       </form>
       <div className="mt-10">
         <h4 className="mb-8 text-center lg:text-left">Mi contacto:</h4>
-        <div className="mx-auto w-max rounded-3xl shadow-md lg:mx-0 ">
+        <div className="mx-auto rounded-3xl shadow-md sm:w-max lg:mx-0 ">
           <table className="border-separate border-spacing-x-8 border-spacing-y-4">
             <tr>
               <td>E-mail</td>
