@@ -5,6 +5,7 @@ import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import sendIcon from "../../../public/images/send_icon.svg";
 import withIcon from "../form/withIcon";
+import Section from "./Section";
 
 type TContactProps = {};
 
@@ -12,9 +13,9 @@ const Contact: React.FC<TContactProps> = () => {
   const TextareaWithIcon = withIcon(Textarea);
 
   return (
-    <section id="#contact" className="min-h-[75vh] lg:mx-20">
+    <Section id="#contact">
       <SectionTitle className="text-center">Contacto</SectionTitle>
-      <Paragraph className="text-md text-center">
+      <Paragraph className="text-md mb-10 text-center">
         Si tienes alguna duda escríbeme y me
         <br />
         pondré en contacto contigo lo antes posible
@@ -58,7 +59,7 @@ const Contact: React.FC<TContactProps> = () => {
           </table>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

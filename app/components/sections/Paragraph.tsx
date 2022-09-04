@@ -1,7 +1,7 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-type TParagraphProps = React.ButtonHTMLAttributes<HTMLParagraphElement>;
+type TParagraphProps = React.HTMLAttributes<HTMLParagraphElement>;
 const Paragraph: React.FC<TParagraphProps> = ({ className, ...props }) => {
   const mergedClassName = React.useMemo(
     () => twMerge("fontLight text-lg leading-10 tracking-wide", className),

@@ -6,6 +6,7 @@ import vector_large_width from "../../../public/images/onlineVisits/vector_large
 import vector_mobile_width from "../../../public/images/onlineVisits/bg_track_mobile.svg";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
+import Section from "./Section";
 
 type CardType = {
   id: string;
@@ -68,8 +69,8 @@ type TOnlineVisitsProps = {};
 
 const OnlineVisits: React.FC<TOnlineVisitsProps> = () => {
   return (
-    <section
-      className={`bg-contain bg-center bg-no-repeat`}
+    <Section
+      className={`bg-contain bg-center bg-no-repeat lg:mx-0`}
       style={{
         backgroundImage: `url(${vector_large_width})`,
       }}
@@ -96,7 +97,7 @@ const OnlineVisits: React.FC<TOnlineVisitsProps> = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

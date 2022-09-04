@@ -3,6 +3,7 @@ import SectionTitle from "./SectionTitle";
 import arrowRight from "../../../public/images/arrow_right_icon_dark.png";
 import { twMerge } from "tailwind-merge";
 import Paragraph from "./Paragraph";
+import Section from "./Section";
 
 type FAQType = {
   id: string;
@@ -55,14 +56,14 @@ type TFaqsProps = {};
 
 const Faqs: React.FC<TFaqsProps> = () => {
   return (
-    <section id="#servicios" className="min-h-[75vh] md:mx-20">
-      <SectionTitle className="mb-10 text-center">FAQ</SectionTitle>
+    <Section id="#servicios" className="md:mx-20">
+      <SectionTitle className="text-center">FAQ</SectionTitle>
       <div className="lg:mx-20">
         {faqs.map((faq) => (
           <Faq key={faq.id} faq={faq} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

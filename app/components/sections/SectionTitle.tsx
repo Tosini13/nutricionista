@@ -8,7 +8,7 @@ const SectionTitle: React.FC<TSectionTitleProps> = ({
   ...props
 }) => {
   const mergedClassName = React.useMemo(
-    () => twMerge("title fontSemiBold pb-8 text-4xl font-bold", className),
+    () => twMerge("title fontSemiBold mb-8 text-4xl font-bold", className),
     [className]
   );
   return (

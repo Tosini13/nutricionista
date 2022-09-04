@@ -1,4 +1,5 @@
 import React from "react";
+import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 import BodyComposition from "./servicios-tabs/BodyComposition";
 import DietTherapy from "./servicios-tabs/DietTherapy";
@@ -22,8 +23,8 @@ const Servicios: React.FC<TServiciosProps> = () => {
   }, [activeTab]);
 
   return (
-    <section id="#servicios" className="min-h-[75vh] lg:mx-20">
-      <SectionTitle className="mb-10">Servicios</SectionTitle>
+    <Section id="#servicios" className="min-h-[50vh]">
+      <SectionTitle>Servicios</SectionTitle>
       <div className="mb-10 grid grid-cols-3">
         <TabButton onClick={() => setActiveTab(0)} isActive={activeTab === 0}>
           mejora de la <br />
@@ -37,7 +38,7 @@ const Servicios: React.FC<TServiciosProps> = () => {
         </TabButton>
       </div>
       {content}
-    </section>
+    </Section>
   );
 };
 
