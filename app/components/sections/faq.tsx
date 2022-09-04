@@ -89,7 +89,7 @@ const Faq: React.FC<TFaqProps> = ({ faq }) => {
   return (
     <div className="mb-6 rounded-xl bg-white/75 shadow-md">
       <div
-        className="flex flex cursor-pointer select-none items-center px-8 py-4"
+        className="noFocus flex flex cursor-pointer select-none items-center px-8 py-4"
         onClick={() => setOpen((open) => !open)}
       >
         <img
