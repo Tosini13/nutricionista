@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../public/logo.svg";
+import logo from "../../../public/logoWithTitle.svg";
 import Button from "../form/Button";
 import Hamburger from "./Hamburger";
 
