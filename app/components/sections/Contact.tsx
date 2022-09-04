@@ -13,7 +13,7 @@ const Contact: React.FC<TContactProps> = () => {
   const TextareaWithIcon = withIcon(Textarea);
 
   return (
-    <Section id="#contact">
+    <Section id="contact">
       <SectionTitle className="text-center">Contacto</SectionTitle>
       <Paragraph className="text-md mb-10 text-center">
         Si tienes alguna duda escríbeme y me

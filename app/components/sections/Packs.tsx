@@ -48,7 +48,7 @@ type TPacksProps = {};
 
 const Packs: React.FC<TPacksProps> = () => {
   return (
-    <Section id="#packs" className="md:mx-20">
+    <Section id="packs" className="md:mx-20">
       <SectionTitle className="text-center">Packs</SectionTitle>
       <Paragraph className="fontSemiBold text-center leading-6 text-gray-400">
         Elige tu dieta favorita y contáctame. No hay oferta de descuento para

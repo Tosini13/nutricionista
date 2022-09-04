@@ -20,7 +20,7 @@ const Header: React.FC<THeaderProps> = () => {
             <ul className="hidden pl-3 md:flex">
               <MenuItems />
             </ul>
-            <Button className="hidden whitespace-nowrap md:block" disabled>
+            <Button className="hidden whitespace-nowrap md:block">
               pide cita
             </Button>
             <div className="block md:hidden" style={{ zIndex: "102" }}>
@@ -51,7 +51,7 @@ const MenuItems = ({ hideMenu }: TMenuItemsProps) => {
       <MenuItem href="#servicios" title="servicios" onClick={hideMenu} />
       <MenuItem href="#packs" title="packs" onClick={hideMenu} />
       <MenuItem href="#faq" title="FAQ" onClick={hideMenu} />
-      <MenuItem href="#contacto" title="contacto" onClick={hideMenu} />
+      <MenuItem href="#contact" title="contacto" onClick={hideMenu} />
     </>
   );
 };

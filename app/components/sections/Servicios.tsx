@@ -23,7 +23,7 @@ const Servicios: React.FC<TServiciosProps> = () => {
   }, [activeTab]);
 
   return (
-    <Section id="#servicios" className="min-h-[50vh]">
+    <Section id="servicios" className="min-h-[50vh]">
       <SectionTitle>Servicios</SectionTitle>
       <div className="mb-10 grid grid-cols-3">
         <TabButton onClick={() => setActiveTab(0)} isActive={activeTab === 0}>

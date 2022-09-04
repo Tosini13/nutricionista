@@ -21,7 +21,7 @@ type THomeProps = {};
 
 const Home: React.FC<THomeProps> = () => {
   return (
-    <Section id="#home" className="py-10 lg:pt-24">
+    <Section id="home" className="py-10 lg:pt-24">
       <div className="flex flex-col items-center pb-20 md:text-center">
         <h1 className="title pb-8 pt-6 text-3xl font-bold sm:text-6xl ">
           ¿Quieres empezar
