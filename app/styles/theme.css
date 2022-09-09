@@ -148,6 +148,17 @@ body{
     width: 100%;
 }
 
+.insetShadow::after
+{
+ box-shadow: inset 0px -100px 60px 0 white;
+ content: '';
+ display: block;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ width: 100%;
+}
+
 .noFocus{
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
