@@ -32,7 +32,9 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
     <Section id="sobreMi">
       <div className="grid grid-cols-12 gap-4">
         <div className="order-2 col-span-12 md:order-1 md:col-span-7">
-          <SectionTitle>Sobre mi</SectionTitle>
+          <SectionTitle className="text-center md:text-left">
+            Sobre mi
+          </SectionTitle>
           <div data-testid="sobremi_description">
             <div
               className={
