@@ -20,7 +20,10 @@ const Header: React.FC<THeaderProps> = () => {
             <ul className="hidden pl-3 md:flex">
               <MenuItems />
             </ul>
-            <Button className="hidden whitespace-nowrap md:block">
+            <Button
+              className="hidden whitespace-nowrap md:block"
+              href="#contact"
+            >
               pide cita
             </Button>
             <div className="block md:hidden" style={{ zIndex: "102" }}>

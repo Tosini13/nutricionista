@@ -43,6 +43,7 @@ const Home: React.FC<THomeProps> = () => {
         <Button
           className={"fontSemiBold mx-auto w-full sm:w-fit"}
           style={style.button}
+          href="#contact"
         >
           Pide Cita
         </Button>

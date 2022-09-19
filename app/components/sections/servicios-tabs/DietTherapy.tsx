@@ -48,7 +48,10 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
           </div>
         </div>
         <div className="flex items-end md:justify-evenly lg:justify-between">
-          <Button className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0">
+          <Button
+            className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"
+            href="#contact"
+          >
             pide cita
           </Button>
           <img

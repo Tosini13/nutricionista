@@ -86,7 +86,7 @@ const Packs: React.FC<TPacksProps> = () => {
               </Paragraph>
             </div>
             <div className="flex items-center justify-center">
-              <Button className="rounded-full pr-4">
+              <Button className="rounded-full pr-4" href="#contact">
                 Pide Cita
                 <img src={arrowRight} alt="arrow right" className="ml-2" />
               </Button>

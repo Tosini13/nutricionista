@@ -29,7 +29,10 @@ const BodyComposition: React.FC<TBodyCompositionProps> = () => {
           efectos rebotes, aprenderás para toda la vida.
         </Paragraph>
         <div className="mt-8 flex items-end justify-between md:mt-0">
-          <Button className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0">
+          <Button
+            className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"
+            href="#contact"
+          >
             pide cita
           </Button>
           <img
