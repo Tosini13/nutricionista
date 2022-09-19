@@ -7,7 +7,7 @@ const Section: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => {
   const mergedClassName = React.useMemo(
-    () => twMerge("lg:mx-20 pt-24", className),
+    () => twMerge("lg:mx-20 pt-24 mx-2 sm:mx-6", className),
     [className]
   );
   return (
