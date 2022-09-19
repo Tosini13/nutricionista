@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <>
       <Header />
-      <main className="relative mx-2 min-h-screen  max-w-screen-xl bg-white sm:mx-6 xl:mx-auto">
+      <main className="relative mx-2 min-h-screen max-w-screen-xl overflow-x-hidden bg-white sm:mx-6 xl:mx-auto">
         <Home />
         <SobreMi />
         <Servicios />
