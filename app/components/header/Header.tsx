@@ -1,15 +1,31 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 import logo from "../../../public/logoWithTitle.svg";
 import Button from "../form/Button";
 import Hamburger from "./Hamburger";
+
+const menuItems = [
+  { href: "#home", title: "home" },
+  { href: "#sobreMi", title: "sobre mi" },
+  { href: "#servicios", title: "servicios" },
+  { href: "#packs", title: "packs" },
+  { href: "#faq", title: "FAQ" },
+  { href: "#contact", title: "contact" },
+];
 
 type THeaderProps = {};
 
 const Header: React.FC<THeaderProps> = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
+
+  const headerStyle = twMerge(
+    "py-4 px-4 2xl:px-24",
+    openMenu ? "md:shadow-md" : "shadow-md"
+  );
+
   return (
     <>
-      <header className="py-4 px-4 shadow-md 2xl:px-24">
+      <header className={headerStyle}>
         <div className="headerContent">
           <div className="space-between flex items-center justify-between">
             <img
@@ -18,7 +34,18 @@ const Header: React.FC<THeaderProps> = () => {
               className="max-h-10 transition-[max-height] md:max-h-5 lg:max-h-10"
             />
             <ul className="hidden pl-3 md:flex">
-              <MenuItems />
+              {menuItems.map((item) => (
+                <li
+                  key={item.href}
+                  className="w-fit transition-[padding] duration-300 ease-out md:px-2 lg:px-4 xl:px-9"
+                >
+                  <MenuItem
+                    className="link"
+                    href={item.href}
+                    title={item.title}
+                  />
+                </li>
+              ))}
             </ul>
             <Button
               className="hidden whitespace-nowrap md:block"
@@ -32,51 +59,39 @@ const Header: React.FC<THeaderProps> = () => {
                 open={openMenu}
               />
             </div>
-            <MenuScreen open={openMenu} hideMenu={() => setOpenMenu(false)} />
           </div>
         </div>
       </header>
+      <MenuScreen open={openMenu} hideMenu={() => setOpenMenu(false)} />
     </>
   );
 };
 
 export default Header;
 
-type TMenuItemsProps = {
-  hideMenu?: () => void;
-};
-
-const MenuItems = ({ hideMenu }: TMenuItemsProps) => {
-  return (
-    <>
-      <MenuItem href="#home" title="home" onClick={hideMenu} />
-      <MenuItem href="#sobreMi" title="sobre mi" onClick={hideMenu} />
-      <MenuItem href="#servicios" title="servicios" onClick={hideMenu} />
-      <MenuItem href="#packs" title="packs" onClick={hideMenu} />
-      <MenuItem href="#faq" title="FAQ" onClick={hideMenu} />
-      <MenuItem href="#contact" title="contacto" onClick={hideMenu} />
-    </>
-  );
-};
-
 type TMenuItemProps = {
   title: string;
   href: string;
   onClick?: () => void;
+  className?: string;
 };
 
-const MenuItem: React.FC<TMenuItemProps> = ({ title, href, onClick }) => {
+const MenuItem: React.FC<TMenuItemProps> = ({
+  title,
+  href,
+  onClick,
+  className: customClassName,
+}) => {
+  const className = twMerge("whitespace-nowrap", customClassName);
   return (
-    <li className="w-fit transition-[padding] duration-300 ease-out md:px-2 lg:px-4 xl:px-9">
-      <a
-        className="link whitespace-nowrap"
-        href={href}
-        style={{ fontWeight: 400 }}
-        onClick={onClick}
-      >
-        {title}
-      </a>
-    </li>
+    <a
+      className={className}
+      href={href}
+      style={{ fontWeight: 400 }}
+      onClick={onClick}
+    >
+      {title}
+    </a>
   );
 };
 
@@ -85,18 +100,47 @@ type TMenuScreenProps = {
   hideMenu?: () => void;
 };
 
-const MenuScreen: React.FC<TMenuScreenProps> = ({ open, hideMenu }) => (
-  <div
-    className="fixed top-0 left-0 h-screen w-screen bg-white"
-    style={{
-      zIndex: "101",
-      display: open ? "block" : "none",
-    }}
-  >
-    <div className="p-6">
-      <ul className="space-y-2">
-        <MenuItems hideMenu={hideMenu} />
-      </ul>
+const MenuScreen: React.FC<TMenuScreenProps> = ({ open, hideMenu }) => {
+  const className = React.useMemo(
+    () =>
+      twMerge(
+        "fixed top-0 left-0 h-screen w-screen bg-white pt-20 z-[99]",
+        open ? "block md:hidden" : "hidden"
+      ),
+    [open]
+  );
+
+  return (
+    <div className={className}>
+      <div className="flex h-full flex-col divide-y p-6">
+        <ul className="grow space-y-4">
+          {menuItems.map((item) => (
+            <li
+              key={item.href}
+              className="w-full rounded-md px-2 py-3 transition-[padding] duration-300 ease-out"
+              /**
+               * @todo for active link
+              style={{
+                backgroundColor: "rgba(104, 169, 87, 0.15)",
+              }}
+               */
+            >
+              <MenuItem
+                href={item.href}
+                title={item.title}
+                onClick={hideMenu}
+              />
+            </li>
+          ))}
+        </ul>
+        <Button
+          className="whitespace-nowrap"
+          href="#contact"
+          onClick={hideMenu}
+        >
+          pide cita
+        </Button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
