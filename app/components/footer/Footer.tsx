@@ -37,12 +37,12 @@ const Footer: React.FC<TFooterProps> = () => {
               <Paragraph className="mt-6">
                 Numero de telefono:
                 <br />
-                <span className="fontSemiBold">+48 0000000000</span>
+                <span className="font-semibold">+48 0000000000</span>
               </Paragraph>
               <Paragraph className="mt-6">
                 Correo electronico:
                 <br />
-                <a className="fontSemiBold" href="mailto:Esther@gmail.com">
+                <a className="font-semibold" href="mailto:Esther@gmail.com">
                   Esther@gmail.com
                 </a>
               </Paragraph>

@@ -57,7 +57,9 @@ const Visits: React.FC<TVisitsProps> = () => {
 
   return (
     <Section id="visits" className="md:mx-20">
-      <SectionTitle className="text-center">Visita normal</SectionTitle>
+      <SectionTitle className="text-center text-2xl uppercase">
+        Visita normal
+      </SectionTitle>
       <div className="mb-10 grid grid-cols-1 gap-y-8 rounded-3xl bg-white/75 p-10 shadow-xl md:mx-16 lg:mx-0 lg:grid-cols-12 xl:mx-20">
         <div className="col-span-5">{leftColumn}</div>
         <div className="col-span-2 flex items-center justify-center">
@@ -85,9 +87,9 @@ const Visist: React.FC<TVisistProps> = ({ visit }) => {
         <div className="w-5 origin-center border-b-2 border-black lg:w-10" />
       </div>
       <div className="flex h-20 w-full items-center justify-center">
-        <p className="fontSemiBold mr-2 self-start text-2xl">{visit.cost}€</p>
+        <p className="mr-2 self-start text-2xl font-semibold">{visit.cost}€</p>
         <div className="h-1/2 origin-center rotate-45 border-l-2 border-black" />
-        <p className="fontSemiBold ml-2 self-end whitespace-nowrap">
+        <p className="ml-2 self-end whitespace-nowrap font-semibold">
           {visit.duration}
         </p>
       </div>

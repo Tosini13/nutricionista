@@ -27,27 +27,6 @@
     --mainColor: #67a957
 }
 
-
-.fontRegular{
-    font-family: 'montserrat', 'inherit';    
-}
-
-.fontMedium{
-    font-family: 'montserrat-medium', 'inherit';    
-}
-
-.fontLight{
-    font-family: 'montserrat-light', 'inherit';    
-}
-
-.fontSemiBold{
-    font-family: 'montserrat-semi-bold', 'inherit';    
-}
-
-.fontBold{
-    font-family: 'montserrat-bold', 'inherit';    
-}
-
 h1.title{
     font-family: 'montserrat-bold', 'inherit';    
     line-height: 1.2em;
@@ -125,7 +104,7 @@ body{
 .bottomInsetShadow:after{
     content: "";
     position: absolute; top: 0; bottom: 0; left: -15px; right: -15px;
-    box-shadow: inset white 0 -70px 25px 0px;
+    box-shadow: inset white 0 -70px 25px 10px;
     transition: "box-shadow 0.3s",
 }
 

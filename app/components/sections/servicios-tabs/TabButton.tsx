@@ -16,7 +16,7 @@ const TabButton: React.FC<TTabButtonProps> = ({
     () =>
       twMerge(
         `uppercase transition duration-300 text-xs sm:text-lg md:text-2xl ${
-          isActive ? "fontBold" : ""
+          isActive ? "font-bold" : ""
         }`,
         className
       ),

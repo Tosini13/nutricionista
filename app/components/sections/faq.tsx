@@ -98,7 +98,7 @@ const Faq: React.FC<TFaqProps> = ({ faq }) => {
           alt="arrow button"
           style={styleIcon}
         />
-        <h6 className="fontSemiBold">{faq.question}</h6>
+        <h6 className="font-semibold">{faq.question}</h6>
       </div>
       <Answer className={classNameAnswer}>{faq.answer}</Answer>
     </div>

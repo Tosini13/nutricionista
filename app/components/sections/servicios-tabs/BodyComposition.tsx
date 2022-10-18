@@ -22,6 +22,7 @@ const BodyComposition: React.FC<TBodyCompositionProps> = () => {
         </div>
       </div>
       <div>
+        <h3 className="mb-4 text-xl font-bold">Perdida o aumento de peso.</h3>
         <Paragraph>
           Aprende a comer y a disfrutar de la comida sin poner en riesgo tu
           salud. Te acompaño, te asesoro y te motivo en el proceso para que

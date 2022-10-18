@@ -50,7 +50,7 @@ const Packs: React.FC<TPacksProps> = () => {
   return (
     <Section id="packs" className="md:mx-20">
       <SectionTitle className="text-center">Packs</SectionTitle>
-      <Paragraph className="fontSemiBold text-center leading-6 text-gray-400">
+      <Paragraph className="text-center font-semibold leading-6 text-gray-400">
         Elige tu dieta favorita y contáctame. No hay oferta de descuento para
         “embarazo y lactancia”.
         <br />
@@ -69,18 +69,18 @@ const Packs: React.FC<TPacksProps> = () => {
                 className="absolute top-4 right-4"
               />
             )}
-            <h5 className="fontBold mt-16 text-center text-xl capitalize">
+            <h5 className="mt-16 text-center text-xl font-bold capitalize">
               {card.title}
             </h5>
             <div className="flex h-20 w-full items-center justify-center">
-              <p className="mainColor fontBold mr-2 self-start text-5xl">
+              <p className="mainColor mr-2 self-start text-5xl font-bold">
                 {card.price}€
               </p>
               <div className="h-full origin-center rotate-45 border-l-2 border-black" />
-              <p className="fontSemiBold ml-2 self-end">{card.duration}</p>
+              <p className="ml-2 self-end font-semibold">{card.duration}</p>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="fontSemiBold text-center">{card.visits}</p>
+              <p className="text-center font-semibold">{card.visits}</p>
               <Paragraph className="mt-6 text-center text-sm leading-6">
                 {card.description}
               </Paragraph>

@@ -44,7 +44,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
               }
             >
               <Paragraph>
-                <span className="fontSemiBold">Dietista-Nutricionista</span>{" "}
+                <span className="font-semibold">Dietista-Nutricionista</span>{" "}
                 especializada en nutrición clínica y graduada por la Universidad
                 de Valencia. Cursé un año de mis estudios en la universidad de
                 Milán, Italia (Università degli studi di Milano) donde tuve la
@@ -70,7 +70,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
               </Paragraph>
               {readAll ? null : (
                 <button
-                  className="link"
+                  className="link text-lg font-bold"
                   style={style.leerMasButton}
                   onClick={handleReadMore}
                 >
@@ -88,7 +88,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
             className="mx-auto flex w-fit items-center rounded-3xl border border-gray-200 py-4 px-6 text-lg md:ml-0"
             style={style.holaContainer}
           >
-            <p className="fontSemiBold">¡Hola! Soy Esther Zamora.</p>
+            <p className="font-semibold">¡Hola! Soy Esther Zamora.</p>
             <img className="pl-4" src={wavingHand} alt="Hola" />
           </div>
           <img className="pl-4" src={esther} alt="Nutricionista Esther" />

@@ -41,7 +41,7 @@ const Home: React.FC<THomeProps> = () => {
           alimentación
         </p>
         <Button
-          className={"fontSemiBold mx-auto w-full sm:w-fit"}
+          className={"mx-auto w-full font-semibold sm:w-fit"}
           style={style.button}
           href="#contact"
         >

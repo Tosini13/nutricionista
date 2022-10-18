@@ -24,7 +24,7 @@ const Servicios: React.FC<TServiciosProps> = () => {
 
   return (
     <Section id="servicios" className="min-h-[50vh]">
-      <SectionTitle className="text-center md:text-left">
+      <SectionTitle className="text-center">
         Servicios
       </SectionTitle>
       <div className="mb-10 grid grid-cols-3">

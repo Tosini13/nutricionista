@@ -50,11 +50,11 @@ const Contact: React.FC<TContactProps> = () => {
           <table className="border-separate border-spacing-x-8 border-spacing-y-4">
             <tr>
               <td>E-mail</td>
-              <td className="fontSemiBold text-right">Esther@gmail.com</td>
+              <td className="text-right font-semibold">Esther@gmail.com</td>
             </tr>
             <tr className="">
               <td>Numero de telefono:</td>
-              <td className="fontSemiBold text-right">+ 00000000000</td>
+              <td className="text-right font-semibold">+ 00000000000</td>
             </tr>
           </table>
         </div>
