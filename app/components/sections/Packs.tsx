@@ -50,9 +50,9 @@ const Packs: React.FC<TPacksProps> = () => {
   return (
     <Section id="packs" className="md:mx-20">
       <SectionTitle className="text-center">Packs</SectionTitle>
-      <Paragraph className="text-center font-semibold leading-6 text-gray-400">
-        Elige tu dieta favorita y contáctame. No hay oferta de descuento para
-        “embarazo y lactancia”.
+      <Paragraph className="text-center text-lg font-medium leading-9 text-gray-400">
+        Elige tu dieta favorita y contáctame. No hay oferta de descuento para{" "}
+        <u>“embarazo y lactancia”</u>.
         <br />
         Si quieres contactar en este caso te recomiendo visita normal.
       </Paragraph>

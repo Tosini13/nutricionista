@@ -36,7 +36,7 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
             <h4 className="mb-2 w-fit whitespace-nowrap border-b-2 text-xl font-bold">
               Patologías digestivas:
             </h4>
-            <ul className="pb-10 pb-8 text-lg font-light leading-10 tracking-wide">
+            <ul className="text-lfont-light pb-10 pb-8 leading-10 tracking-wide">
               <li>Patologías renales</li>
               <li>
                 Patologías metabólicas: diabetes, colesterol, hipertensión

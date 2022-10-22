@@ -17,7 +17,7 @@ const Contact: React.FC<TContactProps> = () => {
   return (
     <Section id="contact">
       <SectionTitle className="text-center">Contacto</SectionTitle>
-      <Paragraph className="text-md mb-10 text-center">
+      <Paragraph className="mb-10 text-center text-lg font-medium leading-9 text-gray-400">
         Si tienes alguna duda escríbeme y me
         <br />
         pondré en contacto contigo lo antes posible
@@ -65,14 +65,16 @@ const Contact: React.FC<TContactProps> = () => {
         <h4 className="mb-8 text-center lg:text-left">Mi contacto:</h4>
         <div className="mx-auto my-2 rounded-3xl shadow-md sm:w-max lg:mx-0">
           <table className="border-separate border-spacing-x-8 border-spacing-y-4">
-            <tr>
-              <td>E-mail</td>
-              <td className="text-right font-semibold">Esther@gmail.com</td>
-            </tr>
-            <tr className="">
-              <td>Numero de telefono:</td>
-              <td className="text-right font-semibold">+ 00000000000</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>E-mail</td>
+                <td className="text-right font-semibold">Esther@gmail.com</td>
+              </tr>
+              <tr className="">
+                <td>Numero de telefono:</td>
+                <td className="text-right font-semibold">+ 00000000000</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

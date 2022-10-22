@@ -23,7 +23,7 @@ const PregnancyAndLactation: React.FC<TPregnancyAndLactationProps> = () => {
         <h4 className="mb-2 w-fit whitespace-nowrap border-b-2 text-xl font-bold">
           Nutricion óptima
         </h4>
-        <ul className="pb-10 pb-8 text-lg font-light leading-10 tracking-wide">
+        <ul className="pb-10 pb-8 text-lg leading-10 tracking-wide">
           <li>Patologías renales</li>
           <li>Patologías metabólicas: diabetes, colesterol, hipertensión</li>
           <li>Alergias e intolerancias</li>
