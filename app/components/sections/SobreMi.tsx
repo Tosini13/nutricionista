@@ -26,57 +26,53 @@ type TSobreMiProps = {};
 const SobreMi: React.FC<TSobreMiProps> = () => {
   const [readAll, setReadAll] = React.useState(false);
 
-  const handleReadMore = React.useCallback(() => setReadAll(true), []);
+  const handleReadMore = React.useCallback(() => setReadAll((v) => !v), []);
+
+  const paragraphClassName = React.useMemo(() => {
+    if (!readAll) {
+      return "bottomInsetShadow transition-[max-height] overflow-hidden duration-0 max-h-[30em] md:max-h-[30em]";
+    }
+    return "bottomInsetShadow uncovered transition-[max-height] overflow-hidden duration-300 max-h-[500vh]";
+  }, [readAll]);
 
   return (
     <Section id="sobreMi">
       <div className="grid grid-cols-12 gap-4">
         <div className="order-2 col-span-12 md:order-1 md:col-span-7">
-          <SectionTitle className="text-center md:text-left">
-            Sobre mi
-          </SectionTitle>
+          <SectionTitle className="text-left text-left">Sobre mi</SectionTitle>
           <div data-testid="sobremi_description">
-            <div
-              className={
-                readAll
-                  ? "bottomInsetShadow uncovered"
-                  : "bottomInsetShadow max-h-[30em] md:max-h-[40em]"
-              }
-            >
-              <Paragraph>
-                <span className="font-semibold">Dietista-Nutricionista</span>{" "}
-                especializada en nutrición clínica y graduada por la Universidad
-                de Valencia. Cursé un año de mis estudios en la universidad de
-                Milán, Italia (Università degli studi di Milano) donde tuve la
-                oportunidad de recibir formación en materias de gran interés,
-                particularmente los aspectos celulares y moleculares de la
-                nutrición. Posteriormente realicé las prácticas en el servicio
-                de endocrinología del hospital de Denia. Cuando terminé la
-                universidad empecé a interesarme por la nutrición clínica y el
-                tratamiento nutricional en las distintas patologías así como su
-                prevención. Desde entonces he estado realizando varios cursos
-                formativos en este campo y he trabajado en clínicas de nutrición
-                abordando distintos objetivos. Para mí es importante el abordaje
-                desde un punto de vista holístico y tener en cuenta todos los
-                ámbitos de la vida de una persona para poder mejorar su salud, y
-                estar en contacto con otros profesionales de la salud si fuera
-                necesario un tratamiento multidisciplinar: psicólogos,
-                entrenadores personales, médicos, etc. También creo que es
-                necesario ir adquiriendo cambios de una manera paulatina, con
-                objetivos reales y que se disfrute del proceso para poder
-                seguirlos a largo plazo. Tengo un especial interés en la cocina,
-                la gastronomía y el estilo de vida saludable. Me gusta seguir
-                formándome cada día para estar actualizada.
-              </Paragraph>
-              {readAll ? null : (
-                <button
-                  className="link text-lg font-bold"
-                  style={style.leerMasButton}
-                  onClick={handleReadMore}
-                >
-                  Leer mas
-                </button>
-              )}
+            <Paragraph className={paragraphClassName}>
+              <span className="font-semibold">Dietista-Nutricionista</span>{" "}
+              especializada en nutrición clínica y graduada por la Universidad
+              de Valencia. Cursé un año de mis estudios en la universidad de
+              Milán, Italia (Università degli studi di Milano) donde tuve la
+              oportunidad de recibir formación en materias de gran interés,
+              particularmente los aspectos celulares y moleculares de la
+              nutrición. Posteriormente realicé las prácticas en el servicio de
+              endocrinología del hospital de Denia. Cuando terminé la
+              universidad empecé a interesarme por la nutrición clínica y el
+              tratamiento nutricional en las distintas patologías así como su
+              prevención. Desde entonces he estado realizando varios cursos
+              formativos en este campo y he trabajado en clínicas de nutrición
+              abordando distintos objetivos. Para mí es importante el abordaje
+              desde un punto de vista holístico y tener en cuenta todos los
+              ámbitos de la vida de una persona para poder mejorar su salud, y
+              estar en contacto con otros profesionales de la salud si fuera
+              necesario un tratamiento multidisciplinar: psicólogos,
+              entrenadores personales, médicos, etc. También creo que es
+              necesario ir adquiriendo cambios de una manera paulatina, con
+              objetivos reales y que se disfrute del proceso para poder
+              seguirlos a largo plazo. Tengo un especial interés en la cocina,
+              la gastronomía y el estilo de vida saludable. Me gusta seguir
+              formándome cada día para estar actualizada.
+            </Paragraph>
+            <div className="mt-5 flex justify-center">
+              <button
+                className="link text-lg font-bold"
+                onClick={handleReadMore}
+              >
+                {readAll ? "Leer menos" : "Leer mas"}
+              </button>
             </div>
           </div>
         </div>

@@ -92,26 +92,18 @@ body{
 
 .bottomInsetShadow {
     position: relative;
-    overflow: hidden;
-    /* max-height: 40em; */
-    transition: max-height 0.3s;
-}
-
-.bottomInsetShadow.uncovered {
-    max-height: 100%;
 }
 
 .bottomInsetShadow:after{
     content: "";
     position: absolute; top: 0; bottom: 0; left: -15px; right: -15px;
-    box-shadow: inset white 0 -70px 25px 10px;
-    transition: "box-shadow 0.3s",
+    box-shadow: inset white 0 -50px 25px 10px;
+    transition: "box-shadow 1s",
 }
 
 .bottomInsetShadow.uncovered:after{
     box-shadow: inset white 0 0px 0px 0px;
 }
-
 
 .link::after{
     content: '';
@@ -124,6 +116,13 @@ body{
 
 .link:hover::after{
     width: 100%;
+} 
+
+@media (hover: none) {
+    .link::after{
+        width: 100%;
+    }
+
 }
 
 .insetShadow::after
