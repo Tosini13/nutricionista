@@ -112,7 +112,7 @@ const Answer: React.FC<React.ButtonHTMLAttributes<HTMLParagraphElement>> = ({
   const mergedClassName = React.useMemo(
     () =>
       twMerge(
-        "max-h-0 px-8 py-0 transition-all duration-150 ease-in-out overflow-hidden box-content text-md",
+        "max-h-0 px-8 py-0 transition-all duration-150 ease-in-out overflow-hidden box-content text-md leading-7",
         className
       ),
     [className]
