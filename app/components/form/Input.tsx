@@ -8,7 +8,7 @@ const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({
   const mergedClassName = React.useMemo(
     () =>
       twMerge(
-        "w-full rounded-xl bg-gray-200 px-4 py-3 text-lg focus:outline-none",
+        "w-full rounded-xl bg-gray-200 p-[1.1rem] text-lg focus:outline-none",
         className
       ),
     [className]

@@ -7,6 +7,8 @@ import sendIcon from "../../../public/images/send_icon.svg";
 import withIcon from "../form/withIcon";
 import Section from "./Section";
 
+const inputClassName = "mb-4 sm:mb-0";
+
 type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
@@ -22,8 +24,8 @@ const Contact: React.FC<TContactProps> = () => {
       </Paragraph>
       <form>
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-4">
-          <div>
-            <h4 className="mb-8 text-center sm:text-left">Mi mensaje:</h4>
+          <div className="mb-8  flex flex-col sm:mb-0">
+            <h4 className="mb-8 text-center sm:text-left">Tu mensaje:</h4>
             <TextareaWithIcon
               props={{
                 placeholder: "¿Cual es tu objetivo?",
@@ -36,15 +38,30 @@ const Contact: React.FC<TContactProps> = () => {
               }}
             />
           </div>
-          <div className="grid grid-cols-1 gap-y-4 sm:gap-y-6">
-            <h4 className="text-center sm:text-left">Tu contacto:</h4>
-            <Input placeholder="Nombre" name="name" />
-            <Input placeholder="Apellido" name="surname" />
-            <Input placeholder="E-mail" name="email" type="email" />
+          <div className="flex flex-col">
+            <h4 className="mb-8 text-center sm:text-left ">Tu contacto:</h4>
+            <div className="flex grow flex-col justify-between pb-2">
+              <Input
+                placeholder="Nombre"
+                name="name"
+                className={inputClassName}
+              />
+              <Input
+                placeholder="Apellido"
+                name="surname"
+                className={inputClassName}
+              />
+              <Input
+                placeholder="E-mail"
+                name="email"
+                type="email"
+                className={inputClassName}
+              />
+            </div>
           </div>
         </div>
       </form>
-      <div className="mt-10">
+      <div className="mt-8">
         <h4 className="mb-8 text-center lg:text-left">Mi contacto:</h4>
         <div className="mx-auto my-2 rounded-3xl shadow-md sm:w-max lg:mx-0">
           <table className="border-separate border-spacing-x-8 border-spacing-y-4">
