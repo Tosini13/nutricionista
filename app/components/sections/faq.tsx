@@ -87,10 +87,7 @@ const Faq: React.FC<TFaqProps> = ({ faq }) => {
   );
 
   return (
-    <div
-      className="mb-6 rounded-xl bg-white/75"
-      style={{ boxShadow: "0px 8px 30px -2px rgba(0, 0, 0, 0.1)" }}
-    >
+    <div className="mb-6 rounded-xl bg-white/75 shadow-md">
       <div
         className="noFocus flex flex cursor-pointer select-none items-center px-8 py-4 md:py-6"
         onClick={() => setOpen((open) => !open)}
