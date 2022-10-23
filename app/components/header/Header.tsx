@@ -16,16 +16,51 @@ const menuItems = [
 type THeaderProps = {};
 
 const Header: React.FC<THeaderProps> = () => {
+  const ref = React.useRef<HTMLHeadElement>(null);
   const [openMenu, setOpenMenu] = React.useState(false);
+  const [isOnTop, setIsOnTop] = React.useState(true);
 
-  const headerStyle = twMerge(
-    "py-4 px-4 2xl:px-24",
-    openMenu ? "md:shadow-md" : "shadow-md"
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      if (position > 70) {
+        setIsOnTop(false);
+      } else {
+        setIsOnTop(true);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const headerStyle = React.useMemo(
+    () =>
+      twMerge(
+        "py-4 px-4 2xl:px-24 transition-shadow duration-300 ease-out",
+        isOnTop ? "shadow-none" : openMenu ? "md:shadow-md" : "shadow-md"
+      ),
+    [isOnTop, openMenu]
+  );
+
+  const buttonStyle = React.useMemo(
+    () =>
+      twMerge(
+        "hidden whitespace-nowrap md:block",
+        isOnTop
+          ? "[&:not(a:hover)]:drop-shadow-none [&:not(a:hover)]:shadow-none [&:not(a:hover)]:from-button-disabled-bg [&:not(a:hover)]:to-button-disabled-bg [&:not(a:hover)]:text-button-disabled-text"
+          : ""
+      ),
+    [isOnTop]
   );
 
   return (
     <>
-      <header className={headerStyle}>
+      <header ref={ref} className={headerStyle}>
         <div className="headerContent">
           <div className="space-between flex items-center justify-between">
             <img
@@ -47,10 +82,7 @@ const Header: React.FC<THeaderProps> = () => {
                 </li>
               ))}
             </ul>
-            <Button
-              className="hidden whitespace-nowrap md:block"
-              href="#contact"
-            >
+            <Button className={buttonStyle} href="#contact">
               pide cita
             </Button>
             <div className="block md:hidden" style={{ zIndex: "102" }}>

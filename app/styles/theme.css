@@ -1,11 +1,6 @@
-:root{
-    --mainColor: #67a957
-}
-
 h1.title{
     line-height: 1.2em;
 }
-
 
 p{
     letter-spacing: 0.05em;
@@ -41,26 +36,8 @@ body{
     right: calc((100% - 100vw) / 2);
 }
 
-.mainColor {
-    color: var(--mainColor);
-}
-
 .mainBgColor {
     background-color: #2C641E;
-}
-
-.button {
-    background: linear-gradient(96.14deg, #68A957 0%, #74B463 100%);
-    box-shadow: 0px 10px 22px rgba(172, 180, 159, 0.2);
-    filter: drop-shadow(0px 15px 30px rgba(106, 170, 89, 0.3));
-    color: #FFF;
-}
-
-.button:disabled {
-    background: rgba(104, 169, 87, 0.2);
-    color: rgba(103, 169, 87, 0.5);
-    box-shadow: none;
-    filter: none;
 }
 
 .bottomInsetShadow {

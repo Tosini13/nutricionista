@@ -22,15 +22,10 @@ type THomeProps = {};
 const Home: React.FC<THomeProps> = () => {
   return (
     <Section id="home" className="relative py-10 lg:mx-0 lg:pt-24 xl:mx-20">
-      <div
-        className="relative z-[2] pb-20"
-        style={{
-          textShadow: "0px 0px 3px rgba(255,255,255,0.7)",
-        }}
-      >
+      <div className="relative z-[2] pb-20">
         <h1 className="title pb-8 pt-6 text-left text-3xl font-bold sm:text-6xl md:text-center">
           ¿Quieres empezar
-          <br /> a cuidar de tu <span className="mainColor">salud</span>?
+          <br /> a cuidar de tu <span className="text-main">salud</span>?
         </h1>
         <div className="insetShadow relative z-[1] float-right block max-w-[50%] translate-x-1/3 lg:hidden">
           <img src={ImgWatermelon} alt="watermelon" />

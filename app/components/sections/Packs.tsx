@@ -73,7 +73,7 @@ const Packs: React.FC<TPacksProps> = () => {
               {card.title}
             </h5>
             <div className="flex h-20 w-full items-center justify-center">
-              <p className="mainColor mr-2 self-start text-5xl font-bold">
+              <p className="mr-2 self-start text-5xl font-bold text-main">
                 {card.price}€
               </p>
               <div className="h-full origin-center rotate-45 border-l-2 border-black" />

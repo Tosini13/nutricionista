@@ -26,7 +26,7 @@ const cards: CardType[] = [
     },
     content: (
       <>
-        <a href="#contact" className="mainColor border-b border-current">
+        <a href="#contact" className="border-b border-current text-main">
           Pedir cita
         </a>
         <br />
