@@ -1,4 +1,4 @@
-import logo from "../../../public/logoWithTitle.svg";
+import logo from "../../../public/logoWithWhiteTitle.svg";
 import dinner from "../../../public/images/footer/dinner.png";
 import cooking from "../../../public/images/footer/cooking.png";
 import cooking2 from "../../../public/images/footer/cooking2.png";
