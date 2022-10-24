@@ -9,6 +9,11 @@ module.exports = {
       },
       colors: {
         'main': '#67a957',
+        'main-light': '#68A957',
+        'black': '#1E1E1E',
+        'gray-dark': '#E3E8E9',
+        'gray-light': '#C9CECE',
+        'gray': 'rgba(0, 0, 0, 0.4)',
         'button-disabled-bg': 'rgba(104, 169, 87, 0.2);',
         'button-disabled-text': '#68A957'
 

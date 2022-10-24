@@ -50,7 +50,7 @@ const Packs: React.FC<TPacksProps> = () => {
   return (
     <Section id="packs" className="md:mx-20">
       <SectionTitle className="text-center">Packs</SectionTitle>
-      <Paragraph className="text-center text-lg font-medium leading-9 text-gray-400">
+      <Paragraph className="text-center text-lg font-medium leading-9 text-gray">
         Elige tu dieta favorita y contáctame. No hay oferta de descuento para{" "}
         <u>“embarazo y lactancia”</u>.
         <br />

@@ -81,7 +81,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
           className="order-1 col-span-12 md:order-2 md:col-span-5 md:mt-20"
         >
           <div
-            className="mx-auto flex w-fit items-center rounded-3xl border border-gray-200 py-4 px-6 text-lg md:ml-0"
+            className="mx-auto flex w-fit items-center rounded-3xl border border-gray py-4 px-6 text-lg md:ml-0"
             style={style.holaContainer}
           >
             <p className="font-semibold">¡Hola! Soy Esther Zamora.</p>
@@ -90,7 +90,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
           <img className="pl-4" src={esther} alt="Nutricionista Esther" />
         </div>
       </div>
-      <div className="my-10 grid grid-cols-12 gap-4 border-y-2 py-8 text-center text-lg text-gray-400 lg:py-10 lg:text-lg xl:text-xl">
+      <div className="my-10 grid grid-cols-12 gap-4 border-y-2 border-gray-light py-8 text-center text-lg text-gray-light lg:py-10 lg:text-lg xl:text-xl">
         <p className="col-span-12 w-full lg:col-span-6">
           Farmacéutica colegiada nº 18858
         </p>
