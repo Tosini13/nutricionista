@@ -3,8 +3,6 @@ import Input from "../form/Input";
 import Textarea from "../form/Textarea";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
-import sendIcon from "../../../public/images/send_icon.svg";
-import withIcon from "../form/withIcon";
 import Section from "./Section";
 
 const inputClassName = "mb-4 sm:mb-0";
@@ -12,12 +10,10 @@ const inputClassName = "mb-4 sm:mb-0";
 type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
-  const TextareaWithIcon = withIcon(Textarea);
-
   return (
     <Section id="contact">
       <SectionTitle className="text-center">Contacto</SectionTitle>
-      <Paragraph className="mb-10 text-center text-lg font-medium leading-9 text-gray-400">
+      <Paragraph className="mb-10 text-center text-lg font-medium leading-9 text-gray">
         Si tienes alguna duda escríbeme y me
         <br />
         pondré en contacto contigo lo antes posible
@@ -26,16 +22,10 @@ const Contact: React.FC<TContactProps> = () => {
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-4">
           <div className="mb-8  flex flex-col sm:mb-0">
             <h4 className="mb-8 text-center sm:text-left">Tu mensaje:</h4>
-            <TextareaWithIcon
-              props={{
-                placeholder: "¿Cual es tu objetivo?",
-                className: "resize-none",
-                rows: 7,
-              }}
-              iconProps={{
-                src: sendIcon,
-                alt: "send icon",
-              }}
+            <Textarea
+              placeholder={"¿Cual es tu objetivo?"}
+              className={"resize-none"}
+              rows={8}
             />
           </div>
           <div className="flex flex-col">
@@ -44,18 +34,18 @@ const Contact: React.FC<TContactProps> = () => {
               <Input
                 placeholder="Nombre"
                 name="name"
-                className={inputClassName}
+                containerClassName={inputClassName}
               />
               <Input
                 placeholder="Apellido"
                 name="surname"
-                className={inputClassName}
+                containerClassName={inputClassName}
               />
               <Input
                 placeholder="E-mail"
                 name="email"
                 type="email"
-                className={inputClassName}
+                containerClassName={inputClassName}
               />
             </div>
           </div>
