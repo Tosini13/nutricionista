@@ -23,6 +23,7 @@ const Contact: React.FC<TContactProps> = () => {
           <div className="mb-8  flex flex-col sm:mb-0">
             <h4 className="mb-8 text-center sm:text-left">Tu mensaje:</h4>
             <Textarea
+              id="content"
               placeholder={"¿Cual es tu objetivo?"}
               className={"resize-none"}
               rows={8}
@@ -32,16 +33,19 @@ const Contact: React.FC<TContactProps> = () => {
             <h4 className="mb-8 text-center sm:text-left ">Tu contacto:</h4>
             <div className="flex grow flex-col justify-between pb-2">
               <Input
+                id="name"
                 placeholder="Nombre"
                 name="name"
                 containerClassName={inputClassName}
               />
               <Input
+                id="surname"
                 placeholder="Apellido"
                 name="surname"
                 containerClassName={inputClassName}
               />
               <Input
+                id="email"
                 placeholder="E-mail"
                 name="email"
                 type="email"
