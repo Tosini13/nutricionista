@@ -41,7 +41,7 @@ const Header: React.FC<THeaderProps> = () => {
   const headerStyle = React.useMemo(
     () =>
       twMerge(
-        "py-4 px-4 2xl:px-24 transition-shadow duration-300 ease-out",
+        "2xl:px-24 transition-shadow duration-300 ease-out",
         isOnTop ? "shadow-none" : openMenu ? "md:shadow-md" : "shadow-md"
       ),
     [isOnTop, openMenu]
@@ -61,7 +61,7 @@ const Header: React.FC<THeaderProps> = () => {
   return (
     <>
       <header ref={ref} className={headerStyle}>
-        <div className="headerContent">
+        <div className="mx-2 max-w-[1400px] py-4 sm:mx-6 lg:mx-20">
           <div className="space-between flex items-center justify-between">
             <img
               src={logo}
