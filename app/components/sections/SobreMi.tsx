@@ -88,7 +88,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
           className="order-1 col-span-12 md:order-2 md:col-span-5 md:mt-20"
         >
           <div
-            className="mx-auto flex w-fit items-center rounded-3xl border border-gray py-4 px-6 text-lg md:ml-0"
+            className="mx-auto flex w-fit items-center rounded-3xl py-4 px-6 text-lg drop-shadow-[0px_5px_20px_0px_rgba(0,0,0,0.05)] md:ml-0"
             style={style.holaContainer}
           >
             <p className="font-semibold">¡Hola! Soy Esther Zamora.</p>
