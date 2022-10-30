@@ -87,14 +87,18 @@ const Packs: React.FC<TPacksProps> = () => {
               <p className="text-center text-base font-semibold">
                 {card.visits}
               </p>
-              <Paragraph className="mt-6 text-center text-sm leading-6">
+              <Paragraph className="mt-6 text-left text-sm leading-6">
                 {card.description}
               </Paragraph>
             </div>
             <div className="mb-10 flex items-center justify-center">
-              <Button className="rounded-full py-4 pr-4" href="#contact">
+              <Button className="group rounded-full py-4 pr-4" href="#contact">
                 Pide Cita
-                <img src={arrowRight} alt="arrow right" className="ml-2" />
+                <img
+                  src={arrowRight}
+                  alt="arrow right"
+                  className="tranistion-all ml-2 duration-300 ease-out hover-hover:group-hover:ml-4"
+                />
               </Button>
             </div>
           </div>
