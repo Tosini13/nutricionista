@@ -94,7 +94,7 @@ const Header: React.FC<THeaderProps> = () => {
           </div>
         </div>
       </header>
-      <MenuScreen open={openMenu} hideMenu={() => setOpenMenu(false)} />
+      <MobileMenuScreen open={openMenu} hideMenu={() => setOpenMenu(false)} />
     </>
   );
 };
@@ -127,12 +127,15 @@ const MenuItem: React.FC<TMenuItemProps> = ({
   );
 };
 
-type TMenuScreenProps = {
+type TMobileMenuScreenProps = {
   open: boolean;
   hideMenu?: () => void;
 };
 
-const MenuScreen: React.FC<TMenuScreenProps> = ({ open, hideMenu }) => {
+const MobileMenuScreen: React.FC<TMobileMenuScreenProps> = ({
+  open,
+  hideMenu,
+}) => {
   const className = React.useMemo(
     () =>
       twMerge(
@@ -166,7 +169,7 @@ const MenuScreen: React.FC<TMenuScreenProps> = ({ open, hideMenu }) => {
           ))}
         </ul>
         <Button
-          className="whitespace-nowrap"
+          className="mb-10 whitespace-nowrap"
           href="#contact"
           onClick={hideMenu}
         >
