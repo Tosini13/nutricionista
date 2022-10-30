@@ -22,6 +22,7 @@ module.exports = {
       gradientColorStops: {
         'button-from-bg': '#68A957',
         'button-to-bg': '#74B463',
+        'gray-light-opacity0': 'rgba(201, 206, 206, 0)'
       },
       screens: {
         'hover-hover': { 'raw': '(hover: hover)' },

@@ -4,6 +4,7 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 import Paragraph from "./Paragraph";
 import Section from "./Section";
+import { twMerge } from "tailwind-merge";
 
 const style = {
   holaContainer: {
@@ -21,6 +22,12 @@ const style = {
   } as React.ButtonHTMLAttributes<HTMLButtonElement>["style"],
 };
 
+const paragraphClassNames = {
+  base: "bottomInsetShadow overflow-hidden transition-[max-height] text-gray leading-[3.5rem]",
+  readAll: "uncovered  duration-300 max-h-[500vh]",
+  unReadAll: "duration-0 max-h-[30em] md:max-h-[30em]",
+};
+
 type TSobreMiProps = {};
 
 const SobreMi: React.FC<TSobreMiProps> = () => {
@@ -30,9 +37,9 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
 
   const paragraphClassName = React.useMemo(() => {
     if (!readAll) {
-      return "bottomInsetShadow transition-[max-height] overflow-hidden duration-0 max-h-[30em] md:max-h-[30em]";
+      return twMerge(paragraphClassNames.base, paragraphClassNames.unReadAll);
     }
-    return "bottomInsetShadow uncovered transition-[max-height] overflow-hidden duration-300 max-h-[500vh]";
+    return twMerge(paragraphClassNames.base, paragraphClassNames.readAll);
   }, [readAll]);
 
   return (
@@ -90,13 +97,17 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
           <img className="pl-4" src={esther} alt="Nutricionista Esther" />
         </div>
       </div>
-      <div className="my-10 grid grid-cols-12 gap-4 border-y-2 border-gray-light py-8 text-center text-lg text-gray-light lg:py-10 lg:text-lg xl:text-xl">
-        <p className="col-span-12 w-full lg:col-span-6">
-          Farmacéutica colegiada nº 18858
-        </p>
-        <p className="col-span-12 w-full lg:col-span-6">
-          Nutricionista colegiada nº CAT 001827
-        </p>
+      <div>
+        <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0 " />
+        <div className="my-2 grid grid-cols-12 gap-4 text-center text-lg lg:my-4 lg:text-lg xl:text-xl">
+          <p className="col-span-12 w-full text-gray-light lg:col-span-6">
+            Farmacéutica colegiada nº 18858
+          </p>
+          <p className="col-span-12 w-full text-gray-light lg:col-span-6 ">
+            Nutricionista colegiada nº CAT 001827
+          </p>
+        </div>
+        <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-very-light to-gray-light-opacity0 " />
       </div>
     </Section>
   );
