@@ -3,7 +3,6 @@ import checkList from "../../../public/images/onlineVisits/checkList.png";
 import house from "../../../public/images/onlineVisits/house.png";
 import search from "../../../public/images/onlineVisits/search.png";
 import vector_large_width from "../../../public/images/onlineVisits/vector_large_width.png";
-import vector_mobile_width from "../../../public/images/onlineVisits/bg_track_mobile.svg";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import Section from "./Section";
@@ -26,12 +25,14 @@ const cards: CardType[] = [
     },
     content: (
       <>
-        <a href="#contact" className="border-b border-current text-main">
+        <a
+          href="#contact"
+          className="border-b border-current font-semibold text-main"
+        >
           Pedir cita
-        </a>
-        <br />
-        Pedir cita escribiéndome un correo electrónico, puedes especificarme
-        cuando te viene mejor. Las consultas serán desde casa.
+        </a>{" "}
+        escribiéndome un correo electrónico, puedes especificarme cuando te
+        viene mejor. Las consultas serán desde casa.
       </>
     ),
   },
@@ -83,14 +84,14 @@ const OnlineVisits: React.FC<TOnlineVisitsProps> = () => {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="mx-auto flex max-w-sm flex-col items-center rounded-3xl bg-white px-4 pb-8 shadow-xl"
+              className="mx-auto flex max-w-sm flex-col items-center rounded-3xl bg-white px-8 py-10 shadow-xl"
             >
               <img
                 src={card.icon.url}
                 alt={card.icon.alt}
-                className="my-6 h-10"
+                className="mb-10 h-10"
               />
-              <Paragraph className="text-center text-sm leading-6">
+              <Paragraph className="text-left text-sm leading-6">
                 {card.content}
               </Paragraph>
             </div>
