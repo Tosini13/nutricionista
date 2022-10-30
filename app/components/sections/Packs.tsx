@@ -27,7 +27,7 @@ const cards: CardType[] = [
   },
   {
     id: "2",
-    title: "Pack vegetarianos/veganos",
+    title: "Pack vegetarianos o veganos",
     vegetarian: true,
     price: 99,
     duration: "3 MESES",
@@ -60,32 +60,38 @@ const Packs: React.FC<TPacksProps> = () => {
         {cards.map((card) => (
           <div
             key={card.id}
-            className="relative grid auto-rows-fr gap-y-4 rounded-3xl bg-white px-4 shadow-xl"
+            className="relative flex flex-col rounded-3xl bg-white px-8 shadow-xl "
           >
-            {card.vegetarian && (
-              <img
-                src={badge}
-                alt={"vegetarian badge"}
-                className="absolute top-4 right-4"
-              />
-            )}
-            <h5 className="mt-16 text-center text-xl font-bold capitalize">
-              {card.title}
-            </h5>
-            <div className="flex h-20 w-full items-center justify-center">
-              <p className="mr-2 self-start text-5xl font-bold text-main">
-                {card.price}€
-              </p>
-              <div className="h-full origin-center rotate-45 border-l-2 border-black" />
-              <p className="ml-2 self-end font-semibold">{card.duration}</p>
+            <div className="grid grow auto-rows-fr">
+              {card.vegetarian && (
+                <img
+                  src={badge}
+                  alt={"vegetarian badge"}
+                  className="absolute top-4 right-4"
+                />
+              )}
+              <div className="flex items-center justify-center">
+                <h5 className="text-center text-lg font-bold uppercase text-[#465342]">
+                  {card.title}
+                </h5>
+              </div>
+              <div className="flex items-center justify-center border-y-2 border-gray-very-light py-8">
+                <p className="mb-10 text-5xl font-bold text-main">
+                  {card.price}€
+                </p>
+                <div className="h-full origin-center rotate-45 border-l-2 border-black" />
+                <p className="mt-10 font-semibold">{card.duration}</p>
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-center font-semibold">{card.visits}</p>
+            <div className="flex h-full flex-col items-center justify-center py-10">
+              <p className="text-center text-base font-semibold">
+                {card.visits}
+              </p>
               <Paragraph className="mt-6 text-center text-sm leading-6">
                 {card.description}
               </Paragraph>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="mb-10 flex items-center justify-center">
               <Button className="rounded-full pr-4" href="#contact">
                 Pide Cita
                 <img src={arrowRight} alt="arrow right" className="ml-2" />
