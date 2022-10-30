@@ -92,7 +92,7 @@ const Packs: React.FC<TPacksProps> = () => {
               </Paragraph>
             </div>
             <div className="mb-10 flex items-center justify-center">
-              <Button className="rounded-full pr-4" href="#contact">
+              <Button className="rounded-full py-4 pr-4" href="#contact">
                 Pide Cita
                 <img src={arrowRight} alt="arrow right" className="ml-2" />
               </Button>
