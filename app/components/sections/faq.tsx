@@ -4,6 +4,7 @@ import arrowRight from "../../../public/images/arrow_right_icon_dark.png";
 import { twMerge } from "tailwind-merge";
 import Paragraph from "./Paragraph";
 import Section from "./Section";
+import type { LoaderData } from "~/routes";
 
 type FAQType = {
   id: string;
@@ -11,50 +12,11 @@ type FAQType = {
   answer: string;
 };
 
-const loremIpsum =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac est vitae arcu fringilla auctor. Pellentesque et turpis vel elit tincidunt vehicula. Nunc eu purus arcu. Cras posuere tortor vel est elementum imperdiet. Donec nec accumsan dolor. Pellentesque convallis nulla sit amet est faucibus, at lacinia massa vehicula. Etiam maximus quam ut condimentum laoreet. Etiam ut placerat dui. Suspendisse pretium, ligula ac posuere sodales, urna urna cursus nisi, ac convallis felis justo sed magna.";
+type TFaqsProps = {
+  faqs: LoaderData["faqs"];
+};
 
-const faqs: FAQType[] = [
-  {
-    id: "1",
-    question: "¿Como sé si puedes ayudarme con mi problema?",
-    answer: loremIpsum,
-  },
-  {
-    id: "2",
-    question: "¿Cada cuanto tiempo tengo que tener las visitas de seguimiento?",
-    answer: loremIpsum,
-  },
-  {
-    id: "3",
-    question: "¿Tendré soporte entre una visita y otra para preguntar dudas?",
-    answer: loremIpsum,
-  },
-  {
-    id: "4",
-    question: "¿Es igual el servicio online que el presencial?",
-    answer: loremIpsum,
-  },
-  {
-    id: "5",
-    question: "¿Trabajas con aseguradoras?",
-    answer: loremIpsum,
-  },
-  {
-    id: "6",
-    question: "¿Cómo puedo hacer el pago?",
-    answer: loremIpsum,
-  },
-  {
-    id: "7",
-    question: "¿Si he comprado una cita, se puede cambiar o devolver? ",
-    answer: loremIpsum,
-  },
-];
-
-type TFaqsProps = {};
-
-const Faqs: React.FC<TFaqsProps> = () => {
+const Faqs: React.FC<TFaqsProps> = ({ faqs }) => {
   return (
     <Section id="faq" className="md:mx-20">
       <SectionTitle className="text-center">FAQ</SectionTitle>
