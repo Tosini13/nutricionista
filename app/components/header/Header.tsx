@@ -1,7 +1,7 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import logo from "../../../public/logoWithTitle.svg";
-import Button from "../form/Button";
+import { LinkButton } from "../form/Button";
 import Hamburger from "./Hamburger";
 
 const menuItems = [
@@ -82,9 +82,9 @@ const Header: React.FC<THeaderProps> = () => {
                 </li>
               ))}
             </ul>
-            <Button className={buttonStyle} href="#contact">
+            <LinkButton className={buttonStyle} href="#contact">
               pide cita
-            </Button>
+            </LinkButton>
             <div className="block md:hidden" style={{ zIndex: "102" }}>
               <Hamburger
                 onClick={() => setOpenMenu((open) => !open)}
@@ -168,13 +168,13 @@ const MobileMenuScreen: React.FC<TMobileMenuScreenProps> = ({
             </li>
           ))}
         </ul>
-        <Button
+        <LinkButton
           className="mb-10 whitespace-nowrap"
           href="#contact"
           onClick={hideMenu}
         >
           pide cita
-        </Button>
+        </LinkButton>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import Button from "../form/Button";
+import { LinkButton } from "../form/Button";
 import ImgWatermelon from "../../../public/images/woman_watermelon.png";
 import Section from "./Section";
 
@@ -35,13 +35,13 @@ const Home: React.FC<THomeProps> = () => {
           <br className="hidden md:inline" /> gracias al cambio de hábitos en tu
           alimentación
         </p>
-        <Button
+        <LinkButton
           className={"mx-auto w-full font-semibold sm:w-fit"}
           style={style.button}
           href="#contact"
         >
           Pide Cita
-        </Button>
+        </LinkButton>
         {/**
          * @todo implement when img is ready
          */

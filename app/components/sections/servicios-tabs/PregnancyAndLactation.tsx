@@ -1,6 +1,6 @@
 import pregnancy from "../../../../public/images/pregnancy.png";
 import badge from "../../../../public/images/opcion_vegana.png";
-import Button from "~/components/form/Button";
+import { LinkButton } from "~/components/form/Button";
 
 type TPregnancyAndLactationProps = {};
 
@@ -31,12 +31,12 @@ const PregnancyAndLactation: React.FC<TPregnancyAndLactationProps> = () => {
           <li>Migrañas</li>
         </ul>
         <div className="mt-8 flex items-end justify-between md:mt-0">
-          <Button
+          <LinkButton
             className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"
             href="#contact"
           >
             pide cita
-          </Button>
+          </LinkButton>
           <img
             src={badge}
             alt="fruits vegetables nutritionist diet"
