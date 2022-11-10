@@ -9,8 +9,55 @@ import Servicios from "~/components/sections/Servicios";
 import SobreMi from "~/components/sections/SobreMi";
 import Visits from "~/components/sections/Visits";
 import { json } from "@remix-run/node";
+import type { ActionFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getFaqs } from "~/models/faq.server";
+import { sendEmail } from "~/utils/email.server";
+import invariant from "tiny-invariant";
+
+type ActionData =
+  | {
+      email: null | string;
+      name: null | string;
+      surname: null | string;
+      content: null | string;
+    }
+  | undefined;
+
+export const action: ActionFunction = async ({ request }) => {
+  const formData = await request.formData();
+
+  const email = formData.get("email");
+  const name = formData.get("name");
+  const surname = formData.get("surname");
+  const content = formData.get("content");
+
+  const errors: ActionData = {
+    email: email ? null : "Email is required",
+    name: name ? null : "Name is required",
+    surname: surname ? null : "Surname is required",
+    content: content ? null : "Content is required",
+  };
+
+  const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
+  if (hasErrors) {
+    return json<ActionData>(errors);
+  }
+
+  invariant(typeof email === "string", "email must be a string");
+  invariant(typeof name === "string", "name must be a string");
+  invariant(typeof surname === "string", "surname must be a string");
+  invariant(typeof content === "string", "content must be a string");
+
+  await sendEmail({
+    email,
+    name,
+    surname,
+    content,
+  });
+
+  return null;
+};
 
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;

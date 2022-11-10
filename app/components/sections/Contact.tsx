@@ -4,12 +4,16 @@ import Textarea from "../form/Textarea";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import Section from "./Section";
+import { Form, useActionData } from "@remix-run/react";
 
 const inputClassName = "mb-4 sm:mb-0";
 
 type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
+  const errors = useActionData();
+  console.log("errors!log!", errors);
+
   return (
     <Section id="contact">
       <SectionTitle className="text-center">Contacto</SectionTitle>
@@ -18,7 +22,7 @@ const Contact: React.FC<TContactProps> = () => {
         <br />
         pondré en contacto contigo lo antes posible
       </Paragraph>
-      <form>
+      <Form method="post">
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-4">
           <div className="mb-8  flex flex-col sm:mb-0">
             <h4 className="mb-8 text-center sm:text-left">Tu mensaje:</h4>
@@ -27,6 +31,7 @@ const Contact: React.FC<TContactProps> = () => {
               placeholder={"¿Cual es tu objetivo?"}
               className={"resize-none"}
               rows={8}
+              name="content"
             />
           </div>
           <div className="flex flex-col">
@@ -54,7 +59,7 @@ const Contact: React.FC<TContactProps> = () => {
             </div>
           </div>
         </div>
-      </form>
+      </Form>
       <div className="mt-8">
         <h4 className="mb-8 text-center lg:text-left">Mi contacto:</h4>
         <div className="mx-auto my-2 rounded-3xl shadow-md sm:w-max lg:mx-0">
