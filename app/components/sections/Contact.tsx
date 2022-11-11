@@ -15,6 +15,14 @@ const Contact: React.FC<TContactProps> = () => {
   const result = useActionData<ActionData>();
   console.log("result!log!", result);
 
+  const ref = React.useRef<HTMLFormElement | null>(null);
+
+  React.useMemo(() => {
+    if (result?.sent === true && ref.current) {
+      ref.current.reset();
+    }
+  }, [result?.sent]);
+
   return (
     <Section id="contact">
       <SectionTitle className="text-center">Contacto</SectionTitle>
@@ -23,7 +31,7 @@ const Contact: React.FC<TContactProps> = () => {
         <br />
         pondré en contacto contigo lo antes posible
       </Paragraph>
-      <Form method="post">
+      <Form ref={ref} method="post">
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-4">
           <div className="mb-8  flex flex-col sm:mb-0">
             <h4 className="mb-8 text-center sm:text-left">Tu mensaje:</h4>
