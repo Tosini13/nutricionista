@@ -1,5 +1,13 @@
 import nodemailer from "nodemailer";
 
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
+
 export type ContactForm = {
   name: string;
   surname: string;
@@ -13,14 +21,6 @@ export async function sendEmail({
   surname,
   content,
 }: ContactForm) {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.EMAIL_PASSWORD,
-    },
-  });
-
   const mailOptions = {
     from: process.env.EMAIL,
     to: email,
@@ -28,10 +28,18 @@ export async function sendEmail({
     html: `<h1>Contact from website</h1><p>${content}</p>`,
   };
 
-  console.log("mailOptions!log!", mailOptions);
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    console.log("error!log!", error);
-    console.log("info!log!", info);
-  });
+  try {
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log("error!log!", error);
+      }
+      if (info) {
+        console.log("info!log!", info);
+      }
+    });
+  } catch (e) {
+    console.log("ERROR - SEND EMAIL !log!", e);
+    return false;
+  }
+  return true;
 }

@@ -5,14 +5,15 @@ import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import Section from "./Section";
 import { Form, useActionData } from "@remix-run/react";
+import type { ActionData } from "~/routes";
 
 const inputClassName = "mb-4 sm:mb-0";
 
 type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
-  const errors = useActionData();
-  console.log("errors!log!", errors);
+  const result = useActionData<ActionData>();
+  console.log("result!log!", result);
 
   return (
     <Section id="contact">

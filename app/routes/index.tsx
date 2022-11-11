@@ -15,14 +15,15 @@ import { getFaqs } from "~/models/faq.server";
 import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
 
-type ActionData =
-  | {
-      email: null | string;
-      name: null | string;
-      surname: null | string;
-      content: null | string;
-    }
-  | undefined;
+export type ActionData = {
+  errors?: {
+    email?: null | string;
+    name?: null | string;
+    surname?: null | string;
+    content?: null | string;
+  };
+  sent?: boolean;
+};
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
@@ -32,7 +33,7 @@ export const action: ActionFunction = async ({ request }) => {
   const surname = formData.get("surname");
   const content = formData.get("content");
 
-  const errors: ActionData = {
+  const errors: ActionData["errors"] = {
     email: email ? null : "Email is required",
     name: name ? null : "Name is required",
     surname: surname ? null : "Surname is required",
@@ -41,7 +42,7 @@ export const action: ActionFunction = async ({ request }) => {
 
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
   if (hasErrors) {
-    return json<ActionData>(errors);
+    return json<ActionData>({ errors });
   }
 
   invariant(typeof email === "string", "email must be a string");
@@ -49,14 +50,22 @@ export const action: ActionFunction = async ({ request }) => {
   invariant(typeof surname === "string", "surname must be a string");
   invariant(typeof content === "string", "content must be a string");
 
-  await sendEmail({
+  const approved = await sendEmail({
     email,
     name,
     surname,
-    content,
+    content: content,
   });
 
-  return null;
+  if (!approved) {
+    return json<ActionData>({
+      sent: false,
+    });
+  }
+
+  return json<ActionData>({
+    sent: true,
+  });
 };
 
 export type LoaderData = {
