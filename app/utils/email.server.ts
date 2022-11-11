@@ -29,12 +29,9 @@ export async function sendEmail({
   };
 
   try {
-    transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error, _info) {
       if (error) {
         console.log("error!log!", error);
-      }
-      if (info) {
-        console.log("info!log!", info);
       }
     });
   } catch (e) {
