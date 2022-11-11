@@ -40,7 +40,7 @@ const Textarea: React.FC<TextareaPropsType> = ({
       )}
       <button
         type="submit"
-        name="submit_textarea"
+        data-testid="submit_textarea"
         className={
           "absolute bottom-5 right-5 cursor-pointer grayscale-0 peer-placeholder-shown:grayscale"
         }

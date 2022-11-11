@@ -31,12 +31,13 @@ const Contact: React.FC<TContactProps> = () => {
         <br />
         pondré en contacto contigo lo antes posible
       </Paragraph>
-      <Form ref={ref} method="post">
+      <Form ref={ref} method="post" data-testid="contact_form">
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-y-0 sm:gap-x-4">
           <div className="mb-8  flex flex-col sm:mb-0">
             <h4 className="mb-8 text-center sm:text-left">Tu mensaje:</h4>
             <Textarea
               id="content"
+              data-testid="contact-textarea-content"
               placeholder={"¿Cual es tu objetivo?"}
               className={"resize-none"}
               rows={8}
@@ -49,6 +50,7 @@ const Contact: React.FC<TContactProps> = () => {
             <div className="flex grow flex-col justify-between pb-2">
               <Input
                 id="name"
+                data-testid="contact-input-name"
                 placeholder="Nombre"
                 name="name"
                 containerClassName={inputClassName}
@@ -56,6 +58,7 @@ const Contact: React.FC<TContactProps> = () => {
               />
               <Input
                 id="surname"
+                data-testid="contact-input-surname"
                 placeholder="Apellido"
                 name="surname"
                 containerClassName={inputClassName}
@@ -63,6 +66,7 @@ const Contact: React.FC<TContactProps> = () => {
               />
               <Input
                 id="email"
+                data-testid="contact-input-email"
                 placeholder="E-mail"
                 name="email"
                 type="email"
