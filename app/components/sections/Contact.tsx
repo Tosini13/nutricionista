@@ -33,6 +33,7 @@ const Contact: React.FC<TContactProps> = () => {
               className={"resize-none"}
               rows={8}
               name="content"
+              error={result?.errors?.content && "Este campo es obligatorio"}
             />
           </div>
           <div className="flex flex-col">
@@ -43,12 +44,14 @@ const Contact: React.FC<TContactProps> = () => {
                 placeholder="Nombre"
                 name="name"
                 containerClassName={inputClassName}
+                error={result?.errors?.name && "Este campo es obligatorio"}
               />
               <Input
                 id="surname"
                 placeholder="Apellido"
                 name="surname"
                 containerClassName={inputClassName}
+                error={result?.errors?.surname && "Este campo es obligatorio"}
               />
               <Input
                 id="email"
@@ -56,6 +59,7 @@ const Contact: React.FC<TContactProps> = () => {
                 name="email"
                 type="email"
                 containerClassName={inputClassName}
+                error={result?.errors?.email && "Este campo es obligatorio"}
               />
             </div>
           </div>

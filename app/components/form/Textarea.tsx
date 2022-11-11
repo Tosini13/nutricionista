@@ -1,19 +1,22 @@
-import { useMemo } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 import sendIcon from "../../../public/images/send_icon.svg";
 
-type TextareaPropsType = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+type TextareaPropsType = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  error?: string | null;
+};
 
 const Textarea: React.FC<TextareaPropsType> = ({
   className,
   id,
   placeholder,
+  error,
   ...props
 }) => {
-  const mergedClassName = useMemo(
+  const mergedClassName = React.useMemo(
     () =>
       twMerge(
-        "peer w-full rounded-xl bg-gray-dark p-[1.1rem] text-lg focus:outline-none",
+        "peer w-full rounded-xl bg-gray-dark p-[1.1rem] text-lg outline-none focus:outline-none focus:border-main-light border-[0.5px] border-transparent transition-all duration-200",
         className
       ),
     [className]
@@ -30,6 +33,11 @@ const Textarea: React.FC<TextareaPropsType> = ({
       >
         {placeholder}
       </label>
+      {error && (
+        <p className="absolute right-0 bottom-0 translate-y-[100%] text-sm text-red-400">
+          Este campo es obligatorio
+        </p>
+      )}
       <button
         type="submit"
         className={
