@@ -11,6 +11,7 @@ type CardType = {
   title: string;
   vegetarian?: boolean;
   price: number;
+  offer?: number;
   duration: string;
   visits: string;
   description?: string;
@@ -20,16 +21,18 @@ const cards: CardType[] = [
   {
     id: "1",
     title: "MEJORA DE LA COMPOSICIÓN CORPORAL",
-    price: 99,
+    price: 79,
+    offer: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
-    description: "*sin patologías",
+    description: `*sin patologías`,
   },
   {
     id: "2",
     title: "Pack vegetarianos o veganos",
     vegetarian: true,
-    price: 99,
+    price: 79,
+    offer: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
     description:
@@ -51,10 +54,7 @@ const Packs: React.FC<TPacksProps> = () => {
     <Section id="packs" className="md:mx-20">
       <SectionTitle className="text-center">Packs</SectionTitle>
       <Paragraph className="text-center text-lg font-medium leading-9 text-gray">
-        Elige tu dieta favorita y contáctame. No hay oferta de descuento para{" "}
-        <u>“embarazo y lactancia”</u>.
-        <br />
-        Si quieres contactar en este caso te recomiendo visita normal.
+        Elige el pack que más se adapte a ti con descuentos especiales
       </Paragraph>
       <div className="mb-20 mt-8 grid grid-cols-1 gap-4 gap-x-12 lg:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
@@ -76,8 +76,14 @@ const Packs: React.FC<TPacksProps> = () => {
                 </h5>
               </div>
               <div className="flex items-center justify-center border-y-2 border-gray-very-light py-8">
-                <p className="mb-10 text-5xl font-bold text-main">
+                <p className="relative mb-10 text-5xl font-bold text-main">
                   {card.price}€
+                  {card.offer && (
+                    <span className="absolute bottom-0 left-0 translate-y-[100%] text-2xl text-gray-light">
+                      {card.offer}€
+                      <div className="absolute top-1/2 left-1/2 w-full -translate-y-[50%] -translate-x-[50%] border-b-2 border-main-light" />
+                    </span>
+                  )}
                 </p>
                 <div className="h-full origin-center rotate-45 border-l-2 border-black" />
                 <p className="mt-10 font-semibold">{card.duration}</p>

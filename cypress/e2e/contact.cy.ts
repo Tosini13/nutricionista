@@ -18,6 +18,7 @@ describe("contact section tests", () => {
     cy.visit("/");
 
     cy.findByTestId("contact-textarea-content").click();
+    cy.wait(1000); //temporary solution
     cy.findByTestId("contact-textarea-content")
       .type(testNote.content)
       .should("have.value", testNote.content);

@@ -31,8 +31,8 @@ const cards: CardType[] = [
         >
           Pedir cita
         </a>{" "}
-        escribiéndome un correo electrónico, puedes especificarme cuando te
-        viene mejor. Las consultas serán desde casa.
+        escribiéndome un correo electrónico, puedes especificarme tu
+        disponibilidad.
       </>
     ),
   },
@@ -43,7 +43,7 @@ const cards: CardType[] = [
       alt: "search",
     },
     content:
-      "Te contestaré para formalizar la cita. Cuando ya tengas confirmada la cita, me enviarás toda la información que consideres relevante para tu caso y rellenarás los formularios que te envíe.",
+      "Te contestaré para formalizar la cita. Cuando ya tengas confirmada la cita, me enviarás toda la información que consideres relevante para tu caso y rellenarás los formularios que te envie.",
   },
   {
     id: "videocall",
