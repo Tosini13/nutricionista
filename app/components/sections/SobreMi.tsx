@@ -46,17 +46,13 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
     <Section id="sobreMi">
       <div className="grid grid-cols-12 gap-4">
         <div className="order-2 col-span-12 md:order-1 md:col-span-7">
-          <SectionTitle className="text-left text-left">Sobre mi</SectionTitle>
+          <SectionTitle className="text-left text-left">Sobre mí</SectionTitle>
           <div data-testid="sobremi_description">
             <Paragraph className={paragraphClassName}>
               <span className="font-semibold">Dietista-Nutricionista</span>{" "}
               especializada en nutrición clínica y graduada por la Universidad
-              de Valencia. Cursé un año de mis estudios en la universidad de
-              Milán, Italia (Università degli studi di Milano) donde tuve la
-              oportunidad de recibir formación en materias de gran interés,
-              particularmente los aspectos celulares y moleculares de la
-              nutrición. Posteriormente realicé las prácticas en el servicio de
-              endocrinología del hospital de Denia. Cuando terminé la
+              de Valencia. Posteriormente realicé las prácticas en el servicio
+              de endocrinología del hospital de Denia. Cuando terminé la
               universidad empecé a interesarme por la nutrición clínica y el
               tratamiento nutricional en las distintas patologías así como su
               prevención. Desde entonces he estado realizando varios cursos
@@ -99,14 +95,9 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
       </div>
       <div>
         <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0 " />
-        <div className="my-2 grid grid-cols-12 gap-4 text-center text-lg lg:my-4 lg:text-lg xl:text-xl">
-          <p className="col-span-12 w-full text-gray-light lg:col-span-6">
-            Farmacéutica colegiada nº 18858
-          </p>
-          <p className="col-span-12 w-full text-gray-light lg:col-span-6 ">
-            Nutricionista colegiada nº CAT 001827
-          </p>
-        </div>
+        <p className="my-2 w-full text-center text-lg text-gray-light lg:my-4 lg:text-lg xl:text-xl">
+          Nutricionista colegiada <br className="sm:hidden" /> nº CV01045
+        </p>
         <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-very-light to-gray-light-opacity0 " />
       </div>
     </Section>
