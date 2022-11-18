@@ -49,7 +49,7 @@ const cards: CardType[] = [
   {
     id: "3",
     title: "Pack Dietoterapia",
-    price: 120,
+    price: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
   },
@@ -107,10 +107,6 @@ const Packs: React.FC<TPacksProps> = () => {
                 className="mt-6 text-left text-sm leading-6"
                 dangerouslySetInnerHTML={{ __html: card.description ?? "" }}
               />
-              {/* <Paragraph
-                className="mt-6 text-left text-sm leading-6"
-                
-              /> */}
             </div>
             <div className="mb-10 flex items-center justify-center">
               <Button className="group rounded-full py-4 pr-4" href="#contact">
