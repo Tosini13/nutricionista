@@ -7,6 +7,7 @@ import fb_icon from "../../../public/images/media/fb_icon.svg";
 import insta_icon from "../../../public/images/media/insta_icon.svg";
 import whatsapp_icon from "../../../public/images/media/whatsapp_icon.svg";
 import Paragraph from "../sections/Paragraph";
+import { copyToBilboard } from "~/utils/copyToBilboard";
 
 type TFooterProps = {};
 
@@ -37,12 +38,21 @@ const Footer: React.FC<TFooterProps> = () => {
               <Paragraph className="mt-6">
                 Numero de telefono:
                 <br />
-                <span className="font-semibold">+34 601 53 36 64</span>
+                <span
+                  className="cursor-pointer font-semibold"
+                  onClick={copyToBilboard("+34 601 53 36 64")}
+                >
+                  +34 601 53 36 64
+                </span>
               </Paragraph>
               <Paragraph className="mt-6">
                 Correo electronico:
                 <br />
-                <a className="font-semibold" href="mailto:Esther@gmail.com">
+                <a
+                  className="cursor-pointer font-semibold"
+                  href="mailto:Esther@gmail.com"
+                  onClick={copyToBilboard("nutricionez@gmail.com")}
+                >
                   nutricionez@gmail.com
                 </a>
               </Paragraph>
