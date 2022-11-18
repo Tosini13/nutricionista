@@ -13,7 +13,6 @@ type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
   const result = useActionData<ActionData>();
-  console.log("result!log!", result);
 
   const ref = React.useRef<HTMLFormElement | null>(null);
 
@@ -84,11 +83,13 @@ const Contact: React.FC<TContactProps> = () => {
             <tbody>
               <tr>
                 <td>E-mail</td>
-                <td className="text-right font-semibold">Esther@gmail.com</td>
+                <td className="text-right font-semibold">
+                  nutricionez@gmail.com
+                </td>
               </tr>
               <tr className="">
                 <td>Numero de telefono:</td>
-                <td className="text-right font-semibold">+ 00000000000</td>
+                <td className="text-right font-semibold">+34 601 53 36 64</td>
               </tr>
             </tbody>
           </table>

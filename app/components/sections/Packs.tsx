@@ -1,3 +1,5 @@
+import { marked } from "marked";
+import * as DOMPurify from "isomorphic-dompurify";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import badge from "../../../public/images/opcion_vegana_icon.png";
@@ -5,7 +7,6 @@ import arrowRight from "../../../public/images/arrow_right_icon.svg";
 
 import Button from "../form/Button";
 import Section from "./Section";
-
 type CardType = {
   id: string;
   title: string;
@@ -25,7 +26,11 @@ const cards: CardType[] = [
     offer: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
-    description: `*sin patologías`,
+    description: DOMPurify.sanitize(
+      marked(
+        `<ul><li>Pérdida de peso</li><li>Aumento masa muscular</li></br>*sin patologías`
+      )
+    ),
   },
   {
     id: "2",
@@ -35,13 +40,16 @@ const cards: CardType[] = [
     offer: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
-    description:
-      "Asesoramiento en nutrición vegetariana, suplementación, analíticas, aprender a planificar menús, etc.",
+    description: DOMPurify.sanitize(
+      marked(
+        "Asesoramiento en nutrición vegetariana, suplementación, analíticas, aprender a planificar menús, etc."
+      )
+    ),
   },
   {
     id: "3",
     title: "Pack Dietoterapia",
-    price: 120,
+    price: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
   },
@@ -79,9 +87,11 @@ const Packs: React.FC<TPacksProps> = () => {
                 <p className="relative mb-10 text-5xl font-bold text-main">
                   {card.price}€
                   {card.offer && (
-                    <span className="absolute bottom-0 left-0 translate-y-[100%] text-2xl text-gray-light">
+                    <span
+                      className="absolute bottom-0 left-0 translate-y-[100%] text-2xl text-gray-light
+                    after:absolute after:top-1/2 after:left-1/2 after:w-full after:-translate-y-[50%] after:-translate-x-[50%] after:border-b-2 after:border-main-light after:content-['']"
+                    >
                       {card.offer}€
-                      <div className="absolute top-1/2 left-1/2 w-full -translate-y-[50%] -translate-x-[50%] border-b-2 border-main-light" />
                     </span>
                   )}
                 </p>
@@ -93,9 +103,10 @@ const Packs: React.FC<TPacksProps> = () => {
               <p className="text-center text-base font-semibold">
                 {card.visits}
               </p>
-              <Paragraph className="mt-6 text-left text-sm leading-6">
-                {card.description}
-              </Paragraph>
+              <div
+                className="mt-6 text-left text-sm leading-6"
+                dangerouslySetInnerHTML={{ __html: card.description ?? "" }}
+              />
             </div>
             <div className="mb-10 flex items-center justify-center">
               <Button className="group rounded-full py-4 pr-4" href="#contact">
