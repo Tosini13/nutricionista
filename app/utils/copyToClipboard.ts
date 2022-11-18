@@ -1,4 +1,4 @@
-export const copyToBilboard =
+export const copyToClipboard =
   <T>(value: string) =>
   async (e: React.MouseEvent<T, MouseEvent>) => {
     e.preventDefault();

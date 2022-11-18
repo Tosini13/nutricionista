@@ -6,7 +6,7 @@ import SectionTitle from "./SectionTitle";
 import Section from "./Section";
 import { Form, useActionData } from "@remix-run/react";
 import type { ActionData } from "~/routes";
-import { copyToBilboard } from "~/utils/copyToBilboard";
+import { copyToClipboard } from "~/utils/copyToClipboard";
 
 const inputClassName = "mb-4 sm:mb-0";
 
@@ -86,7 +86,7 @@ const Contact: React.FC<TContactProps> = () => {
                 <td>E-mail</td>
                 <td
                   className="cursor-pointer text-right font-semibold"
-                  onClick={copyToBilboard("nutricionez@gmail.com")}
+                  onClick={copyToClipboard("nutricionez@gmail.com")}
                 >
                   nutricionez@gmail.com
                 </td>
@@ -95,7 +95,7 @@ const Contact: React.FC<TContactProps> = () => {
                 <td>Numero de telefono:</td>
                 <td
                   className="cursor-pointer text-right font-semibold"
-                  onClick={copyToBilboard("+34 601 53 36 64")}
+                  onClick={copyToClipboard("+34 601 53 36 64")}
                 >
                   +34 601 53 36 64
                 </td>
