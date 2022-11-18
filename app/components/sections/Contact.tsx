@@ -13,7 +13,6 @@ type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
   const result = useActionData<ActionData>();
-  console.log("result!log!", result);
 
   const ref = React.useRef<HTMLFormElement | null>(null);
 
