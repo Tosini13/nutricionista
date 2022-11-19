@@ -29,6 +29,7 @@ export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Nutricionista Esther Zamora",
   viewport: "width=device-width,initial-scale=1",
+  description: "Pedir cita a mantener tu salud con nutricionista",
 });
 
 export async function loader({ request }: LoaderArgs) {
