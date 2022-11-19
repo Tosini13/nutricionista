@@ -24,7 +24,12 @@ const Textarea: React.FC<TextareaPropsType> = ({
 
   return (
     <div className="relative mt-[20px]">
-      <textarea className={mergedClassName} placeholder=" " {...props} />
+      <textarea
+        id={id}
+        className={mergedClassName}
+        placeholder=" "
+        {...props}
+      />
       <label
         htmlFor={id}
         className={`absolute left-0 top-0 -translate-y-[100%] pl-0 text-sm text-gray transition-all duration-200 ease-out
