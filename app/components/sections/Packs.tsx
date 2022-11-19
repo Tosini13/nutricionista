@@ -28,7 +28,7 @@ const cards: CardType[] = [
     visits: "1A VISITA + 2 SEGUIMIENTOS",
     description: DOMPurify.sanitize(
       marked(
-        `<ul><li>Pérdida de peso</li><li>Aumento masa muscular</li></br>*sin patologías`
+        `<ul><li>Pérdida de peso</li><li>Aumento masa muscular</li></ul></br>*sin patologías`
       )
     ),
   },
