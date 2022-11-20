@@ -3,10 +3,8 @@ import dinner from "../../../public/images/footer/dinner.png";
 import cooking from "../../../public/images/footer/cooking.png";
 import cooking2 from "../../../public/images/footer/cooking2.png";
 import meal from "../../../public/images/footer/meal.png";
-import fb_icon from "../../../public/images/media/fb_icon.svg";
-import insta_icon from "../../../public/images/media/insta_icon.svg";
-import whatsapp_icon from "../../../public/images/media/whatsapp_icon.svg";
 import Paragraph from "../sections/Paragraph";
+import SocialBar from "../SocialBar";
 
 type TFooterProps = {};
 
@@ -58,16 +56,8 @@ const Footer: React.FC<TFooterProps> = () => {
                 <MapLink href="#contacto" title="contacto" />
               </ul>
             </div>
-            <div className="grid grid-rows-3 lg:hidden">
-              <div className="flex items-center justify-center">
-                <img src={fb_icon} alt="facebook icon" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={insta_icon} alt="instagram icon" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={whatsapp_icon} alt="WhatsApp icon" />
-              </div>
+            <div className="flex flex-col items-center justify-evenly lg:hidden">
+              <SocialBar />
             </div>
             <div className="hidden min-w-max py-8 md:flex">
               <div>
