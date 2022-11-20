@@ -94,11 +94,11 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
         </div>
       </div>
       <div>
-        <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0 " />
+        <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0" />
         <p className="my-2 w-full text-center text-lg text-gray-light lg:my-4 lg:text-lg xl:text-xl">
           Nutricionista colegiada <br className="sm:hidden" /> nº CV01045
         </p>
-        <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-very-light to-gray-light-opacity0 " />
+        <div className="my-10 h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0 " />
       </div>
     </Section>
   );
