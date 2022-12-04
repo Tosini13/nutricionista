@@ -2,6 +2,8 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
+import avocado from "../../../public/images/normalVisits/tangerine-newt-A5uZlKIuiD8-unsplash 2.svg";
+import apple from "../../../public/images/normalVisits/unsplash_hFBsF-CX5eQ.svg";
 
 type VisitType = {
   id: string;
@@ -47,12 +49,24 @@ const Visits: React.FC<TVisitsProps> = () => {
       <SectionTitle className="text-center text-2xl uppercase">
         Visitas individuales
       </SectionTitle>
-      <div className="mb-10 grid grid-cols-1 gap-y-8 rounded-3xl bg-white/75 p-10 shadow-xl md:mx-16 lg:mx-0 lg:grid-cols-12 xl:mx-20">
-        <div className="col-span-5">{leftColumn}</div>
-        <div className="col-span-2 flex items-center justify-center">
-          <div className="w-10/12 origin-center self-stretch border-b-2 border-gray lg:h-full lg:w-0 lg:border-l-2 lg:border-black" />
+      <div className="relative mb-10 md:mx-16 lg:mx-0 xl:mx-20">
+        <img
+          src={avocado}
+          alt="avocado"
+          className="absolute bottom-0 left-0 hidden -translate-x-[65%] sm:block"
+        />
+        <img
+          src={apple}
+          alt="apple"
+          className="absolute bottom-0 right-0 translate-y-[50%] translate-x-[50%]"
+        />
+        <div className="relative grid grid-cols-1 gap-y-8 rounded-3xl bg-white/75 p-10 shadow-xl backdrop-blur-sm lg:grid-cols-12">
+          <div className="col-span-5">{leftColumn}</div>
+          <div className="col-span-2 flex items-center justify-center">
+            <div className="w-10/12 origin-center self-stretch border-b-2 border-gray lg:h-full lg:w-0 lg:border-l-2 lg:border-black" />
+          </div>
+          <div className="col-span-5">{rightColumn}</div>
         </div>
-        <div className="col-span-5">{rightColumn}</div>
       </div>
     </Section>
   );
