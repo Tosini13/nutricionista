@@ -4,18 +4,16 @@ import logo from "../../../public/logoWithTitle.svg";
 import { LinkButton } from "../form/Button";
 import Hamburger from "./Hamburger";
 
-const menuItems = [
-  { href: "#home", title: "home" },
-  { href: "#sobreMi", title: "sobre mi" },
-  { href: "#servicios", title: "servicios" },
-  { href: "#packs", title: "packs" },
-  { href: "#faq", title: "FAQ" },
-  { href: "#contact", title: "contact" },
-];
+export type LinkType = {
+  href: string;
+  title: string;
+};
 
-type THeaderProps = {};
+type THeaderProps = {
+  links: Array<LinkType>;
+};
 
-const Header: React.FC<THeaderProps> = () => {
+const Header: React.FC<THeaderProps> = ({ links }) => {
   const ref = React.useRef<HTMLHeadElement>(null);
   const [openMenu, setOpenMenu] = React.useState(false);
   const [isOnTop, setIsOnTop] = React.useState(true);
@@ -69,15 +67,15 @@ const Header: React.FC<THeaderProps> = () => {
               className="max-h-10 transition-[max-height] md:max-h-5 lg:max-h-10"
             />
             <ul className="hidden pl-3 md:flex">
-              {menuItems.map((item) => (
+              {links.map((link) => (
                 <li
-                  key={item.href}
+                  key={link.href}
                   className="w-fit transition-[padding] duration-300 ease-out md:px-2 lg:px-4 xl:px-9"
                 >
                   <MenuItem
                     className="link"
-                    href={item.href}
-                    title={item.title}
+                    href={link.href}
+                    title={link.title}
                   />
                 </li>
               ))}
@@ -94,7 +92,11 @@ const Header: React.FC<THeaderProps> = () => {
           </div>
         </div>
       </header>
-      <MobileMenuScreen open={openMenu} hideMenu={() => setOpenMenu(false)} />
+      <MobileMenuScreen
+        links={links}
+        open={openMenu}
+        hideMenu={() => setOpenMenu(false)}
+      />
     </>
   );
 };
@@ -128,11 +130,13 @@ const MenuItem: React.FC<TMenuItemProps> = ({
 };
 
 type TMobileMenuScreenProps = {
+  links: Array<LinkType>;
   open: boolean;
   hideMenu?: () => void;
 };
 
 const MobileMenuScreen: React.FC<TMobileMenuScreenProps> = ({
+  links,
   open,
   hideMenu,
 }) => {
@@ -149,9 +153,9 @@ const MobileMenuScreen: React.FC<TMobileMenuScreenProps> = ({
     <div className={className}>
       <div className="flex h-full flex-col divide-y p-6">
         <ul className="grow space-y-4">
-          {menuItems.map((item) => (
+          {links.map((link) => (
             <li
-              key={item.href}
+              key={link.href}
               className="w-full rounded-md px-2 py-3 transition-[padding] duration-300 ease-out"
               /**
                * @todo for active link
@@ -161,8 +165,8 @@ const MobileMenuScreen: React.FC<TMobileMenuScreenProps> = ({
                */
             >
               <MenuItem
-                href={item.href}
-                title={item.title}
+                href={link.href}
+                title={link.title}
                 onClick={hideMenu}
               />
             </li>
