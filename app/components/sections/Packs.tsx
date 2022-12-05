@@ -1,3 +1,5 @@
+import { marked } from "marked";
+import * as DOMPurify from "isomorphic-dompurify";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import badge from "../../../public/images/opcion_vegana_icon.png";
@@ -5,12 +7,12 @@ import arrowRight from "../../../public/images/arrow_right_icon.svg";
 
 import { LinkButton } from "../form/Button";
 import Section from "./Section";
-
 type CardType = {
   id: string;
   title: string;
   vegetarian?: boolean;
   price: number;
+  offer?: number;
   duration: string;
   visits: string;
   description?: string;
@@ -20,25 +22,34 @@ const cards: CardType[] = [
   {
     id: "1",
     title: "MEJORA DE LA COMPOSICIÓN CORPORAL",
-    price: 99,
+    price: 79,
+    offer: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
-    description: "*sin patologías",
+    description: DOMPurify.sanitize(
+      marked(
+        `<ul><li>Pérdida de peso</li><li>Aumento masa muscular</li></ul></br>*sin patologías`
+      )
+    ),
   },
   {
     id: "2",
     title: "Pack vegetarianos o veganos",
     vegetarian: true,
-    price: 99,
+    price: 79,
+    offer: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
-    description:
-      "Asesoramiento en nutrición vegetariana, suplementación, analíticas, aprender a planificar menús, etc.",
+    description: DOMPurify.sanitize(
+      marked(
+        "Asesoramiento en nutrición vegetariana, suplementación, analíticas, aprender a planificar menús, etc."
+      )
+    ),
   },
   {
     id: "3",
     title: "Pack Dietoterapia",
-    price: 120,
+    price: 99,
     duration: "3 MESES",
     visits: "1A VISITA + 2 SEGUIMIENTOS",
   },
@@ -51,10 +62,7 @@ const Packs: React.FC<TPacksProps> = () => {
     <Section id="packs" className="md:mx-20">
       <SectionTitle className="text-center">Packs</SectionTitle>
       <Paragraph className="text-center text-lg font-medium leading-9 text-gray">
-        Elige tu dieta favorita y contáctame. No hay oferta de descuento para{" "}
-        <u>“embarazo y lactancia”</u>.
-        <br />
-        Si quieres contactar en este caso te recomiendo visita normal.
+        Elige el pack que más se adapte a ti con descuentos especiales
       </Paragraph>
       <div className="mb-20 mt-8 grid grid-cols-1 gap-4 gap-x-12 lg:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
@@ -76,8 +84,16 @@ const Packs: React.FC<TPacksProps> = () => {
                 </h5>
               </div>
               <div className="flex items-center justify-center border-y-2 border-gray-very-light py-8">
-                <p className="mb-10 text-5xl font-bold text-main">
+                <p className="relative mb-10 text-5xl font-bold text-main">
                   {card.price}€
+                  {card.offer && (
+                    <span
+                      className="absolute bottom-0 left-0 translate-y-[100%] text-2xl text-gray-light
+                    after:absolute after:top-1/2 after:left-1/2 after:w-full after:-translate-y-[50%] after:-translate-x-[50%] after:border-b-2 after:border-main-light after:content-['']"
+                    >
+                      {card.offer}€
+                    </span>
+                  )}
                 </p>
                 <div className="h-full origin-center rotate-45 border-l-2 border-black" />
                 <p className="mt-10 font-semibold">{card.duration}</p>
@@ -87,9 +103,10 @@ const Packs: React.FC<TPacksProps> = () => {
               <p className="text-center text-base font-semibold">
                 {card.visits}
               </p>
-              <Paragraph className="mt-6 text-left text-sm leading-6">
-                {card.description}
-              </Paragraph>
+              <div
+                className="mt-6 text-left text-sm leading-6"
+                dangerouslySetInnerHTML={{ __html: card.description ?? "" }}
+              />
             </div>
             <div className="mb-10 flex items-center justify-center">
               <LinkButton

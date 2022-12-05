@@ -1,11 +1,9 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-type InputPropsType = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> & {
-  containerClassName?: string;
+type InputPropsType = React.InputHTMLAttributes<HTMLInputElement> & {
+  containerClassName: string;
+  error?: string | null;
 };
 
 const Input: React.FC<InputPropsType> = ({
@@ -13,6 +11,7 @@ const Input: React.FC<InputPropsType> = ({
   containerClassName,
   placeholder,
   id,
+  error,
   ...props
 }) => {
   const mergedContainerClassName = React.useMemo(
@@ -23,7 +22,7 @@ const Input: React.FC<InputPropsType> = ({
   const mergedClassName = React.useMemo(
     () =>
       twMerge(
-        "peer w-full rounded-xl bg-gray-dark p-[1.1rem] text-lg focus:outline-none",
+        "peer w-full rounded-xl bg-gray-dark p-[1.1rem] text-lg outline-none focus:outline-none focus:border-main-light border-[0.5px] border-transparent transition-all duration-200",
         className
       ),
     [className]
@@ -39,6 +38,11 @@ const Input: React.FC<InputPropsType> = ({
       >
         {placeholder}
       </label>
+      {error && (
+        <p className="absolute right-0 bottom-0 translate-y-[100%] text-sm text-red-400">
+          Este campo es obligatorio
+        </p>
+      )}
     </div>
   );
 };

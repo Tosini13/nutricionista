@@ -1,6 +1,7 @@
 import pregnancy from "../../../../public/images/pregnancy.png";
 import badge from "../../../../public/images/opcion_vegana.png";
 import { LinkButton } from "~/components/form/Button";
+import Paragraph from "../Paragraph";
 
 type TPregnancyAndLactationProps = {};
 
@@ -20,16 +21,11 @@ const PregnancyAndLactation: React.FC<TPregnancyAndLactationProps> = () => {
         </div>
       </div>
       <div>
-        <h4 className="mb-2 w-fit whitespace-nowrap border-b-2 text-xl font-bold">
-          Nutricion óptima
-        </h4>
-        <ul className="pb-10 pb-8 text-lg leading-10 tracking-wide">
-          <li>Patologías renales</li>
-          <li>Patologías metabólicas: diabetes, colesterol, hipertensión</li>
-          <li>Alergias e intolerancias</li>
-          <li>Hipotiroidismo</li>
-          <li>Migrañas</li>
-        </ul>
+        <Paragraph>
+          Si quieres estar segura de tener una nutrición óptima en estas etapas
+          de la vida, puedo ayudarte. También en diabetes gestacional,
+          preeclampsia e infertilidad
+        </Paragraph>
         <div className="mt-8 flex items-end justify-between md:mt-0">
           <LinkButton
             className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"

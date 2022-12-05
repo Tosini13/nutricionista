@@ -1,6 +1,7 @@
 import { LinkButton } from "../form/Button";
 import ImgWatermelon from "../../../public/images/woman_watermelon.png";
 import Section from "./Section";
+import SocialBar from "../SocialBar";
 
 const style = {
   button: {
@@ -49,6 +50,13 @@ const Home: React.FC<THomeProps> = () => {
       </div>
       <div className="insetShadow absolute right-0 bottom-0 z-[1] hidden lg:block">
         <img src={ImgWatermelon} alt="watermelon" />
+      </div>
+      <div className="block sm:hidden">
+        <div className="h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0" />
+        <div className="my-4 flex items-center justify-evenly">
+          <SocialBar mode="dark" />
+        </div>
+        <div className="h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0" />
       </div>
     </Section>
   );

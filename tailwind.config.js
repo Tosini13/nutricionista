@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
@@ -29,5 +31,25 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities, theme }) => {
+      addUtilities({
+        ".fade-up": {
+          transition:
+            "transform 1s cubic-bezier(0.64, 0.04, 0.26, 0.87), opacity 0.8s cubic-bezier(0.64, 0.04, 0.26, 0.87)",
+          opacity: theme("opacity.0"),
+          transform: "translate3d(0, 2rem, 0)",
+        },
+        ".highlight-none": {
+          "-webkit-tap-highlight-color": "transparent",
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-khtml-user-select": "none",
+          "-moz-user-select": "none",
+          "-ms-user-select": "none",
+          "user-select": "none",
+        },
+      });
+    })
+  ],
 };

@@ -12,7 +12,7 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
         <div>
           <img src={diet} alt="man and woman having diet" />
         </div>
-        <div className="block md:hidden">
+        <div className="block lg:hidden">
           <img
             src={badge}
             alt="fruits vegetables nutritionist diet"
@@ -33,17 +33,16 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
             </Paragraph>
           </div>
           <div>
-            <h4 className="mb-2 w-fit whitespace-nowrap border-b-2 text-xl font-bold">
-              Patologías digestivas:
-            </h4>
-            <ul className="text-lfont-light pb-10 pb-8 leading-10 tracking-wide">
+            <ul className="text-lfont-light min-w-max pb-10 pb-8 leading-10 tracking-wide">
+              <li>Patologías digestivas</li>
               <li>Patologías renales</li>
-              <li>
-                Patologías metabólicas: diabetes, colesterol, hipertensión
-              </li>
               <li>Alergias e intolerancias</li>
               <li>Hipotiroidismo</li>
               <li>Migrañas</li>
+              <li>Colesterol</li>
+              <li>Hipertension</li>
+              <li>Diabetes tipo 1 y 2</li>
+              <li>Problemas hormonales: SOP, acne…</li>
             </ul>
           </div>
         </div>
@@ -57,7 +56,7 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
           <img
             src={badge}
             alt="fruits vegetables nutritionist diet"
-            className="hidden md:block"
+            className="hidden lg:block"
           />
         </div>
       </div>

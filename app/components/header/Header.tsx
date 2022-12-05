@@ -61,7 +61,7 @@ const Header: React.FC<THeaderProps> = () => {
   return (
     <>
       <header ref={ref} className={headerStyle}>
-        <div className="mx-2 max-w-[1400px] py-4 sm:mx-6 lg:mx-20">
+        <div className="mx-4 max-w-[1400px] py-4 sm:mx-6 lg:mx-20">
           <div className="space-between flex items-center justify-between">
             <img
               src={logo}
