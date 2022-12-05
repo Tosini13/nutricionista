@@ -1,6 +1,4 @@
 import Footer from "~/components/footer/Footer";
-import Header from "~/components/header/Header";
-import type { LinkType } from "~/components/header/Header";
 import Contact from "~/components/sections/Contact";
 import Faqs from "~/components/sections/faq";
 import Home from "~/components/sections/Home";
@@ -15,15 +13,7 @@ import { useLoaderData } from "@remix-run/react";
 import { getFaqs } from "~/models/faq.server";
 import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
-
-const MENU_LINKS: Array<LinkType> = [
-  { href: "#home", title: "home" },
-  { href: "#sobreMi", title: "sobre mi" },
-  { href: "#servicios", title: "servicios" },
-  { href: "#packs", title: "packs" },
-  { href: "#faq", title: "FAQ" },
-  { href: "#contact", title: "contact" },
-];
+import HeaderModule from "~/modules/HeaderModule";
 
 export type ActionData = {
   errors?: {
@@ -92,7 +82,7 @@ export default function Index() {
   const { faqs } = useLoaderData() as LoaderData;
   return (
     <>
-      <Header links={MENU_LINKS} />
+      <HeaderModule />
       <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden bg-white xl:mx-auto">
         <Home />
         <SobreMi />
