@@ -86,10 +86,6 @@ const Footer: React.FC<TFooterProps> = () => {
           Copyright 2022 by Esther Zamora All rights reserved
         </h6>
         <div className="h-{50} hidden border-r border-white md:block" />
-        <a href="#privacy">Privacy</a>
-        <div className="h-{50} hidden border-r border-white md:block" />
-        <a href="#cookies">Cookies</a>
-        <div className="h-{50} hidden border-r border-white md:block" />
         <h6>Crafted by Bartosik Bros</h6>
       </div>
     </footer>
