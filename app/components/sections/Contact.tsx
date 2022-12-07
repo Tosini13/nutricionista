@@ -88,7 +88,7 @@ const Contact: React.FC<TContactProps> = () => {
                 </td>
               </tr>
               <tr className="">
-                <td>Numero de telefono:</td>
+                <td>Numero de telefono</td>
                 <td className="text-right font-semibold">+34 601 53 36 64</td>
               </tr>
             </tbody>
