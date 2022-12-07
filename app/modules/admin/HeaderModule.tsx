@@ -10,7 +10,7 @@ import MobileMenuScreen from "~/components/header/MobileMenuScreen";
 const MENU_LINKS: Array<LinkType> = [
   { href: "/admin/servicios", title: "servicios" },
   { href: "/admin/packs", title: "packs" },
-  { href: "/admin/faq", title: "FAQ" },
+  { href: "/admin/faqs", title: "FAQ" },
   { href: "/admin/contact", title: "contact" },
 ];
 

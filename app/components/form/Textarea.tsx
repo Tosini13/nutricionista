@@ -1,9 +1,10 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import sendIcon from "../../../public/images/send_icon.svg";
+import sendIcon from "../../../public/images/icons/paper-plane-right-fill.svg";
 
 type TextareaPropsType = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   error?: string | null;
+  submitIcon?: string;
 };
 
 const Textarea: React.FC<TextareaPropsType> = ({
@@ -11,6 +12,7 @@ const Textarea: React.FC<TextareaPropsType> = ({
   id,
   placeholder,
   error,
+  submitIcon = sendIcon,
   ...props
 }) => {
   const mergedClassName = React.useMemo(
@@ -50,7 +52,7 @@ const Textarea: React.FC<TextareaPropsType> = ({
           "absolute bottom-5 right-5 cursor-pointer grayscale-0 peer-placeholder-shown:grayscale"
         }
       >
-        <img src={sendIcon} alt={"send icon"} />
+        <img src={submitIcon} width={32} alt={"send icon"} />
       </button>
     </div>
   );
