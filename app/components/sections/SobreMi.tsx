@@ -1,26 +1,9 @@
-import wavingHand from "../../../public/images/wavingHand.svg";
 import esther from "../../../public/images/esther_image.png";
 import React from "react";
 import SectionTitle from "./SectionTitle";
 import Paragraph from "./Paragraph";
 import Section from "./Section";
 import { twMerge } from "tailwind-merge";
-
-const style = {
-  holaContainer: {
-    background:
-      "linear-gradient(96.93deg, rgba(254, 254, 254, 0.82) 0%, rgba(255, 255, 255, 0.09) 43.77%, rgba(255, 255, 255, 0.53) 100%)",
-    boxShadow: "0px 30px 50px rgba(0, 0, 0, 0.1)",
-    backdropFilter: "blur(20px)",
-  },
-  leerMasButton: {
-    position: "absolute",
-    bottom: "10px",
-    zIndex: 2,
-    left: "50%",
-    transform: "translateX(-50%)",
-  } as React.ButtonHTMLAttributes<HTMLButtonElement>["style"],
-};
 
 const paragraphClassNames = {
   base: "bottomInsetShadow overflow-hidden transition-[max-height] text-gray leading-[3.5rem]",
@@ -43,7 +26,7 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
   }, [readAll]);
 
   return (
-    <Section id="sobreMi">
+    <Section id="sobreMi" className="pt-0 sm:pt-24">
       <div className="grid grid-cols-12 gap-4">
         <div className="order-2 col-span-12 md:order-1 md:col-span-7">
           <SectionTitle className="text-left text-left">Sobre mí</SectionTitle>
@@ -81,15 +64,8 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
         </div>
         <div
           data-testid="sobremi_images"
-          className="order-1 col-span-12 md:order-2 md:col-span-5 md:mt-20"
+          className="order-1 col-span-12 mb-10 sm:mb-0 md:order-2 md:col-span-5 md:mt-20"
         >
-          <div
-            className="mx-auto flex w-fit items-center rounded-3xl py-4 px-6 text-lg drop-shadow-[0px_5px_20px_0px_rgba(0,0,0,0.05)] md:ml-0"
-            style={style.holaContainer}
-          >
-            <p className="font-semibold">¡Hola! Soy Esther Zamora.</p>
-            <img className="pl-4" src={wavingHand} alt="Hola" />
-          </div>
           <img className="pl-4" src={esther} alt="Nutricionista Esther" />
         </div>
       </div>
