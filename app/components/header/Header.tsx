@@ -16,11 +16,13 @@ const Header: React.FC<THeaderProps> = ({ links, rightAction }) => {
   return (
     <div className="mx-4 max-w-[1400px] py-4 sm:mx-6 lg:mx-20">
       <div className="space-between flex items-center justify-between">
-        <img
-          src={logo}
-          alt={"logo"}
-          className="max-h-10 transition-[max-height] md:max-h-5 lg:max-h-10"
-        />
+        <a className="cursor-pointer" href="/">
+          <img
+            src={logo}
+            alt={"logo"}
+            className="max-h-10 transition-[max-height] md:max-h-5 lg:max-h-10"
+          />
+        </a>
         <ul className="hidden pl-3 md:flex">
           {links.map((link) => (
             <li

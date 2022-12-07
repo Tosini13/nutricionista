@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import { faqs } from "./mock_data";
 
 const prisma = new PrismaClient();
 
@@ -23,6 +24,14 @@ async function seed() {
       },
     },
   });
+
+  for (const faq of faqs) {
+    await prisma.faq.upsert({
+      where: { id: faq.id },
+      update: faq,
+      create: faq,
+    });
+  }
 
   console.log(`Database has been seeded. 🌱`);
 }
