@@ -3,7 +3,7 @@ import handlebars from "handlebars";
 import path from "path";
 import fs from "fs";
 
-const filePath = path.join("./app/utils/email.server.html");
+const filePath = path.join("./app/utils/self-email.server.html");
 
 const source = fs.readFileSync(filePath, "utf-8").toString();
 const template = handlebars.compile(source);
@@ -20,23 +20,25 @@ export type ContactForm = {
   name: string;
   surname: string;
   email: string;
+  content: string;
 };
 
-export async function sendEmail({ email, name, surname }: ContactForm) {
+export async function sendSelfEmail({
+  email,
+  name,
+  surname,
+  content,
+}: ContactForm) {
   const replacements = {
-    firstName: name,
-    lastName: surname,
-    phoneNumber: "+34 601533664",
-    instagramLink: ".",
-    whatsappLink: ".",
+    content: content,
     websiteLink: "https://nutricionez.com/",
   };
   const htmlToSend = template(replacements);
 
   const mailOptions = {
     from: process.env.EMAIL,
-    to: email,
-    subject: `Respuesta automática`,
+    to: "nutricionez@gmail.com",
+    subject: `Contacto de ${name} ${surname} - ${email}`,
     html: htmlToSend,
   };
 
