@@ -5,12 +5,12 @@ import Button from "../form/Button";
 import Hamburger from "./Hamburger";
 
 const menuItems = [
-  { href: "#home", title: "home" },
-  { href: "#sobreMi", title: "sobre mi" },
-  { href: "#servicios", title: "servicios" },
-  { href: "#packs", title: "packs" },
+  { href: "#home", title: "Home" },
+  { href: "#sobreMi", title: "Sobre mi" },
+  { href: "#servicios", title: "Servicios" },
+  { href: "#packs", title: "Packs" },
   { href: "#faq", title: "FAQ" },
-  { href: "#contact", title: "contact" },
+  { href: "#contact", title: "Contact" },
 ];
 
 type THeaderProps = {};

@@ -26,7 +26,7 @@ export async function sendEmail({ email, name, surname }: ContactForm) {
   const replacements = {
     firstName: name,
     lastName: surname,
-    phoneNumber: "+34 601533664",
+    phoneNumber: "+34601533664",
     instagramLink: ".",
     whatsappLink: ".",
     websiteLink: "https://nutricionez.com/",
