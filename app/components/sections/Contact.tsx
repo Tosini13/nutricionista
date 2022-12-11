@@ -76,25 +76,6 @@ const Contact: React.FC<TContactProps> = () => {
           </div>
         </div>
       </Form>
-      <div className="mt-8">
-        <h4 className="mb-8 text-center lg:text-left">Mi contacto:</h4>
-        <div className="mx-auto my-2 rounded-3xl shadow-md sm:w-max lg:mx-0">
-          <table className="border-separate border-spacing-x-8 border-spacing-y-4">
-            <tbody>
-              <tr>
-                <td>E-mail</td>
-                <td className="text-right font-semibold">
-                  nutricionez@gmail.com
-                </td>
-              </tr>
-              <tr className="">
-                <td>Numero de telefono</td>
-                <td className="text-right font-semibold">+34 601 53 36 64</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </Section>
   );
 };

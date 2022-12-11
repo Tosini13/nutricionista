@@ -29,8 +29,8 @@ const Footer: React.FC<TFooterProps> = () => {
           <polygon points="0 100 100 0 100 100" fill="url(#triangleGradient)" />
         </svg>
         <div className="headerContent">
-          <div className="relative flex flex-wrap items-stretch justify-around py-10 md:mx-24 md:items-center">
-            <address className="hidden min-w-max not-italic md:mx-4 md:block">
+          <div className="relative flex flex-wrap items-stretch justify-around space-y-6 py-10 md:mx-24 md:items-center">
+            <address className="flex min-w-max basis-full flex-col items-center text-center not-italic sm:block sm:basis-auto sm:text-left md:mx-4">
               <img src={logo} alt={"logo"} />
               <Paragraph className="mt-6">
                 Numero de telefono:
@@ -45,7 +45,7 @@ const Footer: React.FC<TFooterProps> = () => {
                 </a>
               </Paragraph>
             </address>
-            <div className="min-w-max md:mx-4">
+            <div className="ml-4 sm:min-w-max md:mx-4">
               <h6 className="hidden pb-6 md:block">Mapa del sitio</h6>
               <ul>
                 <MapLink href="#home" title="home" />
