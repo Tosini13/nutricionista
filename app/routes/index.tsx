@@ -14,6 +14,7 @@ import { useLoaderData } from "@remix-run/react";
 import { getFaqs } from "~/models/faq.server";
 import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
+import { sendSelfEmail } from "~/utils/self-email.server";
 
 export type ActionData = {
   errors?: {
@@ -54,10 +55,24 @@ export const action: ActionFunction = async ({ request }) => {
     email,
     name,
     surname,
+  });
+
+  const approvedSelf = await sendSelfEmail({
+    email,
+    name,
+    surname,
     content: content,
   });
 
   if (!approved) {
+    console.error("not sent to user!log!");
+    return json<ActionData>({
+      sent: false,
+    });
+  }
+
+  if (!approvedSelf) {
+    console.error("not sent to admin!log!");
     return json<ActionData>({
       sent: false,
     });
