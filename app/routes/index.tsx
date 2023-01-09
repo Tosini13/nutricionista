@@ -22,23 +22,30 @@ export type ActionData = {
     name?: null | string;
     surname?: null | string;
     content?: null | string;
+    recaptcha?: null | string;
   };
   sent?: boolean;
 };
 
 export const action: ActionFunction = async ({ request }) => {
+  console.log("request !log!", request);
+
   const formData = await request.formData();
+  console.log("formData !log!", formData);
 
   const email = formData.get("email");
   const name = formData.get("name");
   const surname = formData.get("surname");
   const content = formData.get("content");
+  const recaptcha = formData.get("g-recaptcha-response");
+  console.log("recaptcha !log!", recaptcha);
 
   const errors: ActionData["errors"] = {
     email: email ? null : "Email is required",
     name: name ? null : "Name is required",
     surname: surname ? null : "Surname is required",
     content: content ? null : "Content is required",
+    recaptcha: recaptcha ? null : "Recaptcha is required",
   };
 
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
@@ -85,11 +92,15 @@ export const action: ActionFunction = async ({ request }) => {
 
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;
+  siteKey?: string;
 };
 
 export const loader = async () => {
+  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY_DEV;
+
   return json<LoaderData>({
     faqs: await getFaqs(),
+    siteKey: SITE_KEY,
   });
 };
 

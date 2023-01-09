@@ -1,17 +1,21 @@
 import React from "react";
+import { json } from "@remix-run/node";
 import Input from "../form/Input";
 import Textarea from "../form/Textarea";
 import Paragraph from "./Paragraph";
 import SectionTitle from "./SectionTitle";
 import Section from "./Section";
-import { Form, useActionData } from "@remix-run/react";
-import type { ActionData } from "~/routes";
+import { Form, useActionData, useLoaderData } from "@remix-run/react";
+import type { ActionData, LoaderData } from "~/routes";
+import ReCaptcha from "../form/ReCaptcha";
 
 const inputClassName = "mb-4 sm:mb-0";
 
 type TContactProps = {};
 
 const Contact: React.FC<TContactProps> = () => {
+  const { siteKey } = useLoaderData() as LoaderData;
+
   const result = useActionData<ActionData>();
 
   const ref = React.useRef<HTMLFormElement | null>(null);
@@ -74,6 +78,9 @@ const Contact: React.FC<TContactProps> = () => {
               />
             </div>
           </div>
+        </div>
+        <div className="flex justify-center">
+          <ReCaptcha siteKey={siteKey} error={result?.errors?.recaptcha} />
         </div>
       </Form>
     </Section>
