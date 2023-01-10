@@ -23,7 +23,7 @@ export type ActionData = {
     name?: null | string;
     surname?: null | string;
     content?: null | string;
-    recaptcha?: null | string;
+    reCaptcha?: null | string;
   };
   sent?: boolean;
 };
@@ -35,15 +35,14 @@ export const action: ActionFunction = async ({ request }) => {
   const name = formData.get("name");
   const surname = formData.get("surname");
   const content = formData.get("content");
-  const recaptcha = formData.get("g-recaptcha-response");
-  console.log("recaptcha !log!", recaptcha);
+  const reCaptcha = formData.get("g-recaptcha-response");
 
   const errors: ActionData["errors"] = {
     email: email ? null : "Email is required",
     name: name ? null : "Name is required",
     surname: surname ? null : "Surname is required",
     content: content ? null : "Content is required",
-    recaptcha: recaptcha ? null : "Recaptcha is required",
+    reCaptcha: reCaptcha ? null : "ReCaptcha is required",
   };
 
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
@@ -55,44 +54,14 @@ export const action: ActionFunction = async ({ request }) => {
   invariant(typeof name === "string", "name must be a string");
   invariant(typeof surname === "string", "surname must be a string");
   invariant(typeof content === "string", "content must be a string");
-  invariant(typeof recaptcha === "string", "recaptcha must be a string");
+  invariant(typeof reCaptcha === "string", "recaptcha must be a string");
 
-  const responseRecCaptcha = await verifyReCaptcha(recaptcha);
-  console.log("--------------------------------------------- !log!");
-  console.log("responseRecCaptcha !log!", responseRecCaptcha);
+  const responseRecCaptcha = await verifyReCaptcha(reCaptcha);
 
-  const reader = responseRecCaptcha.body?.getReader();
-  const result = new ReadableStream({
-    start(controller) {
-      return pump();
-      function pump() {
-        return reader?.read().then(({ done, value }) => {
-          // When no more data needs to be consumed, close the stream
-          if (done) {
-            controller.close();
-            return;
-          }
-          // Enqueue the next data chunk into our target stream
-          controller.enqueue(value);
-          return pump();
-        });
-      }
-    },
-  });
-  console.log("result !log!", result);
-
-  if (!responseRecCaptcha) {
+  if (!responseRecCaptcha.success) {
     return json<ActionData>({
       errors: {
-        recaptcha: "Not verified",
-      },
-    });
-  }
-
-  if (responseRecCaptcha) {
-    return json<ActionData>({
-      errors: {
-        recaptcha: "Well done!",
+        reCaptcha: "Not verified",
       },
     });
   }
