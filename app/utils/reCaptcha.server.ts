@@ -1,7 +1,7 @@
 const getUrl = (secret: string, token: string) => 
 `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`;
 const METHOD = 'post';
-const SECRET = process.env.RECAPTCHA_SECRET_KEY_DEV;
+const SECRET = process.env.RECAPTCHA_SECRET_KEY;
 
 type ReturnType = {
     success: boolean;

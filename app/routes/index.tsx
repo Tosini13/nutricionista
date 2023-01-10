@@ -104,7 +104,7 @@ export type LoaderData = {
 };
 
 export const loader = async () => {
-  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY_DEV;
+  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
 
   return json<LoaderData>({
     faqs: await getFaqs(),
