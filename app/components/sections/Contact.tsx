@@ -45,7 +45,6 @@ const Contact: React.FC<TContactProps> = () => {
               rows={8}
               name="content"
               error={result?.errors?.content && "Este campo es obligatorio"}
-              defaultValue={"test"}
             />
           </div>
           <div className="flex flex-col">
@@ -58,7 +57,6 @@ const Contact: React.FC<TContactProps> = () => {
                 name="name"
                 containerClassName={inputClassName}
                 error={result?.errors?.name && "Este campo es obligatorio"}
-                defaultValue={"test"}
               />
               <Input
                 id="surname"
@@ -67,7 +65,6 @@ const Contact: React.FC<TContactProps> = () => {
                 name="surname"
                 containerClassName={inputClassName}
                 error={result?.errors?.surname && "Este campo es obligatorio"}
-                defaultValue={"test"}
               />
               <Input
                 id="email"
@@ -77,7 +74,6 @@ const Contact: React.FC<TContactProps> = () => {
                 type="email"
                 containerClassName={inputClassName}
                 error={result?.errors?.email && "Este campo es obligatorio"}
-                defaultValue={"test@gmail.com"}
               />
             </div>
           </div>
