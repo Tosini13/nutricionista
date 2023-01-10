@@ -5,7 +5,7 @@ type ReCaptchaPropsType = {
 
 const ReCaptcha: React.FC<ReCaptchaPropsType> = ({ siteKey, error }) => {
   return (
-    <div data-test-id="re_captcha" className="relative py-[1.1rem]">
+    <div data-test-id="re_captcha" className="relative my-[1.1rem] mb-[20px]">
       <div
         className="g-recaptcha h-[75px] w-[300px]"
         data-sitekey={siteKey}

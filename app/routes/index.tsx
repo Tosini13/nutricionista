@@ -15,6 +15,7 @@ import { getFaqs } from "~/models/faq.server";
 import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
 import { sendSelfEmail } from "~/utils/self-email.server";
+import { verifyReCaptcha } from "~/utils/reCaptcha.server";
 
 export type ActionData = {
   errors?: {
@@ -28,10 +29,7 @@ export type ActionData = {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  console.log("request !log!", request);
-
   const formData = await request.formData();
-  console.log("formData !log!", formData);
 
   const email = formData.get("email");
   const name = formData.get("name");
@@ -57,6 +55,47 @@ export const action: ActionFunction = async ({ request }) => {
   invariant(typeof name === "string", "name must be a string");
   invariant(typeof surname === "string", "surname must be a string");
   invariant(typeof content === "string", "content must be a string");
+  invariant(typeof recaptcha === "string", "recaptcha must be a string");
+
+  const responseRecCaptcha = await verifyReCaptcha(recaptcha);
+  console.log("--------------------------------------------- !log!");
+  console.log("responseRecCaptcha !log!", responseRecCaptcha);
+
+  const reader = responseRecCaptcha.body?.getReader();
+  const result = new ReadableStream({
+    start(controller) {
+      return pump();
+      function pump() {
+        return reader?.read().then(({ done, value }) => {
+          // When no more data needs to be consumed, close the stream
+          if (done) {
+            controller.close();
+            return;
+          }
+          // Enqueue the next data chunk into our target stream
+          controller.enqueue(value);
+          return pump();
+        });
+      }
+    },
+  });
+  console.log("result !log!", result);
+
+  if (!responseRecCaptcha) {
+    return json<ActionData>({
+      errors: {
+        recaptcha: "Not verified",
+      },
+    });
+  }
+
+  if (responseRecCaptcha) {
+    return json<ActionData>({
+      errors: {
+        recaptcha: "Well done!",
+      },
+    });
+  }
 
   const approved = await sendEmail({
     email,
