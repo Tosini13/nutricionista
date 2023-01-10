@@ -31,11 +31,12 @@ const ReCaptcha: React.FC<ReCaptchaPropsType> = ({ siteKey, error }) => {
       return;
     }
 
+    if (refInterval.current) {
+      return;
+    }
     const intervalId = setInterval(() => updateReadyState(), 1000);
 
     refInterval.current = intervalId;
-
-    return () => clearInterval(intervalId);
   }, []);
 
   const updateReadyState = React.useCallback(() => {
