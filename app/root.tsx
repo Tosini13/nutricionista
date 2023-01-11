@@ -22,6 +22,15 @@ export const links: LinksFunction = () => {
       href: "https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900",
       type: "text/css",
     },
+    {
+      rel: "preconnect",
+      href: "https://www.google.com",
+    },
+    {
+      rel: "preconnect",
+      href: "https://www.gstatic.com",
+      crossOrigin: "anonymous",
+    },
   ];
 };
 

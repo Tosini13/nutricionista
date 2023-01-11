@@ -15,6 +15,7 @@ import { getFaqs } from "~/models/faq.server";
 import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
 import { sendSelfEmail } from "~/utils/self-email.server";
+import { verifyReCaptcha } from "~/utils/reCaptcha.server";
 
 export type ActionData = {
   errors?: {
@@ -22,6 +23,7 @@ export type ActionData = {
     name?: null | string;
     surname?: null | string;
     content?: null | string;
+    reCaptcha?: null | string;
   };
   sent?: boolean;
 };
@@ -33,12 +35,14 @@ export const action: ActionFunction = async ({ request }) => {
   const name = formData.get("name");
   const surname = formData.get("surname");
   const content = formData.get("content");
+  const reCaptcha = formData.get("g-recaptcha-response");
 
   const errors: ActionData["errors"] = {
     email: email ? null : "Email is required",
     name: name ? null : "Name is required",
     surname: surname ? null : "Surname is required",
     content: content ? null : "Content is required",
+    reCaptcha: reCaptcha ? null : "ReCaptcha is required",
   };
 
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
@@ -50,6 +54,17 @@ export const action: ActionFunction = async ({ request }) => {
   invariant(typeof name === "string", "name must be a string");
   invariant(typeof surname === "string", "surname must be a string");
   invariant(typeof content === "string", "content must be a string");
+  invariant(typeof reCaptcha === "string", "recaptcha must be a string");
+
+  const responseRecCaptcha = await verifyReCaptcha(reCaptcha);
+
+  if (!responseRecCaptcha.success) {
+    return json<ActionData>({
+      errors: {
+        reCaptcha: "Not verified",
+      },
+    });
+  }
 
   const approved = await sendEmail({
     email,
@@ -85,11 +100,15 @@ export const action: ActionFunction = async ({ request }) => {
 
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;
+  siteKey?: string;
 };
 
 export const loader = async () => {
+  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+
   return json<LoaderData>({
     faqs: await getFaqs(),
+    siteKey: SITE_KEY,
   });
 };
 
