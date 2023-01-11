@@ -53,16 +53,16 @@ export default function App() {
       <head>
         <Meta />
         <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
         <script
           src="https://www.google.com/recaptcha/api.js"
           async
           defer
         ></script>
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
         <LiveReload />
       </body>
     </html>
