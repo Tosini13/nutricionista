@@ -42,7 +42,7 @@ export const action: ActionFunction = async ({ request }) => {
     name: name ? null : "Name is required",
     surname: surname ? null : "Surname is required",
     content: content ? null : "Content is required",
-    reCaptcha: reCaptcha ? null : "ReCaptcha is required",
+    reCaptcha: reCaptcha ? null : "required",
   };
 
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);

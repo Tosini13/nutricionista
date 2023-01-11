@@ -16,7 +16,7 @@ const ReCaptcha: React.FC<ReCaptchaPropsType> = ({ siteKey, error }) => {
       </div>
       {error && (
         <p className="absolute right-0 bottom-0 translate-y-[100%] text-sm text-red-400">
-          {error}
+          {error === "required" ? "Este campo es obligatorio" : error}
         </p>
       )}
     </div>
