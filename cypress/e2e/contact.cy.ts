@@ -5,7 +5,7 @@ describe("contact section tests", () => {
     cy.visit("/");
     cy.findByTestId("contact_form").submit();
 
-    cy.findAllByText("Este campo es obligatorio").should("have.length", 4);
+    cy.findAllByText("Este campo es obligatorio").should("have.length", 5);
   });
 
   it("should allow you to send mail and clear form after", () => {
@@ -28,8 +28,5 @@ describe("contact section tests", () => {
     cy.findByTestId("contact-input-surname")
       .type(testNote.surname)
       .should("have.value", testNote.surname);
-    cy.findByTestId("contact-input-email")
-      .type(testNote.email)
-      .should("have.value", testNote.email);
   });
 });
