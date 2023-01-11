@@ -45,6 +45,7 @@
     "nodemailer": "^6.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^2.1.0",
     "tailwind-merge": "^1.5.1",
     "tiny-invariant": "^1.2.0"
   },
@@ -64,6 +65,7 @@
     "@types/nodemailer": "^6.4.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/react-google-recaptcha": "^2.1.5",
     "@vitejs/plugin-react": "^2.0.0",
     "autoprefixer": "^10.4.7",
     "binode": "^1.0.5",
