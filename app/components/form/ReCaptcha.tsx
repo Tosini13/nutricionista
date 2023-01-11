@@ -11,7 +11,9 @@ const ReCaptcha: React.FC<ReCaptchaPropsType> = ({ siteKey, error }) => {
 
   return (
     <div data-test-id="re_captcha" className="relative my-[1.1rem] mb-[20px]">
-      <ReCAPTCHA ref={reCaptchaRef} sitekey={siteKey as string} />
+      <div className="h-[75px] w-[300px]">
+        <ReCAPTCHA ref={reCaptchaRef} sitekey={siteKey as string} />
+      </div>
       {error && (
         <p className="absolute right-0 bottom-0 translate-y-[100%] text-sm text-red-400">
           {error}

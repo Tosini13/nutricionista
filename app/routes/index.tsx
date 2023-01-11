@@ -36,8 +36,6 @@ export const action: ActionFunction = async ({ request }) => {
   const surname = formData.get("surname");
   const content = formData.get("content");
   const reCaptcha = formData.get("g-recaptcha-response");
-  console.log("----------------------------------- !log!");
-  console.log("reCaptcha !log!", reCaptcha);
 
   const errors: ActionData["errors"] = {
     email: email ? null : "Email is required",
