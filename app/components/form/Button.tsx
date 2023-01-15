@@ -1,6 +1,13 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
+const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
+rounded-md px-8 py-3 font-medium lowercase tracking-wide appearance-button
+transition-all duration-300 ease-out
+hover-hover:hover:shadow-xl hover-hover:hover:bg-primary-light hover-hover:hover:text-primary hover-hover:hover:shadow-[0px_4px_10px_rgba(104, 169, 87, 0.3)]`;
+
+const secondaryThemeClassName = "bg-secondary hover:bg-secondary-light";
+
 const Button: React.FC<React.LinkHTMLAttributes<HTMLAnchorElement>> = ({
   children,
   className = "",
@@ -8,14 +15,7 @@ const Button: React.FC<React.LinkHTMLAttributes<HTMLAnchorElement>> = ({
   ...props
 }) => {
   const mergedClassName = React.useMemo(
-    () =>
-      twMerge(
-        `bg-gradient-to-r from-button-from-bg to-button-to-bg text-white font-semibold flex flex-row items-center justify-center
-         rounded-md px-8 py-3 font-medium lowercase tracking-wide appearance-button 
-         transition-all duration-300 ease-out
-         hover-hover:hover:shadow-xl hover-hover:hover:from-[#69BC54] hover-hover:hover:to-[#69BC54] hover-hover:hover:shadow-[0px_4px_10px_rgba(104, 169, 87, 0.3)]`,
-        className
-      ),
+    () => twMerge(themeClassName, className),
     [className]
   );
   return (
@@ -26,3 +26,23 @@ const Button: React.FC<React.LinkHTMLAttributes<HTMLAnchorElement>> = ({
 };
 
 export default Button;
+
+type ButtonLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  secondary?: boolean;
+};
+export const ButtonLink: React.FC<ButtonLinkProps> = ({
+  className: customClassName,
+  secondary,
+  ...props
+}) => {
+  const className = React.useMemo(
+    () =>
+      twMerge(
+        themeClassName,
+        secondary ? secondaryThemeClassName : "",
+        customClassName
+      ),
+    [customClassName]
+  );
+  return <a data-testId="button" className={className} {...props} />;
+};
