@@ -50,6 +50,15 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
     [isOnTop]
   );
 
+  const buttonClassName = React.useMemo(
+    () =>
+      twMerge(
+        "ml-auto uppercase",
+        isOnTop ? "bg-primary-light text-primary" : ""
+      ),
+    [isOnTop]
+  );
+
   return (
     <div data-testId="header_desktop" ref={ref} className={headerClassName}>
       <div className={headerContentClassName}>
@@ -63,7 +72,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
             />
           ))}
         </div>
-        <Button className="ml-auto uppercase" href="#contact">
+        <Button className={buttonClassName} href="#contact">
           Pide Cita
         </Button>
       </div>

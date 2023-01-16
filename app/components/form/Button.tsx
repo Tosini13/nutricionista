@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
-rounded-xl px-8 py-3 font-medium lowercase tracking-wide appearance-button
+rounded-xl px-8 py-3 font-medium lowercase tracking-wide appearance-button font-semibold uppercase
 transition-all duration-300 ease-out
 hover-hover:hover:shadow-xl hover-hover:hover:bg-primary-light hover-hover:hover:text-primary hover-hover:hover:shadow-[0px_4px_10px_rgba(104, 169, 87, 0.3)]`;
 
