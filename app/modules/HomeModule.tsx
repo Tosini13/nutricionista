@@ -5,6 +5,7 @@ import photoPersons from "../../public/img/photos/home_persons.png";
 import secure_icon from "../../public/img/icons/secure.svg";
 import howTo from "../../public/img/icons/how_to.svg";
 import changeCircle from "../../public/img/icons/change_circle.svg";
+import underline from "../../public/img/photos/underline.svg";
 import Feature from "~/components/home/Feature";
 import React from "react";
 
@@ -63,7 +64,16 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
         <div className="max-w-[550px] space-y-8">
           <h1 className="title text-3xl font-bold sm:text-6xl">
             ¿Quieres empezar
-            <br /> a cuidar de tu <span className="text-main">salud</span>?
+            <br /> a cuidar de tu{" "}
+            <span className="relative text-secondary">
+              salud
+              <img
+                src={underline}
+                alt="underline"
+                className="absolute bottom-0 left-0 w-full"
+              />
+            </span>
+            ?
           </h1>
           <Paragraph className="text-xl font-semibold">
             Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
