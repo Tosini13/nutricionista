@@ -1,10 +1,10 @@
-import logo from "../../../public/logoWithWhiteTitle.svg";
 import dinner from "../../../public/images/footer/dinner.png";
 import cooking from "../../../public/images/footer/cooking.png";
 import cooking2 from "../../../public/images/footer/cooking2.png";
 import meal from "../../../public/images/footer/meal.png";
 import Paragraph from "../sections/Paragraph";
 import SocialBar from "../SocialBar";
+import Logo from "../Logo";
 
 type TFooterProps = {};
 
@@ -31,7 +31,7 @@ const Footer: React.FC<TFooterProps> = () => {
         <div className="headerContent">
           <div className="relative flex flex-wrap items-stretch justify-around space-y-6 py-10 md:mx-24 md:items-center">
             <address className="flex min-w-max basis-full flex-col items-center text-center not-italic sm:block sm:basis-auto sm:text-left md:mx-4">
-              <img src={logo} alt={"logo"} />
+              <Logo secondary />
               <Paragraph className="mt-6">
                 Numero de telefono:
                 <br />

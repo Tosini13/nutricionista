@@ -16,6 +16,7 @@ import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
 import { sendSelfEmail } from "~/utils/self-email.server";
 import { verifyReCaptcha } from "~/utils/reCaptcha.server";
+import HeaderModule from "~/modules/HeaderModule";
 
 export type ActionData = {
   errors?: {
@@ -116,8 +117,9 @@ export default function Index() {
   const { faqs } = useLoaderData() as LoaderData;
   return (
     <>
-      <Header />
-      <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden bg-white xl:mx-auto">
+      {/* <Header /> */}
+      <HeaderModule />
+      <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden xl:mx-auto">
         <Home />
         <SobreMi />
         <Servicios />

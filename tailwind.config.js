@@ -38,8 +38,11 @@ module.exports = {
         'gray-light-opacity0': 'rgba(201, 206, 206, 0)'
       },
       screens: {
+        'semi-md': '900px',
+        'large': '1024px',
         'hover-hover': { 'raw': '(hover: hover)' },
-      }
+        'hover-none': { 'raw': '(hover: none)' },
+      },
     },
   },
   plugins: [
