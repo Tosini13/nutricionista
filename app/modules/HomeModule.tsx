@@ -79,7 +79,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
             Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
             cambio de hábitos en tu alimentación
           </Paragraph>
-          <Button className={" w-full sm:w-fit"} href="#contact">
+          <Button className={"w-full sm:w-fit"} href="#contact">
             Pide Cita
           </Button>
         </div>

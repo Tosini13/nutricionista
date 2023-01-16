@@ -19,7 +19,7 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: themeStylesheetUrl },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900",
+      href: "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900",
       type: "text/css",
     },
     {
@@ -54,7 +54,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-[#FFF] text-[#313131]">
+      <body className="font-poppins bg-[#FFF] text-[#313131] ">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

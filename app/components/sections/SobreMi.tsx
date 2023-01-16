@@ -29,7 +29,9 @@ const SobreMi: React.FC<TSobreMiProps> = () => {
     <Section id="sobreMi" className="pt-0 sm:pt-24">
       <div className="grid grid-cols-12 gap-4">
         <div className="order-2 col-span-12 md:order-1 md:col-span-7">
-          <SectionTitle className="text-left text-left">Sobre mí</SectionTitle>
+          <SectionTitle className="text-left">
+            Sobre <span className="text-secondary">mí</span>
+          </SectionTitle>
           <div data-testid="sobremi_description">
             <Paragraph className={paragraphClassName}>
               <span className="font-semibold">Dietista-Nutricionista</span>{" "}

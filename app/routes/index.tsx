@@ -4,7 +4,6 @@ import Faqs from "~/components/sections/faq";
 import OnlineVisits from "~/components/sections/OnlineVisits";
 import Packs from "~/components/sections/Packs";
 import Servicios from "~/components/sections/Servicios";
-import SobreMi from "~/components/sections/SobreMi";
 import Visits from "~/components/sections/Visits";
 import { json } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
@@ -16,6 +15,7 @@ import { sendSelfEmail } from "~/utils/self-email.server";
 import { verifyReCaptcha } from "~/utils/reCaptcha.server";
 import HeaderModule from "~/modules/HeaderModule";
 import HomeModule from "~/modules/HomeModule";
+import AboutMeModule from "~/modules/AboutMeModule";
 
 export type ActionData = {
   errors?: {
@@ -120,7 +120,7 @@ export default function Index() {
       <HeaderModule />
       <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden xl:mx-auto">
         <HomeModule />
-        <SobreMi />
+        <AboutMeModule />
         <Servicios />
         <OnlineVisits />
         <Packs />

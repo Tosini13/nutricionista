@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
@@ -42,6 +43,9 @@ module.exports = {
         'large': '1024px',
         'hover-hover': { 'raw': '(hover: hover)' },
         'hover-none': { 'raw': '(hover: none)' },
+      },
+      fontFamily: {
+        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans]
       },
     },
   },
