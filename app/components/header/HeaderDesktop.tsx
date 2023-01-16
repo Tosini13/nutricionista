@@ -63,7 +63,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
             />
           ))}
         </div>
-        <Button className="ml-auto" href="#contact">
+        <Button className="ml-auto uppercase" href="#contact">
           Pide Cita
         </Button>
       </div>

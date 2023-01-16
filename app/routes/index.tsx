@@ -1,8 +1,6 @@
 import Footer from "~/components/footer/Footer";
-import Header from "~/components/header/Header";
 import Contact from "~/components/sections/Contact";
 import Faqs from "~/components/sections/faq";
-import Home from "~/components/sections/Home";
 import OnlineVisits from "~/components/sections/OnlineVisits";
 import Packs from "~/components/sections/Packs";
 import Servicios from "~/components/sections/Servicios";
@@ -17,6 +15,7 @@ import invariant from "tiny-invariant";
 import { sendSelfEmail } from "~/utils/self-email.server";
 import { verifyReCaptcha } from "~/utils/reCaptcha.server";
 import HeaderModule from "~/modules/HeaderModule";
+import HomeModule from "~/modules/HomeModule";
 
 export type ActionData = {
   errors?: {
@@ -120,7 +119,7 @@ export default function Index() {
       {/* <Header /> */}
       <HeaderModule />
       <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden xl:mx-auto">
-        <Home />
+        <HomeModule />
         <SobreMi />
         <Servicios />
         <OnlineVisits />
