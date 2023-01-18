@@ -51,31 +51,33 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
     <Section
       data-test-id="about_me_module"
       id="sobreMi"
-      className="space-y-10 pt-0 sm:pt-24"
+      className="max-w-none space-y-10 bg-primary-light px-4 pt-0"
     >
-      <SectionTitle className="text-left">
-        Sobre <span className="text-secondary">mí</span>
-      </SectionTitle>
-      <div className="flex">
-        <div className="grid grid-cols-2 gap-x-6">
-          <div className="space-y-6">
-            {leftHalf.map((myInfo) => (
-              <AboutMeParagraph key={myInfo.id} {...myInfo} />
-            ))}
+      <div className="mx-auto max-w-screen-xl">
+        <SectionTitle className="text-left">
+          Sobre <span className="text-secondary">mí</span>
+        </SectionTitle>
+        <div className="flex">
+          <div className="grid grid-cols-2 gap-x-6">
+            <div className="space-y-6">
+              {leftHalf.map((myInfo) => (
+                <AboutMeParagraph key={myInfo.id} {...myInfo} />
+              ))}
+            </div>
+            <div className="space-y-6">
+              {rightHalf.map((myInfo) => (
+                <AboutMeParagraph key={myInfo.id} {...myInfo} />
+              ))}
+            </div>
           </div>
-          <div className="space-y-6">
-            {rightHalf.map((myInfo) => (
-              <AboutMeParagraph key={myInfo.id} {...myInfo} />
-            ))}
+          <div className="relative order-1 h-fit min-w-[30%] md:order-3">
+            <img width={"100%"} src={esther} alt="Nutricionista Esther" />
           </div>
         </div>
-        <div className="relative order-1 h-fit min-w-[30%] md:order-3">
-          <img width={"100%"} src={esther} alt="Nutricionista Esther" />
-        </div>
+        <Button className={"mx-auto w-full sm:w-fit"} href="#contact">
+          Pide Cita
+        </Button>
       </div>
-      <Button className={"mx-auto w-full sm:w-fit"} href="#contact">
-        Pide Cita
-      </Button>
     </Section>
   );
 };
