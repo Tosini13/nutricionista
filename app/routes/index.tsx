@@ -16,6 +16,7 @@ import HeaderModule from "~/modules/HeaderModule";
 import HomeModule from "~/modules/HomeModule";
 import AboutMeModule from "~/modules/AboutMeModule";
 import ServicesModule from "~/modules/ServicesModule";
+import VisitsModule from "~/modules/VisitsModule";
 
 export type ActionData = {
   errors?: {
@@ -118,10 +119,11 @@ export default function Index() {
     <>
       {/* <Header /> */}
       <HeaderModule />
-      <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden xl:mx-auto">
+      <main className="relative min-h-screen max-w-none">
         <HomeModule />
         <AboutMeModule />
         <ServicesModule />
+        <VisitsModule />
         <OnlineVisits />
         <Packs />
         <Visits />
