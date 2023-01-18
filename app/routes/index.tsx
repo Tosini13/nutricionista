@@ -1,7 +1,6 @@
 import Footer from "~/components/footer/Footer";
 import Contact from "~/components/sections/Contact";
 import Faqs from "~/components/sections/faq";
-import OnlineVisits from "~/components/sections/OnlineVisits";
 import Packs from "~/components/sections/Packs";
 import Visits from "~/components/sections/Visits";
 import { json } from "@remix-run/node";
@@ -124,7 +123,6 @@ export default function Index() {
         <AboutMeModule />
         <ServicesModule />
         <VisitsModule />
-        <OnlineVisits />
         <Packs />
         <Visits />
         <Faqs faqs={faqs} />
