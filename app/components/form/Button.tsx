@@ -11,6 +11,7 @@ const secondaryThemeClassName = "bg-secondary hover:bg-secondary-light";
 const alternativeThemeClassName = `bg-transparent text-primary border border-primary hover-hover:hover:shadow-none`;
 
 type ButtonProps = React.LinkHTMLAttributes<HTMLAnchorElement> & {
+  secondary?: boolean;
   alternative?: boolean;
 };
 
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   className = "",
   href,
+  secondary,
   alternative,
   ...props
 }) => {
@@ -25,10 +27,11 @@ const Button: React.FC<ButtonProps> = ({
     () =>
       twMerge(
         themeClassName,
+        secondary ? secondaryThemeClassName : "",
         alternative ? alternativeThemeClassName : "",
         className
       ),
-    [className, alternative]
+    [className, alternative, secondary]
   );
 
   return (

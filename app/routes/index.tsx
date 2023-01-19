@@ -15,6 +15,7 @@ import ServicesModule from "~/modules/ServicesModule";
 import VisitsModule from "~/modules/VisitsModule";
 import PacksModule from "~/modules/PacksModule";
 import FaqModule from "~/modules/FaqModule";
+import ContactModule from "~/modules/ContactModule";
 
 export type ActionData = {
   errors?: {
@@ -124,6 +125,7 @@ export default function Index() {
         <VisitsModule />
         <PacksModule />
         <FaqModule faqs={faqs} />
+        <ContactModule />
         <Contact />
       </main>
       <Footer />
