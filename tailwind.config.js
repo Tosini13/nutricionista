@@ -22,6 +22,7 @@ module.exports = {
         "neutral-light": '#575757',
         "neutral-contrast": '#E27488',
         "neutral-contrast-dark": '#FFF9FA',
+        "price": "#7E70B6",
         'main': '#E27488',
         'main-light': '#E27488',
         'black': '#1E1E1E',
