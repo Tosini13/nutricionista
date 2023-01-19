@@ -1,6 +1,5 @@
 import Footer from "~/components/footer/Footer";
 import Contact from "~/components/sections/Contact";
-import Faqs from "~/components/sections/faq";
 import { json } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
@@ -15,6 +14,7 @@ import AboutMeModule from "~/modules/AboutMeModule";
 import ServicesModule from "~/modules/ServicesModule";
 import VisitsModule from "~/modules/VisitsModule";
 import PacksModule from "~/modules/PacksModule";
+import FaqModule from "~/modules/FaqModule";
 
 export type ActionData = {
   errors?: {
@@ -123,7 +123,7 @@ export default function Index() {
         <ServicesModule />
         <VisitsModule />
         <PacksModule />
-        <Faqs faqs={faqs} />
+        <FaqModule faqs={faqs} />
         <Contact />
       </main>
       <Footer />
