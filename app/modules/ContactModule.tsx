@@ -31,9 +31,9 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
     <Section
       data-test-id="contact_module"
       id="contact"
-      className="max-w-none bg-[#7B4A53] text-white"
+      className="mx-0 max-w-none bg-[#7B4A53] text-white"
     >
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-0 max-w-screen-lg md:mx-auto">
         <SectionTitle className="text-center">Contacto</SectionTitle>
         <Paragraph className="mb-10 text-center text-lg font-medium leading-9">
           Si tienes alguna duda escríbeme y me

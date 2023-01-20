@@ -96,9 +96,9 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
     <Section
       data-test-id="packs_module"
       id="packs"
-      className="max-w-none bg-primary-light px-4"
+      className="mx-0 max-w-none bg-primary-light px-4"
     >
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-0 max-w-screen-xl md:mx-auto">
         <SectionTitle className="text-center text-secondary">
           Packs
         </SectionTitle>
