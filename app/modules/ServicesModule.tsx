@@ -44,16 +44,18 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
     <Section
       data-test-id="services_module"
       id="servicios"
-      className="space-y-8"
+      className="space-y-12"
     >
-      <SectionTitle>
-        Mí <span className="text-secondary">servicios</span>
-      </SectionTitle>
-      <Paragraph>
-        Después de la primera visita en el plazo de 1 a 3 días laborables
-        recibirás tu plan nutricional, recetas, y toda la información que
-        considere importante para tu caso.
-      </Paragraph>
+      <div>
+        <SectionTitle>
+          Mí <span className="text-secondary">servicios</span>
+        </SectionTitle>
+        <Paragraph>
+          Después de la primera visita en el plazo de 1 a 3 días laborables
+          recibirás tu plan nutricional, recetas, y toda la información que
+          considere importante para tu caso.
+        </Paragraph>
+      </div>
       <div className="flex justify-between">
         {services.map((service) => (
           <div className="max-w-[260px]">
