@@ -7,23 +7,26 @@ type THamburgerProps = {
 
 const Hamburger: React.FC<THamburgerProps> = ({ onClick, open = false }) => {
   const topStyle = twMerge(
-    "w-full border-b-2 border-black transition duration-300 ease-out",
-    open ? "translate-y-1.5  rotate-45" : ""
+    "mx-auto w-2/3 border-b-2 border-primary transition duration-300 ease-out",
+    open ? "translate-y-1.5  rotate-45 w-full" : ""
   );
 
   const centerStyle = twMerge(
-    "w-full max-w-full border-b-2 border-black transition-all duration-300 ease-out",
+    "w-full max-w-full border-b-2 border-primary transition-all duration-300 ease-out",
     open ? "max-w-0" : ""
   );
 
   const bottomStyle = twMerge(
-    "w-full border-b-2 border-black transition duration-300 ease-out",
-    open ? "-translate-y-1.5  -rotate-45" : ""
+    "mx-auto w-2/3 border-b-2 border-primary transition duration-300 ease-out",
+    open ? "-translate-y-1.5  -rotate-45 w-full" : ""
   );
 
   return (
     <>
-      <div onClick={onClick} className="w-[20px] cursor-pointer space-y-1">
+      <div
+        onClick={onClick}
+        className="w-[20px] cursor-pointer space-y-1 highlight-none"
+      >
         <div className={topStyle} />
         <div className={centerStyle} />
         <div className={bottomStyle} />

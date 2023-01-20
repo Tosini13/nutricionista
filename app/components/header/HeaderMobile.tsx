@@ -7,7 +7,7 @@ import Logo from "../Logo";
 import LOGO from "../../../public/img/logos/logo.svg";
 
 const headerThemeClassName =
-  "relative px-4 py-4 bg-primary transition-shadow duration-150 ease-out overflow-hidden";
+  "relative px-4 py-4 bg-white transition-shadow duration-150 ease-out overflow-hidden";
 
 type HeaderMobileProps = {
   links: Array<TLinkType>;
@@ -48,15 +48,8 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ links }) => {
 
   return (
     <div ref={ref} data-testId="header_mobile" className={headerClassName}>
-      <img
-        className="absolute -top-20 -left-20 -rotate-12 opacity-5 grayscale invert"
-        width={300}
-        height={300}
-        src={LOGO}
-        alt="logo background"
-      />
       <div className="relative flex items-center justify-between ">
-        <Logo secondary />
+        <Logo />
         <HamburgerButton open={open} onClick={() => setOpen((bool) => !bool)} />
       </div>
       <div className="relative mt-10 flex flex-col items-center space-y-8">
@@ -66,7 +59,7 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ links }) => {
             title={link.title}
             href={link.href}
             secondary
-            className="text-xl"
+            className="text-xl text-primary"
             onClick={() => setOpen(() => false)}
           />
         ))}
