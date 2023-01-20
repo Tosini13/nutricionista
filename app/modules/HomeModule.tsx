@@ -61,11 +61,10 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
       className="relative max-w-none overflow-hidden pb-0 pt-20"
     >
       <div className="max-w-screen-xl space-y-16 overflow-visible xl:mx-auto">
-        <div className="flex">
-          <div className="max-w-[550px] space-y-8">
+        <div className="flex flex-col md:flex-row">
+          <div className="space-y-8">
             <h1 className="title text-3xl font-bold sm:text-6xl">
-              ¿Quieres empezar
-              <br /> a cuidar de tu{" "}
+              ¿Quieres empezar a cuidar de tu{" "}
               <span className="relative text-secondary">
                 salud
                 <img
@@ -76,21 +75,32 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               </span>
               ?
             </h1>
-            <Paragraph className="font-semibold">
+            <Paragraph>
               Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
               cambio de hábitos en tu alimentación
             </Paragraph>
-            <Button className={"w-full px-10 py-5 sm:w-fit"} href="#contact">
+            <Button
+              className={"mx-auto w-full px-10 py-5 sm:w-fit md:ml-0"}
+              href="#contact"
+            >
               Pide Cita
             </Button>
           </div>
-          <div className="relative order-1 h-fit self-end md:order-3">
+          <div className="relative order-1 h-fit self-end md:order-3 md:min-w-[50%]">
             <img width={"100%"} src={photoPersons} alt="photo persons" />
           </div>
         </div>
-        <div className="relative before:absolute before:left-1/2 before:bottom-0 before:h-1/4 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
-          <div className="relative flex items-center justify-around rounded-xl bg-white px-8 py-6 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]">
-            {features}
+        <div className="relative mx-auto w-fit before:absolute before:left-1/2 before:bottom-0 before:h-1/4 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
+          <div
+            className="relative mx-2 flex w-fit flex-col items-stretch justify-center divide-y
+            divide-[#DDDDDD] rounded-xl bg-white px-8 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)] md:grid-cols-3 md:grid-rows-1 md:flex-row md:items-center
+            md:divide-y-0 md:divide-x md:px-0 md:py-8"
+          >
+            {FEATURES.map((feature) => (
+              <div className="py-8 md:py-0 md:px-4 lg:px-8 xl:min-w-fit xl:lg:px-16">
+                <Feature key={feature.id} {...feature} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
