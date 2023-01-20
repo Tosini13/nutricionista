@@ -54,7 +54,9 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
     () =>
       twMerge(
         "ml-auto uppercase",
-        isOnTop ? "bg-primary-light text-primary" : ""
+        isOnTop
+          ? "bg-primary-light text-primary hover-hover:hover:bg-primary hover-hover:hover:text-white"
+          : ""
       ),
     [isOnTop]
   );

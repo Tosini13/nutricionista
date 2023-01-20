@@ -74,7 +74,7 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
             <img width={"100%"} src={esther} alt="Nutricionista Esther" />
           </div>
         </div>
-        <Button className={"mx-auto w-full sm:w-fit"} href="#contact">
+        <Button secondary className={"mx-auto w-full sm:w-fit"} href="#contact">
           Pide Cita
         </Button>
       </div>
