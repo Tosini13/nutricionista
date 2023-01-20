@@ -44,7 +44,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
   const headerContentClassName = React.useMemo(
     () =>
       twMerge(
-        "max-w-theme mx-auto px-2 xl:px-0 flex items-center transition-all duration-300 py-4",
+        "max-w-screen-xl mx-auto px-2 xl:px-0 flex items-center transition-all duration-300 py-4",
         isOnTop ? "py-10" : ""
       ),
     [isOnTop]
