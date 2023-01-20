@@ -53,7 +53,7 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
       id="sobreMi"
       className="max-w-none space-y-10 bg-primary-light px-4"
     >
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-screen-xl space-y-12">
         <SectionTitle className="text-left">
           Sobre <span className="text-secondary">mí</span>
         </SectionTitle>
