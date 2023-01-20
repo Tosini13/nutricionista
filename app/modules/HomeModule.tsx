@@ -58,38 +58,40 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
     <Section
       data-test-id="home_module"
       id="home"
-      className="relative space-y-20 overflow-visible py-10 pb-0 lg:mx-0 lg:pt-24 xl:mx-20"
+      className="relative max-w-none overflow-hidden pb-0"
     >
-      <div className="flex">
-        <div className="max-w-[550px] space-y-8">
-          <h1 className="title text-3xl font-bold sm:text-6xl">
-            ¿Quieres empezar
-            <br /> a cuidar de tu{" "}
-            <span className="relative text-secondary">
-              salud
-              <img
-                src={underline}
-                alt="underline"
-                className="absolute bottom-0 left-0 w-full"
-              />
-            </span>
-            ?
-          </h1>
-          <Paragraph className="font-semibold">
-            Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
-            cambio de hábitos en tu alimentación
-          </Paragraph>
-          <Button className={"w-full px-10 py-5 sm:w-fit"} href="#contact">
-            Pide Cita
-          </Button>
+      <div className="max-w-screen-xl space-y-16 overflow-visible xl:mx-auto">
+        <div className="flex">
+          <div className="max-w-[550px] space-y-8">
+            <h1 className="title text-3xl font-bold sm:text-6xl">
+              ¿Quieres empezar
+              <br /> a cuidar de tu{" "}
+              <span className="relative text-secondary">
+                salud
+                <img
+                  src={underline}
+                  alt="underline"
+                  className="absolute bottom-0 left-0 w-full"
+                />
+              </span>
+              ?
+            </h1>
+            <Paragraph className="font-semibold">
+              Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
+              cambio de hábitos en tu alimentación
+            </Paragraph>
+            <Button className={"w-full px-10 py-5 sm:w-fit"} href="#contact">
+              Pide Cita
+            </Button>
+          </div>
+          <div className="relative order-1 h-fit self-end md:order-3">
+            <img width={"100%"} src={photoPersons} alt="photo persons" />
+          </div>
         </div>
-        <div className="relative order-1 h-fit self-end md:order-3">
-          <img width={"100%"} src={photoPersons} alt="photo persons" />
-        </div>
-      </div>
-      <div className="relative before:absolute before:left-1/2 before:bottom-0 before:h-1/4 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
-        <div className="relative flex items-center justify-around rounded-xl bg-white px-8 py-6 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]">
-          {features}
+        <div className="relative before:absolute before:left-1/2 before:bottom-0 before:h-1/4 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
+          <div className="relative flex items-center justify-around rounded-xl bg-white px-8 py-6 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]">
+            {features}
+          </div>
         </div>
       </div>
     </Section>
