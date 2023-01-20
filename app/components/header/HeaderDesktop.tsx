@@ -21,7 +21,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
     const handleScroll = () => {
       const position = window.pageYOffset;
 
-      if (position > 30) {
+      if (position > 50) {
         setIsOnTop(false);
       } else if (position < 30) {
         setIsOnTop(true);
