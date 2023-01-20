@@ -33,15 +33,16 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
       id="contact"
       className="mx-0 max-w-none bg-[#7B4A53] text-white"
     >
-      <div className="mx-0 max-w-screen-lg md:mx-auto">
-        <SectionTitle className="text-center">Contacto</SectionTitle>
-        <Paragraph className="mb-10 text-center text-lg font-medium leading-9">
-          Si tienes alguna duda escríbeme y me
-          <br />
-          pondré en contacto contigo lo antes posible
+      <div className="mx-2 max-w-screen-lg md:mx-auto">
+        <SectionTitle className="text-center text-secondary md:text-white">
+          Contacto
+        </SectionTitle>
+        <Paragraph className="mx-auto mb-10 max-w-md text-center text-lg font-medium leading-9">
+          Si tienes alguna duda escríbeme y me pondré en contacto contigo lo
+          antes posible
         </Paragraph>
         <Form ref={ref} method="post" data-testid="contact_form">
-          <div className="flex space-x-16">
+          <div className="flex flex-col space-y-8 md:flex-row  md:space-y-0 md:space-x-16">
             <div className="min-w-[300px] space-y-8 lg:min-w-[40%]">
               <Input
                 id="name"
@@ -85,7 +86,7 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
           </div>
           <Button
             secondary
-            className="mx-auto w-fit uppercase hover-hover:hover:bg-primary hover-hover:hover:text-white"
+            className="mx-auto w-fit px-10 py-5 uppercase hover-hover:hover:bg-primary hover-hover:hover:text-white"
           >
             <img className="mr-6" src={sendIcon} alt={"send icon"} />
             envía tu mensaje
