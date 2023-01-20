@@ -17,7 +17,7 @@ const FaqModule: React.FC<FaqModulePropsType> = ({ faqs }) => {
     <Section
       data-test-id="faq_module"
       id="faq"
-      className="mx-auto max-w-screen-lg"
+      className="max-w-screen-lg lg:mx-auto"
     >
       <SectionTitle className="text-center text-secondary">FAQ</SectionTitle>
       <div className="space-y-6">
