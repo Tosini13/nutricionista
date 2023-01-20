@@ -58,7 +58,7 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
           Sobre <span className="text-secondary">mí</span>
         </SectionTitle>
         <div className="flex">
-          <div className="grid grid-cols-2 gap-x-6">
+          <div className="grid grid-cols-2 gap-x-14">
             <div className="space-y-6">
               {leftHalf.map((myInfo) => (
                 <AboutMeParagraph key={myInfo.id} {...myInfo} />

@@ -75,7 +75,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
             </span>
             ?
           </h1>
-          <Paragraph className="text-xl font-semibold">
+          <Paragraph className="font-semibold">
             Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
             cambio de hábitos en tu alimentación
           </Paragraph>
@@ -90,16 +90,6 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
       <div className="flex items-center justify-around rounded-xl px-8 py-6 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]">
         {features}
       </div>
-      {/* <div className="insetShadow absolute right-0 bottom-0 z-[1] hidden lg:block">
-        <img src={ImgWatermelon} alt="watermelon" />
-      </div>
-      <div className="block sm:hidden">
-        <div className="h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0" />
-        <div className="my-4 flex items-center justify-evenly">
-          <SocialBar mode="dark" />
-        </div>
-        <div className="h-px w-full bg-gradient-to-r from-gray-light-opacity0 via-gray-light to-gray-light-opacity0" />
-      </div> */}
     </Section>
   );
 };

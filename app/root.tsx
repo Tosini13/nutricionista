@@ -54,7 +54,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="font-poppins bg-[#FFF] text-[#313131] ">
+      <body className="bg-[#FFF] font-poppins text-base text-[#313131] ">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
