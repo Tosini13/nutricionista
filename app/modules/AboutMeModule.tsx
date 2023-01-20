@@ -57,14 +57,14 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
         <SectionTitle className="text-left">
           Sobre <span className="text-secondary">mí</span>
         </SectionTitle>
-        <div className="flex">
-          <div className="grid grid-cols-2 gap-x-14">
-            <div className="space-y-6">
+        <div className="flex flex-col md:flex-row">
+          <div className="order-2 grid grid-cols-1 space-y-8 md:grid-cols-2 md:gap-x-14 md:space-y-0">
+            <div className="space-y-8">
               {leftHalf.map((myInfo) => (
                 <AboutMeParagraph key={myInfo.id} {...myInfo} />
               ))}
             </div>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {rightHalf.map((myInfo) => (
                 <AboutMeParagraph key={myInfo.id} {...myInfo} />
               ))}

@@ -9,7 +9,7 @@ const AboutMeParagraph: React.FC<AboutMeParagraphPropsType> = ({
 }) => {
   return (
     <div data-test-id="about_me_paragraph" className="space-y-4">
-      <img src={iconUrl} alt="icon" />
+      <img className="mx-auto md:ml-0" src={iconUrl} alt="icon" />
       <Paragraph>{description}</Paragraph>
     </div>
   );
