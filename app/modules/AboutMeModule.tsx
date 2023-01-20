@@ -51,7 +51,7 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
     <Section
       data-test-id="about_me_module"
       id="sobreMi"
-      className="max-w-none space-y-10 bg-primary-light px-4 pt-0"
+      className="max-w-none space-y-10 bg-primary-light px-4"
     >
       <div className="mx-auto max-w-screen-xl">
         <SectionTitle className="text-left">

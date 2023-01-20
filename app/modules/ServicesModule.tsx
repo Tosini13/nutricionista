@@ -61,7 +61,7 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
           </div>
         ))}
       </div>
-      <Button alternative className="mx-auto w-fit" href="#contact">
+      <Button alternative className="mx-auto w-fit px-10 py-5" href="#contact">
         Pedir Cita
       </Button>
     </Section>
