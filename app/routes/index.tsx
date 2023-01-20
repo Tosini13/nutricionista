@@ -1,4 +1,3 @@
-import Footer from "~/components/footer/Footer";
 import { json } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
@@ -15,6 +14,7 @@ import VisitsModule from "~/modules/VisitsModule";
 import PacksModule from "~/modules/PacksModule";
 import FaqModule from "~/modules/FaqModule";
 import ContactModule from "~/modules/ContactModule";
+import FooterModule from "~/modules/FooterModule";
 
 export type ActionData = {
   errors?: {
@@ -115,7 +115,6 @@ export default function Index() {
   const { faqs } = useLoaderData() as LoaderData;
   return (
     <>
-      {/* <Header /> */}
       <HeaderModule />
       <main className="relative min-h-screen max-w-none">
         <HomeModule />
@@ -126,7 +125,7 @@ export default function Index() {
         <FaqModule faqs={faqs} />
         <ContactModule />
       </main>
-      <Footer />
+      <FooterModule />
     </>
   );
 }

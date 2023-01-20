@@ -14,7 +14,7 @@ export type ServiceType = {
   title: string;
 };
 
-const services: Array<ServiceType> = [
+export const services: Array<ServiceType> = [
   {
     id: "1",
     photoUrl: photo1,
