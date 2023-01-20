@@ -58,7 +58,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
     <Section
       data-test-id="home_module"
       id="home"
-      className="relative max-w-none overflow-hidden pb-0"
+      className="relative max-w-none overflow-hidden pb-0 pt-20"
     >
       <div className="max-w-screen-xl space-y-16 overflow-visible xl:mx-auto">
         <div className="flex">
