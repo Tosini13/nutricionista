@@ -60,14 +60,11 @@ const Slider: React.FC<SliderPropsType> = ({
   React.useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
-      console.log("windowWidth !log!", windowWidth);
-      console.log("itemsLength !log!", itemsLength);
 
       if (windowWidth && windowWidth < itemsLength) {
         const dotsQtt = Math.floor(
           (itemsLength - windowWidth) / slideWidth + 1
         );
-        console.log("dotsQtt !log!", dotsQtt);
 
         setDots(dotsQtt);
         setHasSlider(true);
