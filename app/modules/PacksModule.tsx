@@ -1,7 +1,9 @@
+import React from "react";
 import Pack, { PackIndividual } from "~/components/packs/Pack";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
+import Slider from "~/components/Slider";
 
 type VisitType = {
   id: string;
@@ -46,7 +48,7 @@ export type CardType = {
   recommended?: boolean;
 };
 
-const cards: Array<CardType> = [
+const CARDS: Array<CardType> = [
   {
     id: "3",
     title: "Pack dietoterapia",
@@ -89,9 +91,21 @@ const cards: Array<CardType> = [
   },
 ];
 
+const ITEM_WIDTH = 280;
+const ITEM_HEIGHT = 630;
+const SPACE_BETWEEN_ITEMS_WIDTH = 10;
+
 type PacksModulePropsType = {};
 
 const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
+  const sliderItems = React.useMemo(
+    () => [
+      <PackIndividual {...individualCard} />,
+      ...CARDS.map((card) => <Pack {...card} />),
+    ],
+    []
+  );
+
   return (
     <Section
       data-test-id="packs_module"
@@ -105,16 +119,23 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
         <Paragraph className="text-center text-lg font-medium leading-9 text-gray">
           Elige el pack que más se adapte a ti con descuentos especiales
         </Paragraph>
-        <div className="mb-20 mt-8 flex items-stretch space-x-2">
-          <div className="w-[300px]">
+        <Slider
+          secondary
+          items={sliderItems}
+          itemWidth={ITEM_WIDTH}
+          itemHeight={ITEM_HEIGHT}
+          spaceBetweenWidth={SPACE_BETWEEN_ITEMS_WIDTH}
+        />
+        {/* <div className="mb-20 mt-8 flex items-stretch space-x-2"> */}
+        {/* <div className="w-[300px]">
             <PackIndividual {...individualCard} />
           </div>
-          {cards.map((card) => (
+          {CARDS.map((card) => (
             <div className="w-[300px]">
               <Pack {...card} />
             </div>
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
       </div>
     </Section>
   );

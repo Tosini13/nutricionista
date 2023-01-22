@@ -3,7 +3,7 @@ import Logo from "~/components/Logo";
 import Paragraph from "~/components/sections/Paragraph";
 import SocialBar from "~/components/SocialBar";
 import { links } from "./HeaderModule";
-import { services } from "./ServicesModule";
+import { SERVICES } from "./ServicesModule";
 
 type FooterModulePropsType = {};
 
@@ -46,7 +46,7 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
           <div className="ml-4 hidden sm:min-w-max md:mx-4 md:block">
             <h6 className="pb-6">Servicios</h6>
             <ul>
-              {services.map((service) => (
+              {SERVICES.map((service) => (
                 <FooterLink
                   href={`/services/${service.id}`}
                   title={service.title}
