@@ -61,5 +61,5 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
       ),
     [customClassName]
   );
-  return <a data-testId="button" className={className} {...props} />;
+  return <a data-testid="button" className={className} {...props} />;
 };

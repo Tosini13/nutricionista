@@ -8,7 +8,7 @@ type LogoProps = {
 
 const Logo: React.FC<LogoProps> = ({ secondary }) => {
   return (
-    <div data-testId="logo" className="flex items-center">
+    <div data-testid="logo" className="flex items-center">
       <img src={secondary ? SECONDARY_LOGO : LOGO_ICON} alt="logo" />
     </div>
   );

@@ -47,7 +47,7 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ links }) => {
   );
 
   return (
-    <div ref={ref} data-testId="header_mobile" className={headerClassName}>
+    <div ref={ref} data-testid="header_mobile" className={headerClassName}>
       <div className="relative flex items-center justify-between ">
         <Logo />
         <HamburgerButton open={open} onClick={() => setOpen((bool) => !bool)} />
