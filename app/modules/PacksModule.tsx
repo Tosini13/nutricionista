@@ -1,9 +1,16 @@
 import React from "react";
+import Carousel from "react-elastic-carousel";
 import Pack, { PackIndividual } from "~/components/packs/Pack";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
-import Slider from "~/components/Slider";
+
+const CAROUSEL_BREAK_POINTS = [
+  { width: 1, itemsToShow: 1 },
+  { width: 640, itemsToShow: 2 },
+  { width: 990, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
+];
 
 type VisitType = {
   id: string;
@@ -91,10 +98,6 @@ const CARDS: Array<CardType> = [
   },
 ];
 
-const ITEM_WIDTH = 280;
-const ITEM_HEIGHT = 630;
-const SPACE_BETWEEN_ITEMS_WIDTH = 10;
-
 type PacksModulePropsType = {};
 
 const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
@@ -116,26 +119,20 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
         <SectionTitle className="text-center text-secondary">
           Packs
         </SectionTitle>
-        <Paragraph className="text-center text-lg font-medium leading-9 text-gray">
+        <Paragraph className="mb-10 text-center text-lg font-medium leading-9 text-gray">
           Elige el pack que más se adapte a ti con descuentos especiales
         </Paragraph>
-        <Slider
-          secondary
-          items={sliderItems}
-          itemWidth={ITEM_WIDTH}
-          itemHeight={ITEM_HEIGHT}
-          spaceBetweenWidth={SPACE_BETWEEN_ITEMS_WIDTH}
-        />
-        {/* <div className="mb-20 mt-8 flex items-stretch space-x-2"> */}
-        {/* <div className="w-[300px]">
-            <PackIndividual {...individualCard} />
-          </div>
+        <Carousel
+          itemsToScroll={1}
+          showArrows={false}
+          initialActiveIndex={1}
+          breakPoints={CAROUSEL_BREAK_POINTS}
+        >
+          <PackIndividual {...individualCard} />
           {CARDS.map((card) => (
-            <div className="w-[300px]">
-              <Pack {...card} />
-            </div>
-          ))} */}
-        {/* </div> */}
+            <Pack {...card} />
+          ))}
+        </Carousel>
       </div>
     </Section>
   );
