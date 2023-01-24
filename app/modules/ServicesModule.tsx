@@ -1,3 +1,4 @@
+import Carousel from "react-elastic-carousel";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
@@ -8,7 +9,13 @@ import photo3 from "../../public/img/photos/pregnant_woman.png";
 import photo4 from "../../public/img/photos/smoothie_woman.png";
 import Button from "~/components/form/Button";
 import React from "react";
-import Slider from "~/components/Slider";
+
+const CAROUSEL_BREAK_POINTS = [
+  { width: 1, itemsToShow: 1 },
+  { width: 580, itemsToShow: 2 },
+  { width: 840, itemsToShow: 3 },
+  { width: 1100, itemsToShow: 4 },
+];
 
 export type ServiceType = {
   id: string;
@@ -39,17 +46,9 @@ export const SERVICES: Array<ServiceType> = [
   },
 ];
 
-const ITEM_WIDTH = 260;
-const SPACE_BETWEEN_ITEMS_WIDTH = 10;
-
 type ServicesModulePropsType = {};
 
 const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
-  const servicesList = React.useMemo(
-    () => SERVICES.map((service) => <Service key={service.id} {...service} />),
-    []
-  );
-
   return (
     <Section
       data-test-id="services_module"
@@ -66,11 +65,16 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
           considere importante para tu caso.
         </Paragraph>
       </div>
-      <Slider
-        items={servicesList}
-        itemWidth={ITEM_WIDTH}
-        spaceBetweenWidth={SPACE_BETWEEN_ITEMS_WIDTH}
-      />
+      <Carousel
+        itemsToScroll={1}
+        showArrows={false}
+        initialActiveIndex={1}
+        breakPoints={CAROUSEL_BREAK_POINTS}
+      >
+        {SERVICES.map((service) => (
+          <Service key={service.id} {...service} />
+        ))}
+      </Carousel>
       <Button alternative className="mx-auto w-fit px-10 py-5" href="#contact">
         Pedir Cita
       </Button>
