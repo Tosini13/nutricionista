@@ -36,16 +36,46 @@ const Slider: React.FC<SliderPropsType> = ({
     [items.length, slideWidth]
   );
 
-  const sliderTransform = React.useMemo(() => {
+  const containerStyle = React.useMemo(
+    () => ({
+      height: `${itemHeight}px`,
+    }),
+    [itemHeight]
+  );
+
+  const itemStyle = React.useMemo(
+    () => ({
+      width: `${itemWidth}px`,
+    }),
+    [itemWidth]
+  );
+
+  const itemSliderStyle = React.useMemo(
+    () => ({
+      marginRight: `${spaceBetweenWidth}px`,
+      width: `${itemWidth}px`,
+      height: `${itemHeight}px`,
+    }),
+    [spaceBetweenWidth, itemHeight, itemWidth]
+  );
+
+  const itemsContainerStyle = React.useMemo(() => {
     if (dots === service && dots !== 0) {
       const containerLength = sliderContainerRef.current?.offsetWidth ?? 0;
       console.log("containerLength !log!", containerLength);
       console.log("itemsLength !log!", itemsLength);
 
-      return `translateX(-${itemsLength - containerLength}px)`;
+      return {
+        transform: `translateX(-${
+          itemsLength - containerLength - spaceBetweenWidth
+        }px)`,
+      };
     }
-    return `translateX(-${service * slideWidth}px)`;
-  }, [service, dots, itemsLength, slideWidth]);
+
+    return {
+      transform: `translateX(-${service * slideWidth}px)`,
+    };
+  }, [service, dots, itemsLength, slideWidth, spaceBetweenWidth]);
 
   const dotClassName = React.useCallback(
     (index: number) =>
@@ -89,40 +119,21 @@ const Slider: React.FC<SliderPropsType> = ({
     return (
       <div data-test-id="slider" className="flex justify-between">
         {items.map((item) => (
-          <div
-            style={{
-              width: `${itemWidth}px`,
-            }}
-          >
-            {item}
-          </div>
+          <div style={itemStyle}>{item}</div>
         ))}
       </div>
     );
   }
+
   return (
     <div data-test-id="slider" ref={sliderContainerRef} className="space-y-6">
-      <div
-        className="relative"
-        style={{
-          height: `${itemHeight}px`,
-        }}
-      >
+      <div className="relative" style={containerStyle}>
         <div
           className="absolute top-0 left-0 flex justify-between transition-transform duration-150 ease-out"
-          style={{
-            transform: sliderTransform,
-          }}
+          style={itemsContainerStyle}
         >
           {items.map((item) => (
-            <div
-              className="w-[260px]"
-              style={{
-                marginRight: `${spaceBetweenWidth}px`,
-                width: `${itemWidth}px`,
-                height: `${itemHeight}px`,
-              }}
-            >
+            <div className="w-[260px]" style={itemSliderStyle}>
               {item}
             </div>
           ))}

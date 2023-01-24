@@ -1,6 +1,6 @@
-# fly.toml file generated for nutricionista on 2022-09-01T21:37:53+02:00
+# fly.toml file generated for nutricionez on 2023-01-22T10:42:41+01:00
 
-app = "nutricionista"
+app = "nutricionez"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
