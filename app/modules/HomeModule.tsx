@@ -63,8 +63,8 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
       <div className="mx-2 max-w-screen-xl space-y-16 overflow-visible md:mx-0 xl:mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="space-y-8">
-            <h1 className="title text-3xl font-bold sm:text-6xl">
-              ¿Quieres empezar a cuidar de tu{" "}
+            <h1 className="title max-w-[600px] text-3xl font-bold sm:text-6xl">
+              ¿Quieres empezar a cuidar de tu <br />
               <span className="relative text-secondary">
                 salud
                 <img
@@ -75,7 +75,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               </span>
               ?
             </h1>
-            <Paragraph>
+            <Paragraph className="max-w-[450px] font-medium">
               Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
               cambio de hábitos en tu alimentación
             </Paragraph>
@@ -91,7 +91,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
             <img width={"100%"} src={photoPersons} alt="photo persons" />
           </div>
         </div>
-        <div className="relative mx-auto w-fit before:absolute before:left-1/2 before:bottom-0 before:h-1/4 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
+        <div className="relative mx-auto w-fit pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
           <div
             className="relative mx-2 flex w-fit flex-col items-stretch justify-center divide-y
             divide-[#DDDDDD] rounded-xl bg-white px-8 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)] md:grid-cols-3 md:grid-rows-1 md:flex-row md:items-center
