@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
-rounded-xl px-8 py-3 font-medium lowercase tracking-wide appearance-button font-semibold uppercase cursor-pointer
+rounded-full px-10 py-4 font-medium lowercase tracking-wide appearance-button font-semibold uppercase cursor-pointer
 transition-all duration-300 ease-out
 hover-hover:hover:bg-primary-light hover-hover:hover:text-primary`;
 
@@ -11,9 +11,12 @@ const secondaryThemeClassName =
 
 const alternativeThemeClassName = `bg-transparent text-primary border border-primary  hover-hover:hover:bg-primary hover-hover:hover:text-white`;
 
+const biggerTHemeClassName = "px-12 py-5";
+
 type ButtonProps = React.LinkHTMLAttributes<HTMLAnchorElement> & {
   secondary?: boolean;
   alternative?: boolean;
+  bigger?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   href,
   secondary,
   alternative,
+  bigger,
   ...props
 }) => {
   const mergedClassName = React.useMemo(
@@ -30,9 +34,10 @@ const Button: React.FC<ButtonProps> = ({
         themeClassName,
         secondary ? secondaryThemeClassName : "",
         alternative ? alternativeThemeClassName : "",
+        bigger ? biggerTHemeClassName : "",
         className
       ),
-    [className, alternative, secondary]
+    [className, alternative, secondary, bigger]
   );
 
   return (

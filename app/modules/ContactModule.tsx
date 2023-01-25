@@ -86,7 +86,8 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
           </div>
           <Button
             secondary
-            className="mx-auto w-fit px-10 py-5 uppercase hover-hover:hover:bg-primary hover-hover:hover:text-white"
+            bigger
+            className="mx-auto w-fit uppercase hover-hover:hover:bg-primary hover-hover:hover:text-white"
           >
             <img className="mr-6" src={sendIcon} alt={"send icon"} />
             envía tu mensaje

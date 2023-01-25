@@ -100,7 +100,7 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Button alternative className="mx-auto w-fit px-10 py-5" href="#contact">
+      <Button bigger alternative className="mx-auto w-fit" href="#contact">
         Pedir Cita
       </Button>
     </Section>

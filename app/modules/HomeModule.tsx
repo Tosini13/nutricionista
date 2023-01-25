@@ -80,7 +80,8 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               cambio de hábitos en tu alimentación
             </Paragraph>
             <Button
-              className={"mx-auto w-full px-10 py-5 sm:w-fit md:ml-0"}
+              bigger
+              className={"mx-auto w-full sm:w-fit md:ml-0"}
               href="#contact"
             >
               Pide Cita
