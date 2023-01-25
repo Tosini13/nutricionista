@@ -1,4 +1,6 @@
-import Carousel from "react-elastic-carousel";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
@@ -8,14 +10,21 @@ import photo2 from "../../public/img/photos/food_woman.png";
 import photo3 from "../../public/img/photos/pregnant_woman.png";
 import photo4 from "../../public/img/photos/smoothie_woman.png";
 import Button from "~/components/form/Button";
-import React from "react";
 
-const CAROUSEL_BREAK_POINTS = [
-  { width: 1, itemsToShow: 1 },
-  { width: 580, itemsToShow: 2 },
-  { width: 840, itemsToShow: 3 },
-  { width: 1100, itemsToShow: 4 },
-];
+const SLIDER_BREAK_POINTS = {
+  1: {
+    slidesPerView: 1,
+  },
+  580: {
+    slidesPerView: 2,
+  },
+  840: {
+    slidesPerView: 3,
+  },
+  1100: {
+    slidesPerView: 4,
+  },
+};
 
 export type ServiceType = {
   id: string;
@@ -65,16 +74,19 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
           considere importante para tu caso.
         </Paragraph>
       </div>
-      <Carousel
-        itemsToScroll={1}
-        showArrows={false}
-        initialActiveIndex={1}
-        breakPoints={CAROUSEL_BREAK_POINTS}
+      <Swiper
+        modules={[Pagination]}
+        spaceBetween={10}
+        breakpoints={SLIDER_BREAK_POINTS}
+        pagination={{ clickable: true }}
+        className="pb-[50px]"
       >
         {SERVICES.map((service) => (
-          <Service key={service.id} {...service} />
+          <SwiperSlide className="h-auto">
+            <Service key={service.id} {...service} />
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
       <Button alternative className="mx-auto w-fit px-10 py-5" href="#contact">
         Pedir Cita
       </Button>

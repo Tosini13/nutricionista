@@ -15,6 +15,10 @@ import { getUser } from "./session.server";
 
 export const links: LinksFunction = () => {
   return [
+    {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
+    },
     { rel: "stylesheet", href: tailwindStylesheetUrl },
     { rel: "stylesheet", href: themeStylesheetUrl },
     {

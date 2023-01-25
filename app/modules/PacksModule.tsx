@@ -1,16 +1,25 @@
 import React from "react";
-import Carousel from "react-elastic-carousel";
 import Pack, { PackIndividual } from "~/components/packs/Pack";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 
-const CAROUSEL_BREAK_POINTS = [
-  { width: 1, itemsToShow: 1 },
-  { width: 640, itemsToShow: 2 },
-  { width: 990, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
-];
+const SLIDER_BREAK_POINTS = {
+  1: {
+    slidesPerView: 1,
+  },
+  640: {
+    slidesPerView: 2,
+  },
+  990: {
+    slidesPerView: 3,
+  },
+  1200: {
+    slidesPerView: 4,
+  },
+};
 
 type VisitType = {
   id: string;
@@ -101,14 +110,6 @@ const CARDS: Array<CardType> = [
 type PacksModulePropsType = {};
 
 const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
-  const sliderItems = React.useMemo(
-    () => [
-      <PackIndividual {...individualCard} />,
-      ...CARDS.map((card) => <Pack {...card} />),
-    ],
-    []
-  );
-
   return (
     <Section
       data-test-id="packs_module"
@@ -122,17 +123,22 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
         <Paragraph className="mb-10 text-center text-lg font-medium leading-9 text-gray">
           Elige el pack que más se adapte a ti con descuentos especiales
         </Paragraph>
-        <Carousel
-          itemsToScroll={1}
-          showArrows={false}
-          initialActiveIndex={1}
-          breakPoints={CAROUSEL_BREAK_POINTS}
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={10}
+          breakpoints={SLIDER_BREAK_POINTS}
+          pagination={{ clickable: true }}
+          className="pb-[50px]"
         >
-          <PackIndividual {...individualCard} />
+          <SwiperSlide className="h-auto">
+            <PackIndividual {...individualCard} />
+          </SwiperSlide>
           {CARDS.map((card) => (
-            <Pack {...card} />
+            <SwiperSlide key={card.id} className="h-auto">
+              <Pack {...card} />
+            </SwiperSlide>
           ))}
-        </Carousel>
+        </Swiper>
       </div>
     </Section>
   );

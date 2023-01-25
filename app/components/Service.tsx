@@ -8,7 +8,7 @@ const Service: React.FC<ServicePropsType> = ({ photoUrl, title }) => {
   return (
     <div
       data-test-id="service"
-      className="align-center group flex h-full w-[260px] cursor-pointer flex-col space-y-6 rounded-lg border border-[#DDDDDD] px-4 py-6 transition-all duration-300 hover-hover:hover:border-primary"
+      className="align-center group mx-auto flex h-full w-[260px] cursor-pointer flex-col space-y-6 rounded-lg border border-[#DDDDDD] px-4 py-6 transition-all duration-300 hover-hover:hover:border-primary"
     >
       <img src={photoUrl} alt={`title photo`} width={200} height={200} />
       <div className="flex h-full flex-grow items-center justify-center text-center">
