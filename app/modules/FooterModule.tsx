@@ -37,9 +37,11 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
             </h6>
             <ul className="flex flex-row flex-wrap justify-around md:flex-col">
               {links.map((link) => (
-                <div className="mx-4 my-3 md:mx-0 md:my-1">
-                  <FooterLink href={link.href} title={link.title} />
-                </div>
+                <FooterLink
+                  href={link.href}
+                  title={link.title}
+                  className="mx-4 my-3 md:mx-0 md:my-0 md:mb-2.5"
+                />
               ))}
             </ul>
           </div>
@@ -50,6 +52,7 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
                 <FooterLink
                   href={`/services/${service.id}`}
                   title={service.title}
+                  className="mb-2.5"
                 />
               ))}
             </ul>
