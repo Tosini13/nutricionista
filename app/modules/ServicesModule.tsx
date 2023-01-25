@@ -13,16 +13,29 @@ import Button from "~/components/form/Button";
 
 const SLIDER_BREAK_POINTS = {
   1: {
-    slidesPerView: 1,
+    slidesPerView: 1.2,
+    spaceBetween: 15,
+    centeredSlides: true,
+  },
+  350: {
+    slidesPerView: 1.3,
+    centeredSlides: true,
+  },
+  450: {
+    slidesPerView: 1.5,
+    centeredSlides: true,
   },
   580: {
     slidesPerView: 2,
+    centeredSlides: false,
   },
   840: {
     slidesPerView: 3,
+    centeredSlides: false,
   },
   1100: {
     slidesPerView: 4,
+    centeredSlides: false,
   },
 };
 

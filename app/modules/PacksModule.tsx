@@ -8,16 +8,29 @@ import { Pagination } from "swiper";
 
 const SLIDER_BREAK_POINTS = {
   1: {
-    slidesPerView: 1,
+    slidesPerView: 1.2,
+    spaceBetween: 15,
+    centeredSlides: true,
+  },
+  380: {
+    slidesPerView: 1.3,
+    centeredSlides: true,
+  },
+  450: {
+    slidesPerView: 1.5,
+    centeredSlides: true,
   },
   640: {
     slidesPerView: 2,
+    centeredSlides: false,
   },
   990: {
     slidesPerView: 3,
+    centeredSlides: false,
   },
   1200: {
     slidesPerView: 4,
+    centeredSlides: false,
   },
 };
 
@@ -114,7 +127,7 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
     <Section
       data-test-id="packs_module"
       id="packs"
-      className="mx-0 max-w-none bg-primary-light px-4"
+      className="mx-0 max-w-none bg-primary-light"
     >
       <div className="mx-0 max-w-screen-xl md:mx-auto">
         <SectionTitle className="text-center text-secondary">
@@ -128,7 +141,8 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
           spaceBetween={10}
           breakpoints={SLIDER_BREAK_POINTS}
           pagination={{ clickable: true }}
-          className="pb-[50px]"
+          className="secondary pb-[50px]"
+          initialSlide={1}
         >
           <SwiperSlide className="h-auto">
             <PackIndividual {...individualCard} />
