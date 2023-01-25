@@ -6,7 +6,7 @@ type PackPricePropsType = {
 const PackPrice: React.FC<PackPricePropsType> = ({ price, offer }) => {
   return (
     <div data-test-id="pack_price" className="flex items-center justify-center">
-      <p className="mb-10 text-5xl font-bold tracking-normal text-price">
+      <p className="mb-10 text-5xl font-extrabold tracking-normal text-price">
         {price}€
         {offer && (
           <span

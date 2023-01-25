@@ -9,7 +9,6 @@ import { Pagination } from "swiper";
 const SLIDER_BREAK_POINTS = {
   1: {
     slidesPerView: 1.2,
-    spaceBetween: 15,
     centeredSlides: true,
   },
   380: {
@@ -70,6 +69,7 @@ export type CardType = {
   title: string;
   price: number;
   offer?: number;
+  duration?: string;
   features: Array<{
     id: string;
     title: string;
@@ -83,8 +83,8 @@ const CARDS: Array<CardType> = [
     title: "Pack dietoterapia",
     price: 99,
     offer: 120,
+    duration: "3 meses",
     features: [
-      { id: "1", title: "3 meses" },
       { id: "2", title: "1a visita" },
       { id: "3", title: "2 seguimientos" },
     ],
@@ -95,8 +95,8 @@ const CARDS: Array<CardType> = [
     title: "Mejora de la composición corporal",
     price: 75,
     offer: 99,
+    duration: "3 meses",
     features: [
-      { id: "1", title: "3 meses" },
       { id: "2", title: "1a visita" },
       { id: "3", title: "2 seguimientos" },
       { id: "4", title: "Pérdida de peso" },
@@ -108,8 +108,8 @@ const CARDS: Array<CardType> = [
     title: "Pack vegetarianos o veganos",
     price: 75,
     offer: 99,
+    duration: "3 meses",
     features: [
-      { id: "1", title: "3 meses" },
       { id: "2", title: "1a visita" },
       { id: "3", title: "2 seguimientos" },
       { id: "4", title: "Asesoramiento en nutrición vegetariana" },
@@ -130,15 +130,15 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
       className="mx-0 max-w-none bg-primary-light"
     >
       <div className="mx-0 max-w-screen-xl md:mx-auto">
-        <SectionTitle className="text-center text-secondary">
+        <SectionTitle className="mb-9 text-center text-secondary">
           Packs
         </SectionTitle>
-        <Paragraph className="mb-10 text-center text-lg font-medium leading-9 text-gray">
+        <Paragraph className="mb-9 text-center text-lg font-medium leading-9 text-gray">
           Elige el pack que más se adapte a ti con descuentos especiales
         </Paragraph>
         <Swiper
           modules={[Pagination]}
-          spaceBetween={10}
+          spaceBetween={15}
           breakpoints={SLIDER_BREAK_POINTS}
           pagination={{ clickable: true }}
           className="secondary pb-[50px]"

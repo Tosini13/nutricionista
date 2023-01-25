@@ -13,6 +13,7 @@ const Pack: React.FC<PackPropsType> = ({
   offer,
   features,
   recommended,
+  duration,
 }) => {
   return (
     <PackContainer testId="pack" recommended={recommended}>
@@ -22,7 +23,7 @@ const Pack: React.FC<PackPropsType> = ({
           <PackPrice price={price} offer={offer} />
         </div>
         <div className="flex-grow">
-          <PackFeatureList features={features} />
+          <PackFeatureList duration={duration} features={features} />
         </div>
         <PackFooter recommended={recommended} />
       </div>
