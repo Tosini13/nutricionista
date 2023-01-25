@@ -7,7 +7,7 @@ import Link from "../form/Link";
 import Logo from "../Logo";
 
 const headerThemeClassName =
-  "bg-[rgba(255,255,255,0.96)] transition-shadow duration-300 ease-out w-full";
+  "sticky top-0 left-0 w-full z-[50] bg-[rgba(255,255,255,0.96)] transition-shadow duration-300 ease-out w-full";
 
 type HeaderDesktopProps = {
   links: Array<TLinkType>;
@@ -41,15 +41,6 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
     [isOnTop]
   );
 
-  const headerContentClassName = React.useMemo(
-    () =>
-      twMerge(
-        "max-w-screen-xl mx-auto px-2 xl:px-0 flex items-center transition-all duration-300 py-4",
-        isOnTop ? "py-10" : ""
-      ),
-    [isOnTop]
-  );
-
   const buttonClassName = React.useMemo(
     () =>
       twMerge(
@@ -63,15 +54,22 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
 
   return (
     <div data-testid="header_desktop" ref={ref} className={headerClassName}>
-      <div className={headerContentClassName}>
+      <div className="mx-auto flex max-w-screen-xl items-center px-2 py-4 transition-all duration-300 xl:px-0">
         <Logo />
         <div className="mx-1 flex grow items-center justify-center space-x-2 semi-md:space-x-8 large:space-x-14">
           {links.map((link) => (
-            <Link
+            <div
               key={`${link.title}_${link.href}`}
-              title={link.title}
-              href={link.href}
-            />
+              className="inline-block text-[0px]"
+            >
+              <Link
+                title={link.title}
+                href={link.href}
+                className="inline-block text-center text-base before:invisible before:block
+                before:h-[0px] before:overflow-hidden before:font-medium before:content-[attr(title)]
+                "
+              />
+            </div>
           ))}
         </div>
         <Button className={buttonClassName} href="#contact">
