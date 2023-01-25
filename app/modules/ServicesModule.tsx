@@ -78,10 +78,10 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
       className="space-y-12"
     >
       <div>
-        <SectionTitle>
+        <SectionTitle className="text-center">
           Mí <span className="text-secondary">servicios</span>
         </SectionTitle>
-        <Paragraph>
+        <Paragraph className="mx-auto max-w-[700px] text-center">
           Después de la primera visita en el plazo de 1 a 3 días laborables
           recibirás tu plan nutricional, recetas, y toda la información que
           considere importante para tu caso.
