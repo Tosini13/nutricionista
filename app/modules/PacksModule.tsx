@@ -130,10 +130,10 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
       className="mx-0 max-w-none bg-primary-light"
     >
       <div className="mx-0 max-w-screen-xl md:mx-auto">
-        <SectionTitle className="mb-9 text-center text-secondary">
+        <SectionTitle className="mb-6 text-center text-secondary">
           Packs
         </SectionTitle>
-        <Paragraph className="mb-12 text-center text-lg font-medium leading-9 text-gray">
+        <Paragraph className="mb-9 text-center text-lg font-medium leading-9 text-gray">
           Elige el pack que más se adapte a ti con descuentos especiales
         </Paragraph>
         <Swiper
