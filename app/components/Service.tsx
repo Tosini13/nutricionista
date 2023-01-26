@@ -1,33 +1,44 @@
-import Button from "./form/Button";
-import arrowRightIcon from "../../public/img/icons/arrow_right.svg";
 import { ServiceType } from "~/modules/ServicesModule";
+import Button from "./form/Button";
+import ButtonIcon from "./form/ButtonIcon";
+import Paragraph from "./sections/Paragraph";
+import arrowLeftIcon from "../../public/img/icons/arrow_left.svg";
+import { ArrayLeft } from "./icons";
 
-type ServicePropsType = ServiceType;
+type ServicePropsType = ServiceType & {
+  handleClickGoBack: () => void;
+};
 
-const Service: React.FC<ServicePropsType> = ({ photoUrl, title }) => {
+const Service: React.FC<ServicePropsType> = ({
+  title,
+  photoUrl,
+  description,
+  handleClickGoBack,
+}) => {
   return (
-    <div
-      data-test-id="service"
-      className="align-center group mx-auto flex h-full max-w-[350px] cursor-pointer flex-col space-y-6 rounded-lg border border-[#DDDDDD] px-4 py-6 transition-all duration-300 hover-hover:hover:border-primary"
-    >
-      <img
-        className="mx-auto"
-        src={photoUrl}
-        alt={`title photo`}
-        width={200}
-        height={200}
-      />
-      <div className="flex h-full flex-grow items-center justify-center text-center">
-        <h4 className="h-fit text-center font-bold">{title}</h4>
+    <div data-test-id="service">
+      <div className="flex justify-between">
+        <div className="space-y-7 md:max-w-[600px]">
+          <div className="md:mb-14">
+            <ButtonIcon icon={<ArrayLeft />} onClick={handleClickGoBack} />
+          </div>
+          <h2 className="mx-auto max-w-[350px] text-center text-3xl font-extrabold leading-10 md:mx-0 md:text-left">
+            {title}
+          </h2>
+          <Paragraph className="text-center md:text-left">
+            {description}
+          </Paragraph>
+          <Button className="mx-auto w-full sm:w-fit md:mx-0">Pide Cita</Button>
+        </div>
+        <div className="hidden min-w-[40%] md:block">
+          <img
+            className="mx-auto"
+            src={photoUrl}
+            alt={"service photo"}
+            width={"100%"}
+          />
+        </div>
       </div>
-      <Button className="mx-auto w-fit bg-transparent text-primary hover-hover:hover:bg-transparent hover-hover:hover:text-primary hover-hover:hover:shadow-none">
-        Leer mas{" "}
-        <img
-          src={arrowRightIcon}
-          alt="arrow right"
-          className="ml-2 transition-all  duration-300 hover-hover:group-hover:ml-4"
-        />
-      </Button>
     </div>
   );
 };
