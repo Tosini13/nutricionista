@@ -46,7 +46,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
       id="home"
       className="relative mx-0 max-w-none overflow-hidden pb-0 pt-16 md:pt-20"
     >
-      <div className="mx-2 max-w-screen-xl space-y-16 overflow-visible md:mx-0 xl:mx-auto">
+      <div className="mx-2 max-w-screen-xl space-y-16 overflow-visible xl:mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="space-y-8">
             <h1 className="title max-w-[600px] text-3xl font-bold sm:text-6xl">
@@ -73,7 +73,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               Pide Cita
             </Button>
           </div>
-          <div className="relative order-1 h-fit self-end md:order-3 md:min-w-[50%]">
+          <div className="relative order-1 h-fit self-end md:order-3 md:min-w-[60%]">
             <img width={"100%"} src={photoPersons} alt="photo persons" />
           </div>
         </div>
