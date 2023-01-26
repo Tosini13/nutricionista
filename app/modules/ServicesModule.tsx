@@ -89,7 +89,7 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
   }, [serviceId]);
 
   const service = React.useMemo(
-    () => serviceId && SERVICES[serviceId],
+    () => serviceId && SERVICES[serviceId - 1],
     [serviceId]
   );
   return (
@@ -134,11 +134,16 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
               breakpoints={SLIDER_BREAK_POINTS}
               pagination={{ clickable: true }}
               className="pb-[50px]"
-              initialSlide={previosServiceId.current ?? 0}
+              initialSlide={
+                previosServiceId.current ? previosServiceId.current - 1 : 0
+              }
             >
               {SERVICES.map((service, index) => (
                 <SwiperSlide key={service.id} className="h-auto">
-                  <div className="h-full" onClick={() => setServiceId(index)}>
+                  <div
+                    className="h-full"
+                    onClick={() => setServiceId(index + 1)}
+                  >
                     <ServiceTile {...service} />
                   </div>
                 </SwiperSlide>
