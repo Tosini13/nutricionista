@@ -81,10 +81,15 @@ export const SERVICES: Array<ServiceType> = [
 type ServicesModulePropsType = {};
 
 const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
-  const [serviceId, setServiceId] = React.useState<string | null>(null);
+  const [serviceId, setServiceId] = React.useState<number | null>(null);
+  const previosServiceId = React.useRef<number | null>(null);
+
+  React.useEffect(() => {
+    previosServiceId.current = serviceId;
+  }, [serviceId]);
 
   const service = React.useMemo(
-    () => SERVICES.find((s) => s.id === serviceId),
+    () => serviceId && SERVICES[serviceId],
     [serviceId]
   );
   return (
@@ -129,13 +134,11 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
               breakpoints={SLIDER_BREAK_POINTS}
               pagination={{ clickable: true }}
               className="pb-[50px]"
+              initialSlide={previosServiceId.current ?? 0}
             >
-              {SERVICES.map((service) => (
+              {SERVICES.map((service, index) => (
                 <SwiperSlide key={service.id} className="h-auto">
-                  <div
-                    className="h-full"
-                    onClick={() => setServiceId(service.id)}
-                  >
+                  <div className="h-full" onClick={() => setServiceId(index)}>
                     <ServiceTile {...service} />
                   </div>
                 </SwiperSlide>
