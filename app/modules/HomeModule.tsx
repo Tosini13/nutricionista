@@ -40,20 +40,6 @@ const FEATURES: Array<FeatureType> = [
 type HomeModulePropsType = {};
 
 const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
-  const features = React.useMemo(
-    () =>
-      FEATURES.map((feature) => [
-        <Feature key={feature.id} {...feature} />,
-        <div
-          key={`divider_${feature.id}`}
-          className="mx-4 self-stretch border-r border-[#DDDDDD]"
-        />,
-      ])
-        .flat()
-        .slice(0, -1),
-    []
-  );
-
   return (
     <Section
       data-test-id="home_module"
@@ -98,8 +84,11 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
             md:divide-y-0 md:divide-x md:px-0 md:py-8"
           >
             {FEATURES.map((feature) => (
-              <div className="py-8 md:py-0 md:px-4 lg:px-8 xl:min-w-fit xl:lg:px-16">
-                <Feature key={feature.id} {...feature} />
+              <div
+                key={feature.id}
+                className="py-8 md:py-0 md:px-4 lg:px-8 xl:min-w-fit xl:lg:px-16"
+              >
+                <Feature {...feature} />
               </div>
             ))}
           </div>

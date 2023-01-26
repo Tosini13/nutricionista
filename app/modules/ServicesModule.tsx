@@ -95,8 +95,8 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
         className="pb-[50px]"
       >
         {SERVICES.map((service) => (
-          <SwiperSlide className="h-auto">
-            <Service key={service.id} {...service} />
+          <SwiperSlide key={service.id} className="h-auto">
+            <Service {...service} />
           </SwiperSlide>
         ))}
       </Swiper>
