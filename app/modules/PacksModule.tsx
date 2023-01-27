@@ -133,7 +133,7 @@ const PacksModule: React.FC<PacksModulePropsType> = ({}) => {
         <SectionTitle className="mb-6 text-center text-secondary">
           Packs
         </SectionTitle>
-        <Paragraph className="mb-9 text-center text-lg font-medium leading-9 text-gray">
+        <Paragraph className="mx-2 mb-9 text-left text-lg font-medium leading-9 text-gray sm:text-center">
           Elige el pack que más se adapte a ti con descuentos especiales
         </Paragraph>
         <Swiper

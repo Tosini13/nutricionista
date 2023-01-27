@@ -37,7 +37,7 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
         <SectionTitle className="text-center text-secondary md:text-white">
           Contacto
         </SectionTitle>
-        <Paragraph className="mx-auto mb-10 max-w-md text-center text-lg font-medium leading-9">
+        <Paragraph className="mx-auto mb-10 max-w-md text-left text-lg font-medium leading-9 sm:text-center">
           Si tienes alguna duda escríbeme y me pondré en contacto contigo lo
           antes posible
         </Paragraph>
