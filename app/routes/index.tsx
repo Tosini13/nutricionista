@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { json, LoaderFunction } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getFaqs } from "~/models/faq.server";
@@ -100,14 +100,18 @@ export const action: ActionFunction = async ({ request }) => {
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;
   siteKey?: string;
+  serviceId: string | null;
 };
 
-export const loader = async () => {
+export const loader: LoaderFunction = async ({ request }) => {
   const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+  const url = new URL(request.url);
+  const serviceId = url.searchParams.get("serviceId");
 
   return json<LoaderData>({
     faqs: await getFaqs(),
     siteKey: SITE_KEY,
+    serviceId,
   });
 };
 

@@ -10,27 +10,27 @@ export type TLinkType = {
 export const links: Array<TLinkType> = [
   {
     title: "Home",
-    href: "#home",
+    href: "/#home",
   },
   {
     title: "Sobre mí",
-    href: "#sobreMi",
+    href: "/#sobreMi",
   },
   {
     title: "Servicios",
-    href: "#servicios",
+    href: "/#servicios",
   },
   {
     title: "Packs",
-    href: "#packs",
+    href: "/#packs",
   },
   {
     title: "FAQ",
-    href: "#faq",
+    href: "/#faq",
   },
   {
     title: "Contacto",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
 

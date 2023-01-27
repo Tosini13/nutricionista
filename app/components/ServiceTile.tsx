@@ -4,7 +4,7 @@ import { ServiceType } from "~/modules/ServicesModule";
 
 type ServiceTilePropsType = Omit<ServiceType, "description">;
 
-const ServiceTile: React.FC<ServiceTilePropsType> = ({ photoUrl, title }) => {
+const ServiceTile: React.FC<ServiceTilePropsType> = ({ photos, title }) => {
   return (
     <div
       data-test-id="service_tile"
@@ -12,7 +12,7 @@ const ServiceTile: React.FC<ServiceTilePropsType> = ({ photoUrl, title }) => {
     >
       <img
         className="mx-auto"
-        src={photoUrl}
+        src={photos[0]}
         alt={`title photo`}
         width={200}
         height={200}
