@@ -39,11 +39,11 @@ const VisitsModule: React.FC<VisitsModulePropsType> = ({}) => {
       className={`mx-0 max-w-none bg-gradient-to-b from-[#FFF] to-primary-light`}
     >
       <div className="mx-2 max-w-screen-lg lg:mx-auto">
-        <SectionTitle className="mb-20 text-center">
+        <SectionTitle className="text-center md:mb-20">
           <span className="text-secondary">¿Como funcionan</span> las visitas
           Online?
         </SectionTitle>
-        <ol className="grid list-inside list-[decimal-leading-zero] grid-cols-1 gap-y-10 pt-20 md:grid-cols-2 md:gap-x-10 xl:list-outside xl:gap-x-32">
+        <ol className="grid list-inside list-[decimal-leading-zero] grid-cols-1 gap-y-10 pt-6 md:grid-cols-2 md:gap-x-10 md:pt-20 xl:list-outside xl:gap-x-32">
           {visitSteps.map((step) => (
             <li
               className="marker:text-4xl marker:font-bold marker:text-primary md:odd:-mt-20"

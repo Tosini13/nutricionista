@@ -44,7 +44,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
     <Section
       data-test-id="home_module"
       id="home"
-      className="relative mx-0 max-w-none overflow-hidden pb-0 pt-16 md:pt-20"
+      className="relative mx-0 max-w-none overflow-hidden pb-0 md:-mt-16 md:pt-24"
     >
       <div className="mx-2 max-w-screen-xl space-y-16 overflow-visible xl:mx-auto">
         <div className="flex flex-col md:flex-row">
