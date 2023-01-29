@@ -1,6 +1,6 @@
 import pregnancy from "../../../../public/images/pregnancy.png";
 import badge from "../../../../public/images/opcion_vegana.png";
-import Button from "~/components/form/Button";
+import { ButtonLink } from "~/components/form/Button";
 import Paragraph from "../Paragraph";
 
 type TPregnancyAndLactationProps = {};
@@ -27,12 +27,12 @@ const PregnancyAndLactation: React.FC<TPregnancyAndLactationProps> = () => {
           preeclampsia e infertilidad
         </Paragraph>
         <div className="mt-8 flex items-end justify-between md:mt-0">
-          <Button
+          <ButtonLink
             className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"
             href="#contact"
           >
             pide cita
-          </Button>
+          </ButtonLink>
           <img
             src={badge}
             alt="fruits vegetables nutritionist diet"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { AnchorHTMLAttributes, LinkHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
@@ -13,58 +13,42 @@ const alternativeThemeClassName = `bg-transparent text-primary border border-pri
 
 const biggerTHemeClassName = "px-12 py-5";
 
-type ButtonProps = React.LinkHTMLAttributes<HTMLAnchorElement> & {
+type WithButtonStylePropsType = {
   secondary?: boolean;
   alternative?: boolean;
   bigger?: boolean;
+  className?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  className = "",
-  href,
-  secondary,
-  alternative,
-  bigger,
-  ...props
-}) => {
-  const mergedClassName = React.useMemo(
-    () =>
-      twMerge(
-        themeClassName,
-        secondary ? secondaryThemeClassName : "",
-        alternative ? alternativeThemeClassName : "",
-        bigger ? biggerTHemeClassName : "",
-        className
-      ),
-    [className, alternative, secondary, bigger]
-  );
+export function withButtonStyle<PropsType extends object>(
+  Component: React.ComponentType<PropsType>
+): React.FC<WithButtonStylePropsType & PropsType> {
+  return ({
+    secondary,
+    alternative,
+    bigger,
+    className: customClassName,
+    ...props
+  }: WithButtonStylePropsType & PropsType) => {
+    const className = React.useMemo(
+      () =>
+        twMerge(
+          themeClassName,
+          secondary ? secondaryThemeClassName : "",
+          alternative ? alternativeThemeClassName : "",
+          bigger ? biggerTHemeClassName : "",
+          customClassName
+        ),
+      [customClassName, alternative, secondary, bigger]
+    );
+    return <Component className={className} {...(props as PropsType)} />;
+  };
+}
 
-  return (
-    <a href={href} className={mergedClassName} {...props}>
-      {children}
-    </a>
-  );
-};
+export const Button = withButtonStyle<
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>((props) => <button data-test-id="button" {...props} />);
 
-export default Button;
-
-type ButtonLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-  secondary?: boolean;
-};
-export const ButtonLink: React.FC<ButtonLinkProps> = ({
-  className: customClassName,
-  secondary,
-  ...props
-}) => {
-  const className = React.useMemo(
-    () =>
-      twMerge(
-        themeClassName,
-        secondary ? secondaryThemeClassName : "",
-        customClassName
-      ),
-    [customClassName]
-  );
-  return <a data-testid="button" className={className} {...props} />;
-};
+export const ButtonLink = withButtonStyle<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
+>((props) => <a data-test-id="button_link" {...props} />);

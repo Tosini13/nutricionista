@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { TLinkType } from "~/modules/HeaderModule";
 import { PHONE_NUMBER } from "~/utils/media";
-import Button from "../form/Button";
+import { ButtonLink } from "../form/Button";
 import Link from "../form/Link";
 import Logo from "../Logo";
 
@@ -74,9 +74,9 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
             </div>
           ))}
         </div>
-        <Button className={buttonClassName} href="#contact">
+        <ButtonLink className={buttonClassName} href="#contact">
           Pide Cita
-        </Button>
+        </ButtonLink>
       </div>
     </div>
   );

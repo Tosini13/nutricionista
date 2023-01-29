@@ -1,6 +1,6 @@
-import Button from "./form/Button";
 import arrowRightIcon from "../../public/img/icons/arrow_right.svg";
 import { ServiceType } from "~/modules/ServicesModule";
+import { Button } from "./form/Button";
 
 type ServiceTilePropsType = Omit<ServiceType, "description">;
 

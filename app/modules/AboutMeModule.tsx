@@ -6,7 +6,7 @@ import orderIcon from "../../public/img/icons/order.icon.svg";
 import laboratoryIcon from "../../public/img/icons/laboratory.icon.svg";
 import healthIcon from "../../public/img/icons/health.icon.svg";
 import AboutMeParagraph from "~/components/AboutMeParagraph";
-import Button from "~/components/form/Button";
+import { ButtonLink } from "~/components/form/Button";
 
 export type MyInfo = {
   id: string;
@@ -74,9 +74,13 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
             <img width={"100%"} src={esther} alt="Nutricionista Esther" />
           </div>
         </div>
-        <Button secondary className={"mx-auto w-full sm:w-fit"} href="#contact">
+        <ButtonLink
+          secondary
+          className={"mx-auto w-full sm:w-fit"}
+          href="#contact"
+        >
           Pide Cita
-        </Button>
+        </ButtonLink>
       </div>
     </Section>
   );

@@ -7,8 +7,8 @@ import { ActionData, LoaderData } from "~/routes";
 import Textarea from "~/components/form/Textarea";
 import Input from "~/components/form/Input";
 import ReCaptcha from "~/components/form/ReCaptcha";
-import Button from "~/components/form/Button";
 import sendIcon from "../../public/img/icons/send.icon.svg";
+import { Button } from "~/components/form/Button";
 
 const inputClassName = "mb-4 sm:mb-0";
 
@@ -87,6 +87,7 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
           <Button
             secondary
             bigger
+            type="submit"
             className="mx-auto w-fit px-5 uppercase hover-hover:hover:bg-primary hover-hover:hover:text-white"
           >
             <img className="mr-2" src={sendIcon} alt={"send icon"} />

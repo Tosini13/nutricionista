@@ -1,4 +1,4 @@
-import Button from "~/components/form/Button";
+import { ButtonLink } from "~/components/form/Button";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import photoPersons from "../../public/img/photos/home_persons.png";
@@ -65,13 +65,13 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
               cambio de hábitos en tu alimentación
             </Paragraph>
-            <Button
+            <ButtonLink
               bigger
               className={"mx-auto w-full sm:w-fit md:ml-0"}
               href="#contact"
             >
               Pide Cita
-            </Button>
+            </ButtonLink>
           </div>
           <div className="relative order-1 h-fit self-end md:order-3 md:min-w-[60%]">
             <img width={"100%"} src={photoPersons} alt="photo persons" />
