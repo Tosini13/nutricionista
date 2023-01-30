@@ -28,7 +28,10 @@ export async function getUserId(
   request: Request
 ): Promise<User["id"] | undefined> {
   const session = await getSession(request);
+  console.log('SESSION',session);
+  
   const userId = session.get(USER_SESSION_KEY);
+  console.log('SESSION userId',userId);
   return userId;
 }
 
@@ -66,12 +69,10 @@ export async function requireUser(request: Request) {
 export async function createUserSession({
   request,
   userId,
-  remember,
   redirectTo,
 }: {
   request: Request;
   userId: string;
-  remember: boolean;
   redirectTo: string;
 }) {
   const session = await getSession(request);
@@ -79,9 +80,7 @@ export async function createUserSession({
   return redirect(redirectTo, {
     headers: {
       "Set-Cookie": await sessionStorage.commitSession(session, {
-        maxAge: remember
-          ? 60 * 60 * 24 * 7 // 7 days
-          : undefined,
+        maxAge: 60 * 60 * 24 * 7    
       }),
     },
   });
@@ -89,6 +88,8 @@ export async function createUserSession({
 
 export async function logout(request: Request) {
   const session = await getSession(request);
+  console.log('LOGOUT Session',session);
+  
   return redirect("/", {
     headers: {
       "Set-Cookie": await sessionStorage.destroySession(session),
