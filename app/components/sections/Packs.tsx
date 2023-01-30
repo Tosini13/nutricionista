@@ -5,7 +5,7 @@ import SectionTitle from "./SectionTitle";
 import badge from "../../../public/images/opcion_vegana_icon.png";
 import arrowRight from "../../../public/images/arrow_right_icon.svg";
 
-import Button from "../form/Button";
+import { ButtonLink } from "../form/Button";
 import Section from "./Section";
 type CardType = {
   id: string;
@@ -109,14 +109,17 @@ const Packs: React.FC<TPacksProps> = () => {
               />
             </div>
             <div className="mb-10 flex items-center justify-center">
-              <Button className="group rounded-full py-4 pr-4" href="#contact">
+              <ButtonLink
+                className="group rounded-full py-4 pr-4"
+                href="#contact"
+              >
                 Pide Cita
                 <img
                   src={arrowRight}
                   alt="arrow right"
                   className="tranistion-all ml-2 duration-300 ease-out hover-hover:group-hover:ml-4"
                 />
-              </Button>
+              </ButtonLink>
             </div>
           </div>
         ))}

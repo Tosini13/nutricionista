@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 type InputPropsType = React.InputHTMLAttributes<HTMLInputElement> & {
-  containerClassName: string;
+  containerClassName?: string;
   error?: string | null;
 };
 

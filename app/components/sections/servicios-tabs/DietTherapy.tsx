@@ -1,6 +1,6 @@
 import diet from "../../../../public/images/diet.png";
 import badge from "../../../../public/images/opcion_vegana.png";
-import Button from "~/components/form/Button";
+import { ButtonLink } from "~/components/form/Button";
 import Paragraph from "../Paragraph";
 
 type TDietTherapyProps = {};
@@ -47,12 +47,12 @@ const DietTherapy: React.FC<TDietTherapyProps> = () => {
           </div>
         </div>
         <div className="flex items-end md:justify-evenly lg:justify-between">
-          <Button
+          <ButtonLink
             className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"
             href="#contact"
           >
             pide cita
-          </Button>
+          </ButtonLink>
           <img
             src={badge}
             alt="fruits vegetables nutritionist diet"

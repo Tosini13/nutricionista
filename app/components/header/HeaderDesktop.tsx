@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { TLinkType } from "~/modules/HeaderModule";
 import { PHONE_NUMBER } from "~/utils/media";
-import Button from "../form/Button";
+import { ButtonLink } from "../form/Button";
 import Link from "../form/Link";
 import Logo from "../Logo";
 
@@ -11,9 +11,10 @@ const headerThemeClassName =
 
 type HeaderDesktopProps = {
   links: Array<TLinkType>;
+  actions?: React.ReactNode;
 };
 
-const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
+const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links, actions }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const [isOnTop, setIsOnTop] = React.useState(true);
 
@@ -46,7 +47,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
       twMerge(
         "ml-auto uppercase",
         isOnTop
-          ? "bg-primary-light text-primary hover-hover:hover:bg-primary hover-hover:hover:text-white"
+          ? "[&_button]:bg-primary-light [&_button]:text-primary [&_button]:hover-hover:hover:bg-primary [&_button]:hover-hover:hover:text-white [&_a]:bg-primary-light [&_a]:text-primary [&_a]:hover-hover:hover:bg-primary [&_a]:hover-hover:hover:text-white"
           : ""
       ),
     [isOnTop]
@@ -74,9 +75,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links }) => {
             </div>
           ))}
         </div>
-        <Button className={buttonClassName} href="#contact">
-          Pide Cita
-        </Button>
+        <div className={buttonClassName}>{actions}</div>
       </div>
     </div>
   );

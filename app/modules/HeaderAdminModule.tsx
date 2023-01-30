@@ -1,55 +1,51 @@
-import React from "react";
-import { ButtonLink } from "~/components/form/Button";
+import { Form } from "@remix-run/react";
+import { Button, ButtonLink } from "~/components/form/Button";
 import HeaderDesktop from "~/components/header/HeaderDesktop";
 import HeaderMobile from "~/components/header/HeaderMobile";
-
-export type TLinkType = {
-  title: string;
-  href: string;
-};
+import { TLinkType } from "./HeaderModule";
 
 export const links: Array<TLinkType> = [
   {
     title: "Home",
-    href: "/#home",
+    href: "admin/home",
   },
   {
     title: "Sobre mí",
-    href: "/#sobreMi",
+    href: "admin/sobreMi",
   },
   {
     title: "Servicios",
-    href: "/#servicios",
+    href: "admin/servicios",
   },
   {
     title: "Packs",
-    href: "/#packs",
+    href: "admin/packs",
   },
   {
     title: "FAQ",
-    href: "/#faq",
+    href: "admin/faq",
   },
   {
     title: "Contacto",
-    href: "/#contact",
+    href: "admin/contact",
   },
 ];
 
-type HeaderModuleProps = {};
+type HeaderAdminModulePropsType = {};
 
-const HeaderModule: React.FC<HeaderModuleProps> = () => {
+const HeaderAdminModule: React.FC<HeaderAdminModulePropsType> = ({}) => {
   return (
     <header
-      data-testid="header_module"
+      data-test-id="header_admin_module"
       className="sticky top-0 left-0 z-50 max-h-[84px] w-full"
     >
       <div className="hidden md:block">
         <HeaderDesktop
           links={links}
           actions={
-            <ButtonLink href="#contact" data-size="large" data-headerlink="xx">
-              Pide Cita
-            </ButtonLink>
+            <Form action="/logout" method="post">
+              <Button>Log Out</Button>
+            </Form>
           }
         />
       </div>
@@ -60,4 +56,4 @@ const HeaderModule: React.FC<HeaderModuleProps> = () => {
   );
 };
 
-export default HeaderModule;
+export default HeaderAdminModule;

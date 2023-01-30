@@ -1,5 +1,5 @@
 import { ServiceType } from "~/modules/ServicesModule";
-import Button from "./form/Button";
+import { ButtonLink } from "./form/Button";
 import ButtonIcon from "./form/ButtonIcon";
 import Paragraph from "./sections/Paragraph";
 import { ArrayLeft } from "./icons";
@@ -41,7 +41,12 @@ const Service: React.FC<ServicePropsType> = ({
           <Paragraph className="text-center md:text-left">
             {description}
           </Paragraph>
-          <Button className="mx-auto w-full sm:w-fit md:mx-0">Pide Cita</Button>
+          <ButtonLink
+            href="/#contact"
+            className="mx-auto w-full sm:w-fit md:mx-0"
+          >
+            Pide Cita
+          </ButtonLink>
         </div>
         <div className="hidden min-w-[40%] md:block">
           <img

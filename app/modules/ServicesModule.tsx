@@ -13,9 +13,7 @@ import photo1large from "../../public/img/photos/healthy_man_large.png";
 import photo2large from "../../public/img/photos/food_woman_large.png";
 import photo3large from "../../public/img/photos/pregnant_woman_large.png";
 import photo4large from "../../public/img/photos/smoothie_woman_large.png";
-import Button from "~/components/form/Button";
-import Service from "~/components/Service";
-import { LoaderFunction } from "@remix-run/server-runtime";
+import { ButtonLink } from "~/components/form/Button";
 import { useLoaderData } from "@remix-run/react";
 import { LoaderData } from "~/routes";
 
@@ -132,9 +130,14 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <Button bigger alternative className="mx-auto w-fit" href="#contact">
+        <ButtonLink
+          bigger
+          alternative
+          className="mx-auto w-fit"
+          href="#contact"
+        >
           Pedir Cita
-        </Button>
+        </ButtonLink>
       </Section>
     </>
   );
