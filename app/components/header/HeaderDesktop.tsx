@@ -68,6 +68,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links, actions }) => {
               <Link
                 title={link.title}
                 href={link.href}
+                disabled={link.disabled}
                 className="inline-block text-center text-base before:invisible before:block
                 before:h-[0px] before:overflow-hidden before:font-medium before:content-[attr(title)]
                 "

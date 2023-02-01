@@ -6,9 +6,12 @@ const link =
 const after =
   "after:block after:w-0 after:h-px after:block after:bg-neutral after:transition-all after:duration-300 after:ease-in-out hover:after:w-full";
 const secondaryThemeClassName = "text-secondary after:bg-secondary";
+const disabledThemeClassName =
+  "opacity-30 pointer-events-none hover-hover:hover:font-normal hover:after:w-0";
 
 type LinkPropsType = React.LinkHTMLAttributes<HTMLAnchorElement> & {
-  secondary?: boolean;
+  secondary?: true;
+  disabled?: boolean;
 };
 
 const Link: React.FC<LinkPropsType> = ({
@@ -17,6 +20,7 @@ const Link: React.FC<LinkPropsType> = ({
   onClick,
   className: customClassName,
   secondary,
+  disabled,
 }) => {
   const className = React.useMemo(
     () =>
@@ -24,6 +28,7 @@ const Link: React.FC<LinkPropsType> = ({
         link,
         after,
         secondary ? secondaryThemeClassName : "",
+        disabled ? disabledThemeClassName : "",
         customClassName
       ),
     [customClassName, secondary]

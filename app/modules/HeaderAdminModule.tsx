@@ -6,28 +6,23 @@ import { TLinkType } from "./HeaderModule";
 
 export const links: Array<TLinkType> = [
   {
-    title: "Home",
-    href: "admin/home",
-  },
-  {
-    title: "Sobre mí",
-    href: "admin/sobreMi",
-  },
-  {
     title: "Servicios",
-    href: "admin/servicios",
+    href: "/admin/services",
   },
   {
     title: "Packs",
-    href: "admin/packs",
+    href: "/admin/packs",
+    disabled: true,
   },
   {
     title: "FAQ",
-    href: "admin/faq",
+    href: "/admin/faq",
+    disabled: true,
   },
   {
     title: "Contacto",
-    href: "admin/contact",
+    href: "/admin/contact",
+    disabled: true,
   },
 ];
 

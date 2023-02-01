@@ -1,9 +1,9 @@
-import { ServiceType } from "~/modules/ServicesModule";
 import { ButtonLink } from "./form/Button";
 import ButtonIcon from "./form/ButtonIcon";
 import Paragraph from "./sections/Paragraph";
 import { ArrayLeft } from "./icons";
 import React from "react";
+import { ServiceType } from "~/routes";
 
 const resolution = ["480w", "800w"];
 

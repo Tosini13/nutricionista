@@ -6,6 +6,7 @@ import HeaderMobile from "~/components/header/HeaderMobile";
 export type TLinkType = {
   title: string;
   href: string;
+  disabled?: boolean; // DEV
 };
 
 export const links: Array<TLinkType> = [

@@ -15,9 +15,9 @@ import photo3large from "../../public/img/photos/pregnant_woman_large.png";
 import photo4large from "../../public/img/photos/smoothie_woman_large.png";
 import { ButtonLink } from "~/components/form/Button";
 import { useLoaderData } from "@remix-run/react";
-import { LoaderData } from "~/routes";
+import { LoaderData, ServiceType } from "~/routes";
 
-const SLIDER_BREAK_POINTS = {
+export const SLIDER_BREAK_POINTS = {
   1: {
     slidesPerView: 1.2,
     spaceBetween: 15,
@@ -45,54 +45,17 @@ const SLIDER_BREAK_POINTS = {
   },
 };
 
-export type ServiceType = {
-  id: string;
-  photos: Array<string>;
-  title: string;
-  description: string;
+const copy = { button: "Leer mas" };
+
+type ServicesModulePropsType = {
+  services: Array<ServiceType>;
 };
 
-export const SERVICES: Array<ServiceType> = [
-  {
-    id: "1",
-    photos: [photo1, photo1large],
-    title: "Mejora de la composición corporal",
-    description:
-      "Pérdida o aumento de peso. Aprende a comer y a disfrutar de la comida sin poner en riesgo tu salud. Te acompaño, te asesoro y te motivo en el proceso para que puedas cumplir tu objetivo de una manera fácil y agradable. Sin efectos rebotes, aprenderás para toda la vida.",
-  },
-  {
-    id: "2",
-    photos: [photo2, photo2large],
-
-    title: "Dietoterapia",
-    description:
-      "Si sigues una dieta basada en vegetales o quieres empezarla, puedo ayudarte a plantearla de una manera óptima. Tanto en la confección de tus menús como en la toma de suplementos convenientes. En pocas visitas obtendrás herramientas y recetas muy útiles para tu estilo de vida.",
-  },
-  {
-    id: "3",
-    photos: [photo3, photo3large],
-
-    title: "Embarazo y lactacia",
-    description:
-      "Si sigues una dieta basada en vegetales o quieres empezarla, puedo ayudarte a plantearla de una manera óptima. Tanto en la confección de tus menús como en la toma de suplementos convenientes. En pocas visitas obtendrás herramientas y recetas muy útiles para tu estilo de vida.",
-  },
-  {
-    id: "4",
-    photos: [photo4, photo4large],
-
-    title: "Alimentación vegetariana y vegana",
-    description:
-      "Si sigues una dieta basada en vegetales o quieres empezarla, puedo ayudarte a plantearla de una manera óptima. Tanto en la confección de tus menús como en la toma de suplementos convenientes. En pocas visitas obtendrás herramientas y recetas muy útiles para tu estilo de vida.",
-  },
-];
-
-type ServicesModulePropsType = {};
-
-const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
+const ServicesModule: React.FC<ServicesModulePropsType> = ({ services }) => {
   const { serviceId } = useLoaderData() as LoaderData;
 
   const initialSlide = React.useMemo(() => {
-    const index = SERVICES.findIndex((service) => service.id === serviceId);
+    const index = services.findIndex((service) => service.id === serviceId);
     return index < 0 ? 0 : index;
   }, [serviceId]);
 
@@ -122,10 +85,10 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
           className="pb-[50px]"
           initialSlide={initialSlide}
         >
-          {SERVICES.map((service) => (
+          {services.map((service) => (
             <SwiperSlide key={service.id} className="h-auto">
               <a className="h-full" href={`/services/${service.id}`}>
-                <ServiceTile {...service} />
+                <ServiceTile {...service} copy={copy} />
               </a>
             </SwiperSlide>
           ))}

@@ -2,9 +2,17 @@ import arrowRightIcon from "../../public/img/icons/arrow_right.svg";
 import { ServiceType } from "~/modules/ServicesModule";
 import { Button } from "./form/Button";
 
-type ServiceTilePropsType = Omit<ServiceType, "description">;
+type ServiceTilePropsType = Omit<ServiceType, "description"> & {
+  copy: {
+    button: string;
+  };
+};
 
-const ServiceTile: React.FC<ServiceTilePropsType> = ({ photos, title }) => {
+const ServiceTile: React.FC<ServiceTilePropsType> = ({
+  photos,
+  title,
+  copy,
+}) => {
   return (
     <div
       data-test-id="service_tile"
@@ -21,7 +29,7 @@ const ServiceTile: React.FC<ServiceTilePropsType> = ({ photos, title }) => {
         <h4 className="h-fit text-center font-bold">{title}</h4>
       </div>
       <Button className="mx-auto w-fit bg-transparent text-primary hover-hover:hover:bg-transparent hover-hover:hover:text-primary hover-hover:hover:shadow-none">
-        Leer mas{" "}
+        {copy.button}
         <img
           src={arrowRightIcon}
           alt="arrow right"

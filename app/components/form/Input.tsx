@@ -40,7 +40,7 @@ const Input: React.FC<InputPropsType> = ({
       </label>
       {error && (
         <p className="absolute right-0 bottom-0 translate-y-[100%] text-sm text-white">
-          Este campo es obligatorio
+          {error}
         </p>
       )}
     </div>

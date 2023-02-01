@@ -41,8 +41,13 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
           Si tienes alguna duda escríbeme y me pondré en contacto contigo lo
           antes posible
         </Paragraph>
-        <Form ref={ref} method="post" data-testid="contact_form">
-          <div className="flex flex-col space-y-8 md:flex-row  md:space-y-0 md:space-x-16">
+        <Form
+          ref={ref}
+          method="post"
+          data-testid="contact_form"
+          className="space-y-8"
+        >
+          <div className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-16">
             <div className="min-w-[300px] space-y-8 lg:min-w-[40%]">
               <Input
                 id="name"
@@ -70,7 +75,7 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
                 error={result?.errors?.email && "Este campo es obligatorio"}
               />
             </div>
-            <div className="flex-grow">
+            <div className="flex-grow space-y-0 [&>div]:mt-0 [&>div]:md:mt-[20px] ">
               <Textarea
                 id="content"
                 data-testid="contact-textarea-content"

@@ -3,6 +3,7 @@ import { LoaderFunction } from "@remix-run/server-runtime";
 import { getUserId } from "~/session.server";
 import { redirect } from "@remix-run/node";
 import HeaderAdminModule from "~/modules/HeaderAdminModule";
+import { Outlet } from "@remix-run/react";
 
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request);
@@ -18,7 +19,9 @@ export default function AdminPage() {
   return (
     <>
       <HeaderAdminModule />
-      <main className="relative min-h-screen max-w-none">ADMIN</main>
+      <main>
+        <Outlet />
+      </main>
       <FooterModule />
     </>
   );

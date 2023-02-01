@@ -4,20 +4,27 @@ import { twMerge } from "tailwind-merge";
 const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
 rounded-full px-10 py-4 font-medium lowercase tracking-wide appearance-button font-semibold uppercase cursor-pointer
 transition-all duration-300 ease-out
-hover-hover:hover:bg-primary-light hover-hover:hover:text-primary`;
+hover-hover:hover:bg-primary-light hover-hover:hover:text-primary
+[&_path]:fill-[#FFF] [&_path]:hover-hover:hover:fill-primary
+`;
 
-const secondaryThemeClassName =
-  "bg-secondary hover:bg-secondary-light hover-hover:hover:bg-secondary-light hover-hover:hover:text-secondary";
+const secondaryThemeClassName = `bg-secondary hover-hover:hover:bg-secondary-light hover-hover:hover:bg-secondary-light hover-hover:hover:text-secondary
+  [&_path]:fill-[#FFF] [&_path]:hover-hover:hover:fill-secondary`;
 
 const alternativeThemeClassName = `bg-transparent text-primary border border-primary  hover-hover:hover:bg-primary hover-hover:hover:text-white`;
 
-const biggerTHemeClassName = "px-12 py-5";
+const biggerThemeClassName = "px-12 py-5";
+
+const withIconThemeClassName =
+  "px-4 [&_svg]:mr-2 [&_svg]:transition-all [&_svg]:duration-300  [&_svg]:h-[20px] [&_svg]:w-[20px]";
 
 type WithButtonStylePropsType = {
   secondary?: boolean;
   alternative?: boolean;
   bigger?: boolean;
   className?: string;
+  icon?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export function withButtonStyle<PropsType extends object>(
@@ -28,6 +35,8 @@ export function withButtonStyle<PropsType extends object>(
     alternative,
     bigger,
     className: customClassName,
+    icon,
+    children,
     ...props
   }: WithButtonStylePropsType & PropsType) => {
     const className = React.useMemo(
@@ -36,12 +45,24 @@ export function withButtonStyle<PropsType extends object>(
           themeClassName,
           secondary ? secondaryThemeClassName : "",
           alternative ? alternativeThemeClassName : "",
-          bigger ? biggerTHemeClassName : "",
+          bigger ? biggerThemeClassName : "",
+          icon ? withIconThemeClassName : "",
           customClassName
         ),
       [customClassName, alternative, secondary, bigger]
     );
-    return <Component className={className} {...(props as PropsType)} />;
+    return (
+      <Component
+        className={className}
+        {...(props as PropsType)}
+        children={
+          <>
+            {icon}
+            {children}
+          </>
+        }
+      />
+    );
   };
 }
 

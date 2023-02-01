@@ -2,12 +2,14 @@ import FooterLink from "~/components/FooterLink";
 import Logo from "~/components/Logo";
 import Paragraph from "~/components/sections/Paragraph";
 import SocialBar from "~/components/SocialBar";
+import { ServiceType } from "~/routes";
 import { links } from "./HeaderModule";
-import { SERVICES } from "./ServicesModule";
 
-type FooterModulePropsType = {};
+type FooterModulePropsType = {
+  services?: Array<ServiceType>;
+};
 
-const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
+const FooterModule: React.FC<FooterModulePropsType> = ({ services }) => {
   return (
     <footer data-test-id="footer_module" className="bg-[#56383E] text-white">
       <div className="relative mx-auto max-w-theme px-2">
@@ -48,19 +50,24 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
               ))}
             </ul>
           </div>
-          <div className="ml-4 hidden sm:min-w-max md:mx-4 md:block">
-            <h6 className="pb-6">Servicios</h6>
-            <ul>
-              {SERVICES.map((service) => (
-                <li key={service.id} className="mb-2.5 pb-6 last:pb-0 md:pb-2">
-                  <FooterLink
-                    href={`/services/${service.id}`}
-                    title={service.title}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
+          {services && (
+            <div className="ml-4 hidden sm:min-w-max md:mx-4 md:block">
+              <h6 className="pb-6">Servicios</h6>
+              <ul>
+                {services?.map((service) => (
+                  <li
+                    key={service.id}
+                    className="mb-2.5 pb-6 last:pb-0 md:pb-2"
+                  >
+                    <FooterLink
+                      href={`/services/${service.id}`}
+                      title={service.title}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="flex flex-row items-center justify-evenly md:flex-col">
             <SocialBar />
           </div>

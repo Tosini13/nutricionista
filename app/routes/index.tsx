@@ -15,6 +15,9 @@ import PacksModule from "~/modules/PacksModule";
 import FaqModule from "~/modules/FaqModule";
 import ContactModule from "~/modules/ContactModule";
 import FooterModule from "~/modules/FooterModule";
+import { prisma } from "~/db.server";
+import { IMG_PATH } from "~/utils/resources.server";
+import { Service } from "@prisma/client";
 
 export type ActionData = {
   errors?: {
@@ -97,8 +100,11 @@ export const action: ActionFunction = async ({ request }) => {
   });
 };
 
+export type ServiceType = Service & { photos: Array<string> };
+
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;
+  services: Awaited<Array<Service & { photos: Array<string> }>>;
   siteKey?: string;
   serviceId: string | null;
 };
@@ -108,28 +114,39 @@ export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
   const serviceId = url.searchParams.get("serviceId");
 
+  const services = await prisma.service.findMany();
+  const photos = await prisma.photo.findMany();
+
+  const servicesWithPhotos = services.map((service) => ({
+    ...service,
+    photos: photos
+      .filter((photo) => photo.serviceId === service.id)
+      .map((photo) => `${IMG_PATH}/${photo.filename}`),
+  }));
+
   return json<LoaderData>({
     faqs: await getFaqs(),
+    services: servicesWithPhotos,
     siteKey: SITE_KEY,
     serviceId,
   });
 };
 
 export default function Index() {
-  const { faqs } = useLoaderData() as LoaderData;
+  const { faqs, services } = useLoaderData() as LoaderData;
   return (
     <>
       <HeaderModule />
       <main className="relative min-h-screen max-w-none">
         <HomeModule />
         <AboutMeModule />
-        <ServicesModule />
+        <ServicesModule services={services} />
         <VisitsModule />
         <PacksModule />
         <FaqModule faqs={faqs} />
         <ContactModule />
       </main>
-      <FooterModule />
+      <FooterModule services={services} />
     </>
   );
 }

@@ -20,3 +20,18 @@ model Password {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String @unique
 }
+
+model Photo {
+  id        String   @id @default(cuid())
+  filename  String
+  size      String
+  service   Service? @relation(fields: [serviceId], references: [id])
+  serviceId String?
+}
+
+model Service {
+  id          String  @id @default(cuid())
+  title       String
+  description String
+  photos      Photo[]
+}
