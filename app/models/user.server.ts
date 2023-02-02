@@ -5,6 +5,10 @@ import { prisma } from "~/db.server";
 
 export type { User } from "@prisma/client";
 
+export function validateEmailRights(email: User["email"]) {
+  return email === process.env.DEV_ADMIN_EMAIL || email === process.env.EMAIL;
+}
+
 export async function getUserById(id: User["id"]) {
   return prisma.user.findUnique({ where: { id } });
 }
