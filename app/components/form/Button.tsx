@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, LinkHTMLAttributes } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
@@ -18,7 +18,7 @@ const biggerThemeClassName = "px-12 py-5";
 const withIconThemeClassName =
   "px-4 [&_svg]:mr-2 [&_svg]:transition-all [&_svg]:duration-300  [&_svg]:h-[20px] [&_svg]:w-[20px]";
 
-type WithButtonStylePropsType = {
+export type WithButtonStylePropsType = {
   secondary?: boolean;
   alternative?: boolean;
   bigger?: boolean;
@@ -43,10 +43,10 @@ export function withButtonStyle<PropsType extends object>(
       () =>
         twMerge(
           themeClassName,
-          secondary ? secondaryThemeClassName : "",
           alternative ? alternativeThemeClassName : "",
           bigger ? biggerThemeClassName : "",
           icon ? withIconThemeClassName : "",
+          secondary ? secondaryThemeClassName : "",
           customClassName
         ),
       [customClassName, alternative, secondary, bigger]
