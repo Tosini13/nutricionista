@@ -53,5 +53,4 @@ COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
 ADD . .
 
-ENV PORT 8080
 CMD ["npm", "run", "start"]

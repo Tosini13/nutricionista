@@ -1,9 +1,7 @@
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "email" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "email" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -14,14 +12,19 @@ CREATE TABLE "Password" (
 );
 
 -- CreateTable
-CREATE TABLE "Note" (
+CREATE TABLE "Photo" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "filename" TEXT NOT NULL,
+    "size" TEXT NOT NULL,
+    "serviceId" TEXT,
+    CONSTRAINT "Photo_serviceId_fkey" FOREIGN KEY ("serviceId") REFERENCES "Service" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Service" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "title" TEXT NOT NULL,
-    "body" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
-    "userId" TEXT NOT NULL,
-    CONSTRAINT "Note_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+    "description" TEXT NOT NULL
 );
 
 -- CreateIndex

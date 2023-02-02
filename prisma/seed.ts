@@ -37,7 +37,6 @@ async function seed() {
     },
   });
 
-
   await Promise.all(
     SERVICES.map(({id, description, title, photos}) => (
       prisma.service.create({
