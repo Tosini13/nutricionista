@@ -8,14 +8,20 @@ import { Pagination } from "swiper";
 import ServiceTile from "~/components/ServiceTile";
 import { SLIDER_BREAK_POINTS } from "~/modules/ServicesModule";
 import Section from "~/components/sections/Section";
+import esther from "../../../../public/img/photos/esther_image.png";
+import React from "react";
 
 export type LoaderData = {
   services: Awaited<Array<Service & { photos: Array<string> }>>;
+  serviceId: string | null;
 };
 
-export const loader: LoaderFunction = async () => {
+export const loader: LoaderFunction = async ({ request, params }) => {
   const services = await prisma.service.findMany();
   const photos = await prisma.photo.findMany();
+  console.log("params !log!", params);
+  const url = new URL(request.url);
+  const serviceId = url.searchParams.get("serviceId");
 
   const servicesWithPhotos = services.map((service) => ({
     ...service,
@@ -26,15 +32,22 @@ export const loader: LoaderFunction = async () => {
 
   return json({
     services: servicesWithPhotos,
+    serviceId,
   });
 };
 
 const copy = { button: "Edit" };
+const copyCreate = { button: "Create" };
 
 type ServicesAdminPagePropsType = {};
 
 const ServicesAdminPage: React.FC<ServicesAdminPagePropsType> = ({}) => {
-  const data = useLoaderData<LoaderData>();
+  const { serviceId, services } = useLoaderData<LoaderData>();
+
+  const initialSlide = React.useMemo(() => {
+    const index = services.findIndex((service) => service.id === serviceId);
+    return index < 0 ? 0 : index;
+  }, [serviceId]);
 
   return (
     <Section data-test-id="services_admin_page" first>
@@ -44,8 +57,19 @@ const ServicesAdminPage: React.FC<ServicesAdminPagePropsType> = ({}) => {
         breakpoints={SLIDER_BREAK_POINTS}
         pagination={{ clickable: true }}
         className="pb-[50px]"
+        initialSlide={initialSlide}
       >
-        {data.services.map((service) => (
+        <SwiperSlide className="h-auto">
+          <a className="h-full" href={`/admin/services/create`}>
+            <ServiceTile
+              photos={[esther]}
+              id={"create_new_service_id"}
+              title={"Add new service"}
+              copy={copyCreate}
+            />
+          </a>
+        </SwiperSlide>
+        {services.map((service) => (
           <SwiperSlide key={service.id} className="h-auto">
             <a className="h-full" href={`/admin/services/${service.id}`}>
               <ServiceTile {...service} copy={copy} />

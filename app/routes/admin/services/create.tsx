@@ -11,9 +11,6 @@ import { Button } from "~/components/form/Button";
 import { CancelIcon, OkIcon } from "~/components/icons";
 import React from "react";
 import Section from "~/components/sections/Section";
-import { withConfirmation } from "~/components/form/withConfirmation";
-
-const ButtonWithConfirmation = withConfirmation(Button);
 
 export type ActionData = {
   errors?: {
@@ -26,12 +23,10 @@ export type ActionData = {
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
 
-  const serviceId = formData.get("serviceId");
   const title = formData.get("title");
   const description = formData.get("description");
 
   const errors: ActionData["errors"] = {
-    id: serviceId ? null : "Wrong ID number",
     title: title ? null : "Title is required",
     description: description ? null : "Description is required",
   };
@@ -41,43 +36,21 @@ export const action: ActionFunction = async ({ request }) => {
     return json<ActionData>({ errors });
   }
 
-  invariant(typeof serviceId === "string", "Id wasn't provided");
   invariant(typeof title === "string", "email must be a string");
   invariant(typeof description === "string", "name must be a string");
-  const service = await prisma.service.update({
-    where: {
-      id: serviceId,
-    },
+
+  const service = await prisma.service.create({
     data: { title, description },
   });
 
   return redirect(`/admin/services?serviceId=${service.id}`);
 };
 
-export const loader = async ({ params }: LoaderArgs) => {
-  const service = await prisma.service.findUnique({
-    where: {
-      id: params.serviceId,
-    },
-  });
-
-  return json({ service });
-};
-
 type ServiceAdminPropsType = {};
 
 const ServiceAdmin: React.FC<ServiceAdminPropsType> = ({}) => {
-  const { service } = useLoaderData<typeof loader>();
   const navigate = useNavigate();
   const goBack = React.useCallback(() => navigate(-1), [navigate]);
-
-  if (!service) {
-    return (
-      <div data-test-id="service_admin">
-        <Paragraph>There's no such service</Paragraph>
-      </div>
-    );
-  }
 
   return (
     <Section data-test-id="service_admin" first>
@@ -87,48 +60,25 @@ const ServiceAdmin: React.FC<ServiceAdminPropsType> = ({}) => {
           className="mx-auto mb-2 max-w-screen-md space-y-8 rounded-lg bg-[#7B4A53] p-4 text-white"
         >
           <Input
-            id="serviceId"
-            name="serviceId"
-            defaultValue={service.id}
-            value={service.id}
-            type="hidden"
-          />
-          <Input
             id="title"
             name="title"
             className="text-semibold"
-            defaultValue={service.title}
             placeholder="Title"
           />
           <Textarea
             placeholder="Description"
             id="description"
             name="description"
-            defaultValue={service.description}
             rows={10}
           />
-          <div className="flex w-full">
+          <div className="flex space-x-2">
             <Button icon={<CancelIcon />} onClick={goBack}>
               Cancel
             </Button>
-            <Button className="ml-2" type="submit" secondary icon={<OkIcon />}>
-              Save
+            <Button type="submit" secondary icon={<OkIcon />}>
+              Create
             </Button>
           </div>
-        </div>
-      </Form>
-      <Form action="/admin/services/delete" method="post">
-        <div className="mx-auto w-fit">
-          <Input
-            id="serviceId"
-            name="serviceId"
-            defaultValue={service.id}
-            value={service.id}
-            type="hidden"
-          />
-          <ButtonWithConfirmation type="submit" icon={<OkIcon />}>
-            Delete
-          </ButtonWithConfirmation>
         </div>
       </Form>
     </Section>
