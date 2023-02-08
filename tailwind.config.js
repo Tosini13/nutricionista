@@ -14,7 +14,7 @@ module.exports = {
         'theme': '1200px'
       },
       colors: {
-        "primary": '#E27488',
+        "primary": '#F18FA1',
         "primary-light": '#FFF3F6',
         "secondary": '#719257',
         "secondary-light": 'rgba(143, 182, 112, 0.1)',

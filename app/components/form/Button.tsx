@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 const themeClassName = `bg-primary text-white font-semibold flex flex-row items-center justify-center
 rounded-full px-10 py-4 font-medium lowercase tracking-wide appearance-button font-semibold uppercase cursor-pointer
 transition-all duration-300 ease-out
-hover-hover:hover:bg-primary-light hover-hover:hover:text-primary`;
+hover-hover:hover:bg-[#ED8094]`;
 
 const secondaryThemeClassName =
   "bg-secondary hover:bg-secondary-light hover-hover:hover:bg-secondary-light hover-hover:hover:text-secondary";
