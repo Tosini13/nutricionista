@@ -2,7 +2,7 @@ import { ServiceType } from "~/modules/ServicesModule";
 import { ButtonLink } from "./form/Button";
 import ButtonIcon from "./form/ButtonIcon";
 import Paragraph from "./sections/Paragraph";
-import { ArrayLeft } from "./icons";
+import { ArrowLeftIcon } from "./icons";
 import React from "react";
 
 const resolution = ["480w", "800w"];
@@ -30,7 +30,7 @@ const Service: React.FC<ServicePropsType> = ({
         <div className="space-y-7 md:max-w-[600px]">
           <div className="md:mb-14">
             <ButtonIcon
-              icon={<ArrayLeft />}
+              icon={<ArrowLeftIcon />}
               href={goBackHref}
               onClick={handleClickGoBack}
             />

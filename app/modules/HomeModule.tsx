@@ -8,6 +8,7 @@ import changeCircle from "../../public/img/icons/change_circle.svg";
 import underline from "../../public/img/photos/underline.svg";
 import Feature from "~/components/home/Feature";
 import React from "react";
+import { ArrowLeftIcon } from "~/components/icons";
 
 export type FeatureType = {
   id: string;
@@ -61,16 +62,17 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               </span>
               ?
             </h1>
-            <Paragraph className="max-w-[450px] font-medium">
+            <Paragraph className="font-lg max-w-[450px]">
               Puedo ayudarte a mejorar tu salud y a sentirte mejor gracias al
               cambio de hábitos en tu alimentación
             </Paragraph>
             <ButtonLink
               bigger
-              className={"mx-auto w-full sm:w-fit md:ml-0"}
+              className={"group mx-auto w-full sm:w-fit md:ml-0"}
               href="#contact"
             >
               Pide Cita
+              <ArrowLeftIcon className="ml-3 h-4 w-4 rotate-180 transition-all duration-300 group-hover:ml-5 group-hover:-mr-2 [&_path]:fill-[#FFF]" />
             </ButtonLink>
           </div>
           <div className="relative order-1 h-fit self-end md:order-3 md:min-w-[60%]">
