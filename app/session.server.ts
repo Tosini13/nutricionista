@@ -28,10 +28,8 @@ export async function getUserId(
   request: Request
 ): Promise<User["id"] | undefined> {
   const session = await getSession(request);
-  console.log('SESSION',session);
   
   const userId = session.get(USER_SESSION_KEY);
-  console.log('SESSION userId',userId);
   return userId;
 }
 
@@ -88,7 +86,6 @@ export async function createUserSession({
 
 export async function logout(request: Request) {
   const session = await getSession(request);
-  console.log('LOGOUT Session',session);
   
   return redirect("/", {
     headers: {
