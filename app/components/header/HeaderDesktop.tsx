@@ -63,12 +63,12 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links, actions }) => {
           {links.map((link) => (
             <div
               key={`${link.title}_${link.href}`}
-              className="inline-block text-[0px]"
+              className="flex justify-center text-[0px]"
             >
               <Link
                 title={link.title}
                 href={link.href}
-                className="inline-block text-center text-base before:invisible before:block
+                className="inline-block text-center text-sm before:invisible before:block
                 before:h-[0px] before:overflow-hidden before:font-medium before:content-[attr(title)]
                 "
               />
