@@ -88,7 +88,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
             {FEATURES.map((feature) => (
               <div
                 key={feature.id}
-                className="py-8 md:py-0 md:px-4 lg:px-8 xl:min-w-fit xl:lg:px-16"
+                className="py-8 md:py-0 md:px-4 lg:px-8 xl:min-w-fit"
               >
                 <Feature {...feature} />
               </div>
