@@ -41,7 +41,12 @@ const ContactModule: React.FC<ContactModulePropsType> = ({}) => {
           Si tienes alguna duda escríbeme y me pondré en contacto contigo lo
           antes posible
         </Paragraph>
-        <Form ref={ref} method="post" data-testid="contact_form">
+        <Form
+          ref={ref}
+          method="post"
+          data-testid="contact_form"
+          className="space-y-8"
+        >
           <div className="flex flex-col space-y-8 md:flex-row  md:space-y-0 md:space-x-16">
             <div className="min-w-[300px] space-y-8 lg:min-w-[40%]">
               <Input
