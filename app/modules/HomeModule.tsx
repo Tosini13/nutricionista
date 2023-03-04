@@ -2,6 +2,7 @@ import { ButtonLink } from "~/components/form/Button";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
 import photoPersons from "../../public/img/photos/home_persons.png";
+import photoPersonsWebP from "../../public/img/photos/home_persons.webp";
 import secure_icon from "../../public/img/icons/secure.svg";
 import howTo from "../../public/img/icons/how_to.svg";
 import changeCircle from "../../public/img/icons/change_circle.svg";
@@ -9,6 +10,7 @@ import underline from "../../public/img/photos/underline.svg";
 import Feature from "~/components/home/Feature";
 import React from "react";
 import { ArrowLeftIcon } from "~/components/icons";
+import Img from "~/components/Img";
 
 export type FeatureType = {
   id: string;
@@ -75,9 +77,14 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               <ArrowLeftIcon className="ml-3 h-4 w-4 rotate-180 transition-all duration-300 group-hover:ml-5 group-hover:-mr-2 [&_path]:fill-[#FFF]" />
             </ButtonLink>
           </div>
-          <div className="relative order-1 h-fit self-end md:order-3 md:min-w-[60%]">
-            <img width={"100%"} src={photoPersons} alt="photo persons" />
-          </div>
+          <Img
+            className="relative order-1 h-fit self-end md:order-3 "
+            src={photoPersons}
+            webPsrc={photoPersonsWebP}
+            alt={`photo persons`}
+            width={"100%"}
+            height={"100%"}
+          />
         </div>
         <div className="relative mx-auto w-fit pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
           <div
