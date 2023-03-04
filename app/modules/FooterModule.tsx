@@ -34,9 +34,9 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
             </Paragraph>
           </address>
           <div className="ml-4 sm:min-w-max md:mx-4">
-            <h6 className="pb-6 text-center font-semibold md:text-left">
+            <h3 className="pb-6 text-center font-semibold md:text-left">
               Mapa del sitio
-            </h6>
+            </h3>
             <ul className="flex flex-row flex-wrap justify-around md:flex-col">
               {links.map((link) => (
                 <li
@@ -49,7 +49,7 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
             </ul>
           </div>
           <div className="ml-4 hidden sm:min-w-max md:mx-4 md:block">
-            <h6 className="pb-6">Servicios</h6>
+            <h3 className="pb-6">Servicios</h3>
             <ul>
               {SERVICES.map((service) => (
                 <li key={service.id} className="mb-2.5 pb-6 last:pb-0 md:pb-2">
@@ -67,14 +67,14 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center bg-[#3C282C] p-3 text-sm text-primary md:space-x-4">
-        <h6 className="order-last mt-2 min-w-full text-center md:order-first md:mt-0 md:min-w-max">
+        <h3 className="order-last mt-2 min-w-full text-center md:order-first md:mt-0 md:min-w-max">
           Copyright 2022{" "}
           <span className="hidden md:inline">
             by Esther Zamora All rights reserved
           </span>
-        </h6>
+        </h3>
         <div className="h-{50} hidden border-r border-primary md:block" />
-        <h6>Crafted by Bartosik Bros</h6>
+        <h3>Crafted by Bartosik Bros</h3>
       </div>
     </footer>
   );

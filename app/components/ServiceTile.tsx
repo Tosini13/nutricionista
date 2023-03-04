@@ -20,7 +20,7 @@ const ServiceTile: React.FC<ServiceTilePropsType> = ({ photos, title }) => {
         height={200}
       />
       <div className="flex h-full flex-grow items-center justify-center text-center">
-        <h4 className="h-fit text-center font-bold">{title}</h4>
+        <h3 className="h-fit text-center font-bold">{title}</h3>
       </div>
       <Button className="mx-auto w-fit bg-transparent text-primary hover-hover:hover:bg-transparent hover-hover:hover:text-primary hover-hover:hover:shadow-none">
         Leer mas{" "}

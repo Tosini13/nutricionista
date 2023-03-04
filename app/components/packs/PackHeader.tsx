@@ -4,12 +4,12 @@ type PackHeaderPropsType = {
 
 const PackHeader: React.FC<PackHeaderPropsType> = ({ title }) => {
   return (
-    <h5
+    <h3
       data-test-id="pack_header"
       className="text-center text-lg font-extrabold text-[#465342]"
     >
       {title}
-    </h5>
+    </h3>
   );
 };
 

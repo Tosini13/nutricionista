@@ -14,7 +14,7 @@ const Feature: React.FC<FeaturePropsType> = ({
         <img src={iconUrl} alt="secure icon" width={25} height={25} />
       </div>
       <div className="flex h-full flex-col">
-        <h5 className="text-xl font-semibold text-primary">{title}</h5>
+        <h2 className="text-xl font-semibold text-primary">{title}</h2>
         <Paragraph className="leading-8">{description}</Paragraph>
       </div>
     </div>

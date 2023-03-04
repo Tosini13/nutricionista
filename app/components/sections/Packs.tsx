@@ -79,9 +79,9 @@ const Packs: React.FC<TPacksProps> = () => {
                 />
               )}
               <div className="flex items-center justify-center">
-                <h5 className="text-center text-lg font-bold uppercase text-[#465342]">
+                <h3 className="text-center text-lg font-bold uppercase text-[#465342]">
                   {card.title}
-                </h5>
+                </h3>
               </div>
               <div className="flex items-center justify-center border-y-2 border-gray-very-light py-8">
                 <p className="relative mb-10 text-5xl font-bold text-main">

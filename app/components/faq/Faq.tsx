@@ -43,7 +43,7 @@ const Faq: React.FC<FaqPropsType> = ({ faq }) => {
         className={questionClassName}
         onClick={() => setOpen((open) => !open)}
       >
-        <h6 className="mr-2 font-semibold">{faq.question}</h6>
+        <h3 className="mr-2 font-semibold">{faq.question}</h3>
         <div className={arrowClassName} />
       </div>
       <Answer className={classNameAnswer}>{faq.answer}</Answer>

@@ -47,7 +47,7 @@ export const PackIndividual: React.FC<PackIndividualPropsType> = ({
         <div className="flex-grow space-y-4 pt-10">
           {visits.map((visit) => (
             <div key={visit.id} className="space-y-3">
-              <h4 className="text-center font-semibold">{visit.title}</h4>
+              <h3 className="text-center font-semibold">{visit.title}</h3>
               <PackPrice price={visit.price} offer={visit.offer} />
             </div>
           ))}
