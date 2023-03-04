@@ -6,13 +6,21 @@ import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
 import ServiceTile from "~/components/ServiceTile";
 import photo1 from "../../public/img/photos/healthy_man.png";
+import photo1WebP from "../../public/img/photos/healthy_man.webp";
 import photo2 from "../../public/img/photos/food_woman.png";
+import photo2WebP from "../../public/img/photos/food_woman.webp";
 import photo3 from "../../public/img/photos/pregnant_woman.png";
+import photo3WebP from "../../public/img/photos/pregnant_woman.webp";
 import photo4 from "../../public/img/photos/smoothie_woman.png";
+import photo4WebP from "../../public/img/photos/smoothie_woman.webp";
 import photo1large from "../../public/img/photos/healthy_man_large.png";
+import photo1largeWebP from "../../public/img/photos/healthy_man_large.webp";
 import photo2large from "../../public/img/photos/food_woman_large.png";
+import photo2largeWebP from "../../public/img/photos/food_woman_large.webp";
 import photo3large from "../../public/img/photos/pregnant_woman_large.png";
+import photo3largeWebP from "../../public/img/photos/pregnant_woman_large.webp";
 import photo4large from "../../public/img/photos/smoothie_woman_large.png";
+import photo4largeWebP from "../../public/img/photos/smoothie_woman_large.webp";
 import { ButtonLink } from "~/components/form/Button";
 import { useLoaderData } from "@remix-run/react";
 import { LoaderData } from "~/routes";
@@ -47,7 +55,7 @@ const SLIDER_BREAK_POINTS = {
 
 export type ServiceType = {
   id: string;
-  photos: Array<string>;
+  photos: Array<{ url: string; webP: string }>;
   title: string;
   description: string;
 };
@@ -55,14 +63,20 @@ export type ServiceType = {
 export const SERVICES: Array<ServiceType> = [
   {
     id: "1",
-    photos: [photo1, photo1large],
+    photos: [
+      { url: photo1, webP: photo1WebP },
+      { url: photo1large, webP: photo1largeWebP },
+    ],
     title: "Mejora de la composición corporal",
     description:
       "Pérdida o aumento de peso. Aprende a comer y a disfrutar de la comida sin poner en riesgo tu salud. Te acompaño, te asesoro y te motivo en el proceso para que puedas cumplir tu objetivo de una manera fácil y agradable. Sin efectos rebotes, aprenderás para toda la vida.",
   },
   {
     id: "2",
-    photos: [photo2, photo2large],
+    photos: [
+      { url: photo2, webP: photo2WebP },
+      { url: photo2large, webP: photo2largeWebP },
+    ],
 
     title: "Dietoterapia",
     description:
@@ -70,7 +84,10 @@ export const SERVICES: Array<ServiceType> = [
   },
   {
     id: "3",
-    photos: [photo3, photo3large],
+    photos: [
+      { url: photo3, webP: photo3WebP },
+      { url: photo3large, webP: photo3largeWebP },
+    ],
 
     title: "Embarazo y lactacia",
     description:
@@ -78,7 +95,10 @@ export const SERVICES: Array<ServiceType> = [
   },
   {
     id: "4",
-    photos: [photo4, photo4large],
+    photos: [
+      { url: photo4, webP: photo4WebP },
+      { url: photo4large, webP: photo4largeWebP },
+    ],
 
     title: "Alimentación vegetariana y vegana",
     description:

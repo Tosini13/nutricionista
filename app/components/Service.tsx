@@ -4,6 +4,7 @@ import ButtonIcon from "./form/ButtonIcon";
 import Paragraph from "./sections/Paragraph";
 import { ArrowLeftIcon } from "./icons";
 import React from "react";
+import Img from "./Img";
 
 const resolution = ["480w", "800w"];
 
@@ -49,13 +50,29 @@ const Service: React.FC<ServicePropsType> = ({
           </ButtonLink>
         </div>
         <div className="hidden min-w-[40%] md:block">
-          <img
+          {/* <img
             className="mx-auto"
             srcSet={srcSet}
             sizes="(max-width: 600px) 480px, 800px"
             src={photos[0]}
             alt={"service photo"}
             width={"100%"}
+          /> */}
+          <Img
+            className="mx-auto block md:hidden"
+            src={photos[0].url}
+            webPsrc={photos[0].webP}
+            alt={`title photo`}
+            width={400}
+            height={400}
+          />
+          <Img
+            className="mx-auto hidden md:block"
+            src={photos[1].url}
+            webPsrc={photos[1].webP}
+            alt={`title photo`}
+            width={400}
+            height={400}
           />
         </div>
       </div>
