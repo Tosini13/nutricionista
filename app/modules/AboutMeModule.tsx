@@ -1,12 +1,14 @@
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
 import esther from "../../public/img/photos/esther.png";
+import estherWebP from "../../public/img/photos/esther.webp";
 import universityIcon from "../../public/img/icons/university.icon.svg";
 import orderIcon from "../../public/img/icons/order.icon.svg";
 import laboratoryIcon from "../../public/img/icons/laboratory.icon.svg";
 import healthIcon from "../../public/img/icons/health.icon.svg";
 import AboutMeParagraph from "~/components/AboutMeParagraph";
 import { ButtonLink } from "~/components/form/Button";
+import Img from "~/components/Img";
 
 export type MyInfo = {
   id: string;
@@ -71,7 +73,12 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
             </div>
           </div>
           <div className="relative order-1 h-fit min-w-[40%] md:order-3">
-            <img width={"100%"} src={esther} alt="Nutricionista Esther" />
+            <Img
+              width={"100%"}
+              src={esther}
+              webPsrc={estherWebP}
+              alt="Nutricionista Esther"
+            />
           </div>
         </div>
         <ButtonLink
