@@ -11,7 +11,6 @@ import {
 
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import themeStylesheetUrl from "./styles/theme.css";
-import { getUser } from "./session.server";
 
 export const links: LinksFunction = () => {
   return [
@@ -44,12 +43,6 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
   description: "Pedir cita a mantener tu salud con nutricionista",
 });
-
-export async function loader({ request }: LoaderArgs) {
-  return json({
-    user: await getUser(request),
-  });
-}
 
 export default function App() {
   return (
