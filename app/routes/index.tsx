@@ -104,7 +104,7 @@ export type LoaderData = {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY ?? "MOCK_SITE_KEY";
   const url = new URL(request.url);
   const serviceId = url.searchParams.get("serviceId");
 

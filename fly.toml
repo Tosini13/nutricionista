@@ -1,21 +1,15 @@
-# fly.toml file generated for nutricionez on 2023-01-25T09:55:53+01:00
+# fly.toml file generated for nutricionez on 2023-03-25T15:45:14+01:00
 
 app = "nutricionez"
 kill_signal = "SIGINT"
 kill_timeout = 5
+primary_region = "mad"
 processes = []
 
 [env]
-  DATABASE_URL = "file:/data/sqlite.db"
-  PORT = "8080"
 
 [experimental]
-  cmd = "start_with_migrations.sh"
-  entrypoint = "sh"
-
-[[mounts]]
-  destination = "/data"
-  source = "data"
+  auto_rollback = true
 
 [[services]]
   http_checks = []
