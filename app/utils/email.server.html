@@ -2,16 +2,21 @@
 <html>
   <head>
     <style>
+      #bodyContainer {
+        margin: 20px;
+      }
       #body {
         margin: 40px;
         font-family: sans-serif;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        background: #ffffff;
+        background-color: #f0f0f0;
+        color: #2c2c2c;
         border-radius: 10px;
         overflow: hidden;
         line-height: 1.3rem;
         max-width: 500px;
         margin: auto;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08),
+          0px 0px 20px rgba(0, 0, 0, 0.08), 0px 4px 20px rgba(0, 0, 0, 0.08);
       }
       #header {
         background: linear-gradient(90.73deg, #3c282c 0%, #7b4a53 100%);
@@ -19,6 +24,8 @@
       }
       #main {
         padding: 20px;
+        background: #f0f0f0;
+        color: #2c2c2c;
       }
       #footer {
         background: #719257;
@@ -30,50 +37,63 @@
       .footerLinks {
         margin: auto;
       }
+      p {
+        color: #2c2c2c;
+      }
     </style>
   </head>
   <body>
-    <div id="body">
-      <div id="header">
-        <img
-          src="https://nutricionez.s3.eu-central-1.amazonaws.com/logo.png"
-          alt="logo"
-        />
-      </div>
-      <div id="main">
-        <p>Buenos días, <strong>{{firstName}} {{lastName}}</strong></p>
-        <p>
-          Muchas gracias por contactar con
-          <strong>Esther Zamora Nutrición</strong>. Responderé lo antes posible,
-          puedes revisar la carpeta de spam en los proximos
-          <strong>2 días</strong> por si recibes allí mi respuesta.
-        </p>
-        <p>Si lo prefieres puedes contactarme al teléfono {{phoneNumber}}.</p>
-        <p>¡Hasta pronto!</p>
-      </div>
-      <div id="footer">
-        <a
-          class="footerLinks"
-          href="https://instagram.com/ez.nutricion?igshid=YmMyMTA2M2Y="
-          target="_blank"
-        >
+    <div id="bodyContainer">
+      <div id="body">
+        <div id="header">
           <img
-            src="https://nutricionez.s3.eu-central-1.amazonaws.com/instagram_icon.png"
-            alt="instagram icon"
+            src="https://nutricionez.s3.eu-central-1.amazonaws.com/logo.png"
+            alt="logo"
           />
-        </a>
-        <a class="footerLinks" href="https://wa.me/34601533664" target="_blank">
-          <img
-            src="https://nutricionez.s3.eu-central-1.amazonaws.com/whatsapp_icon.png"
-            alt="whatsapp icon"
-          />
-        </a>
-        <a class="footerLinks" href="https://nutricionez.com/" target="_blank">
-          <img
-            src="https://nutricionez.s3.eu-central-1.amazonaws.com/nutricionez_icon.png"
-            alt="nutricionez icon"
-          />
-        </a>
+        </div>
+        <div id="main">
+          <p>Buenos días, <strong>{{firstName}} {{lastName}}</strong></p>
+          <p>
+            Muchas gracias por contactar con
+            <strong>Esther Zamora Nutrición</strong>. Responderé lo antes
+            posible, puedes revisar la carpeta de spam en los proximos
+            <strong>2 días</strong> por si recibes allí mi respuesta.
+          </p>
+          <p>Si lo prefieres puedes contactarme al teléfono {{phoneNumber}}.</p>
+          <p>¡Hasta pronto!</p>
+        </div>
+        <div id="footer">
+          <a
+            class="footerLinks"
+            href="https://instagram.com/ez.nutricion?igshid=YmMyMTA2M2Y="
+            target="_blank"
+          >
+            <img
+              src="https://nutricionez.s3.eu-central-1.amazonaws.com/instagram_icon.png"
+              alt="instagram icon"
+            />
+          </a>
+          <a
+            class="footerLinks"
+            href="https://wa.me/34601533664"
+            target="_blank"
+          >
+            <img
+              src="https://nutricionez.s3.eu-central-1.amazonaws.com/whatsapp_icon.png"
+              alt="whatsapp icon"
+            />
+          </a>
+          <a
+            class="footerLinks"
+            href="https://nutricionez.com/"
+            target="_blank"
+          >
+            <img
+              src="https://nutricionez.s3.eu-central-1.amazonaws.com/nutricionez_icon.png"
+              alt="nutricionez icon"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </body>
