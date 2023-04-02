@@ -125,7 +125,7 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
       >
         <div>
           <SectionTitle className="text-center">
-            Mí <span className="text-secondary">servicios</span>
+            Mís <span className="text-secondary">servicios</span>
           </SectionTitle>
           <Paragraph className="mx-auto max-w-[700px] text-left sm:text-center">
             Después de la primera visita en el plazo de
