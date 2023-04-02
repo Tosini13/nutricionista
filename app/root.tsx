@@ -39,9 +39,10 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Nutricionista Esther Zamora",
+  title: "Nutricionista - Esther Zamora",
   viewport: "width=device-width,initial-scale=1",
-  description: "Pedir cita a mantener tu salud con nutricionista",
+  description:
+    "¿Estás buscando un Dietista Nutricionista online o en Valencia? Puedo ayudarte a mejorar tu salud, mediante un plan de alimentación personalizado. Visita nuestros servicios: sobrepeso, obesidad, diabetes y otras patologías, embarazo y lactancia, alimentación vegetariana y vegana… ¡Aprovecha los descuentos especiales al reservar hoy la cita!",
 });
 
 export default function App() {
