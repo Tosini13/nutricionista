@@ -23,20 +23,20 @@ const FEATURES: Array<FeatureType> = [
   {
     id: "1",
     iconUrl: secure_icon,
-    title: "Seguro",
-    description: "y metodos personalizados",
+    title: "Método",
+    description: "seguro y personalizado",
   },
   {
     id: "2",
     iconUrl: howTo,
-    title: "Holístico",
-    description: "tratamiento de mis pacientes",
+    title: "Tratamiento",
+    description: "holístico de mis pacientes",
   },
   {
     id: "3",
     iconUrl: changeCircle,
     title: "Online",
-    description: "y presencial en Valencia",
+    description: "y presencial en Valencia",
   },
 ];
 
