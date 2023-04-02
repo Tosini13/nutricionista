@@ -89,7 +89,7 @@ export const SERVICES: Array<ServiceType> = [
       { url: photo3large, webP: photo3largeWebP },
     ],
 
-    title: "Embarazo y lactacia",
+    title: "Embarazo y lactancia",
     description:
       "Si sigues una dieta basada en vegetales o quieres empezarla, puedo ayudarte a plantearla de una manera óptima. Tanto en la confección de tus menús como en la toma de suplementos convenientes. En pocas visitas obtendrás herramientas y recetas muy útiles para tu estilo de vida.",
   },
