@@ -86,19 +86,18 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
             height={"100%"}
           />
         </div>
-        <div className="relative mx-auto w-fit pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
+        <div className="relative mx-auto pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
           <div
-            className="relative mx-2 flex w-fit flex-col items-stretch justify-center divide-y
-            divide-[#DDDDDD] rounded-xl bg-white px-8 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)] md:grid-cols-3 md:grid-rows-1 md:flex-row md:items-center
-            md:divide-y-0 md:divide-x md:px-0 md:py-8"
+            className="relative flex flex-col justify-evenly gap-y-6 rounded-xl bg-white p-8 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]
+            md:flex-row md:items-center md:gap-y-0"
           >
-            {FEATURES.map((feature) => (
-              <div
-                key={feature.id}
-                className="py-8 md:py-0 md:px-4 lg:px-8 xl:min-w-fit"
-              >
+            {FEATURES.map((feature, i) => (
+              <React.Fragment key={feature.id}>
                 <Feature {...feature} />
-              </div>
+                {i !== FEATURES.length - 1 && (
+                  <div className="self-stretch border-b border-[#DDDDDD] md:mx-4 md:border-r" />
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>
