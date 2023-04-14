@@ -1,8 +1,8 @@
 import { ButtonLink } from "~/components/form/Button";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
-import photoPersons from "../../public/img/photos/home_persons.png";
-import photoPersonsWebP from "../../public/img/photos/home_persons.webp";
+import estherImg from "../../public/img/photos/esther_no_background.png";
+import estherImgWebP from "../../public/img/photos/esther_no_background.webp";
 import secure_icon from "../../public/img/icons/secure.svg";
 import howTo from "../../public/img/icons/how_to.svg";
 import changeCircle from "../../public/img/icons/change_circle.svg";
@@ -50,7 +50,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
       className="relative mx-0 max-w-none overflow-hidden pb-0 md:-mt-16 md:pt-24"
     >
       <div className="mx-2 max-w-screen-xl space-y-16 overflow-visible xl:mx-auto">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col items-center md:flex-row">
           <div className="space-y-8">
             <h1 className="title max-w-[600px] text-3xl font-bold sm:text-6xl">
               ¿Quieres empezar a cuidar de tu <br />
@@ -77,14 +77,17 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               <ArrowLeftIcon className="ml-3 h-4 w-4 rotate-180 transition-all duration-300 group-hover:ml-5 group-hover:-mr-2 [&_path]:fill-[#FFF]" />
             </ButtonLink>
           </div>
-          <Img
-            className="relative order-1 h-fit self-end md:order-3 "
-            src={photoPersons}
-            webPsrc={photoPersonsWebP}
-            alt={`photo persons`}
-            width={"100%"}
-            height={"100%"}
-          />
+          <div className="relative order-1 mx-auto mb-[-64px] mt-4 h-fit self-end  md:order-3 md:mt-0">
+            <div className="after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:shadow-[0_0_50px_100px_rgba(255,255,255,0.9),0_0_15px_20px_rgba(255,255,255,1)]" />
+            <Img
+              className="max-h-[500px]"
+              src={estherImg}
+              webPsrc={estherImgWebP}
+              alt={`photo persons`}
+              width={"100%"}
+              height={"100%"}
+            />
+          </div>
         </div>
         <div className="relative mx-auto pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
           <div
