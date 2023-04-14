@@ -1,7 +1,7 @@
 import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
-import esther from "../../public/img/photos/esther.png";
-import estherWebP from "../../public/img/photos/esther.webp";
+import esther from "../../public/img/photos/esther_web_bg.png";
+import estherWebP from "../../public/img/photos/esther_web_bg.webp";
 import universityIcon from "../../public/img/icons/university.icon.svg";
 import orderIcon from "../../public/img/icons/order.icon.svg";
 import laboratoryIcon from "../../public/img/icons/laboratory.icon.svg";
@@ -59,8 +59,8 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
         <SectionTitle className="text-left">
           Sobre <span className="text-secondary">mí</span>
         </SectionTitle>
-        <div className="flex flex-col md:flex-row">
-          <div className="order-2 grid grid-cols-1 space-y-8 md:grid-cols-2 md:gap-x-14 md:space-y-0">
+        <div className="flex flex-col justify-between md:flex-row">
+          <div className="order-2 grid grid-cols-1 space-y-8 md:max-w-[60%] md:grid-cols-2 md:gap-x-14 md:space-y-0">
             <div className="space-y-8">
               {leftHalf.map((myInfo) => (
                 <AboutMeParagraph key={myInfo.id} {...myInfo} />
@@ -72,7 +72,7 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
               ))}
             </div>
           </div>
-          <div className="relative order-1 h-fit min-w-[40%] md:order-3">
+          <div className="relative order-1 mb-10 h-fit translate-x-[10%] md:order-3 md:mb-0 md:min-w-[30%] md:max-w-[30%] md:translate-x-0">
             <Img
               width={"100%"}
               src={esther}
