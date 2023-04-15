@@ -144,7 +144,10 @@ const ServicesModule: React.FC<ServicesModulePropsType> = ({}) => {
         >
           {SERVICES.map((service) => (
             <SwiperSlide key={service.id} className="h-auto">
-              <a className="h-full" href={`/services/${service.id}`}>
+              <a
+                className="h-full highlight-none"
+                href={`/services/${service.id}`}
+              >
                 <ServiceTile {...service} />
               </a>
             </SwiperSlide>

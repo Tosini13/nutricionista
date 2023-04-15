@@ -6,8 +6,6 @@ import { ArrowLeftIcon } from "./icons";
 import React from "react";
 import Img from "./Img";
 
-const resolution = ["480w", "800w"];
-
 type ServicePropsType = ServiceType & {
   handleClickGoBack?: () => void;
   goBackHref?: string;
@@ -20,17 +18,13 @@ const Service: React.FC<ServicePropsType> = ({
   handleClickGoBack,
   goBackHref,
 }) => {
-  const srcSet = React.useMemo(
-    () =>
-      photos.map((photo, index) => `${photo} ${resolution[index]}`).join(","),
-    []
-  );
   return (
     <div data-test-id="service">
       <div className="flex justify-between">
         <div className="space-y-7 md:max-w-[600px]">
           <div className="md:mb-14">
             <ButtonIcon
+              className="highlight-none"
               icon={<ArrowLeftIcon />}
               href={goBackHref}
               onClick={handleClickGoBack}
@@ -50,14 +44,6 @@ const Service: React.FC<ServicePropsType> = ({
           </ButtonLink>
         </div>
         <div className="hidden min-w-[40%] md:block">
-          {/* <img
-            className="mx-auto"
-            srcSet={srcSet}
-            sizes="(max-width: 600px) 480px, 800px"
-            src={photos[0]}
-            alt={"service photo"}
-            width={"100%"}
-          /> */}
           <Img
             className="mx-auto block md:hidden"
             src={photos[0].url}
