@@ -5,7 +5,7 @@ import SectionTitle from "./SectionTitle";
 import badge from "../../../public/images/opcion_vegana_icon.png";
 import arrowRight from "../../../public/images/arrow_right_icon.svg";
 
-import Button from "../form/Button";
+import { ButtonLink } from "../form/Button";
 import Section from "./Section";
 type CardType = {
   id: string;
@@ -79,9 +79,9 @@ const Packs: React.FC<TPacksProps> = () => {
                 />
               )}
               <div className="flex items-center justify-center">
-                <h5 className="text-center text-lg font-bold uppercase text-[#465342]">
+                <h3 className="text-center text-lg font-bold uppercase text-[#465342]">
                   {card.title}
-                </h5>
+                </h3>
               </div>
               <div className="flex items-center justify-center border-y-2 border-gray-very-light py-8">
                 <p className="relative mb-10 text-5xl font-bold text-main">
@@ -109,14 +109,17 @@ const Packs: React.FC<TPacksProps> = () => {
               />
             </div>
             <div className="mb-10 flex items-center justify-center">
-              <Button className="group rounded-full py-4 pr-4" href="#contact">
+              <ButtonLink
+                className="group rounded-full py-4 pr-4"
+                href="#contact"
+              >
                 Pide Cita
                 <img
                   src={arrowRight}
                   alt="arrow right"
                   className="tranistion-all ml-2 duration-300 ease-out hover-hover:group-hover:ml-4"
                 />
-              </Button>
+              </ButtonLink>
             </div>
           </div>
         ))}

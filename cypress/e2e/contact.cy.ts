@@ -3,7 +3,8 @@ import { faker } from "@faker-js/faker";
 describe("contact section tests", () => {
   it("should not allow for empty strings", () => {
     cy.visit("/");
-    cy.findByTestId("contact_form").submit();
+
+    cy.findAllByTestId("contact_form").submit();
 
     cy.findAllByText("Este campo es obligatorio").should("have.length", 5);
   });
@@ -16,6 +17,7 @@ describe("contact section tests", () => {
       content: faker.lorem.words(10),
     };
     cy.visit("/");
+    cy.wait(1000); //temporary solution
 
     cy.findByTestId("contact-textarea-content").click();
     cy.wait(1000); //temporary solution

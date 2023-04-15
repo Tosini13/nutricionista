@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 type InputPropsType = React.InputHTMLAttributes<HTMLInputElement> & {
-  containerClassName: string;
+  containerClassName?: string;
   error?: string | null;
 };
 
@@ -22,7 +22,7 @@ const Input: React.FC<InputPropsType> = ({
   const mergedClassName = React.useMemo(
     () =>
       twMerge(
-        "peer w-full rounded-xl bg-gray-dark p-[1.1rem] text-lg outline-none focus:outline-none focus:border-main-light border-[0.5px] border-transparent transition-all duration-200",
+        "peer w-full bg-transparent p-[1.1rem] px-0 text-lg outline-none focus:outline-none focus:border-secondary border-b-[0.5px] border-white transition-all duration-200",
         className
       ),
     [className]
@@ -33,7 +33,7 @@ const Input: React.FC<InputPropsType> = ({
       <label
         htmlFor={id}
         className={
-          "absolute left-0 top-0 -translate-y-[100%] pl-0 text-sm text-gray transition-all duration-200 ease-out peer-placeholder-shown:top-[50%] peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:pl-[1.1rem]  peer-placeholder-shown:text-lg peer-focus:top-0 peer-focus:-translate-y-[100%] peer-focus:pl-0 peer-focus:text-sm peer-focus:text-main-light"
+          "absolute left-0 top-0 -translate-y-[100%] pl-0 text-sm text-white transition-all duration-200 ease-out peer-placeholder-shown:top-[60%] peer-placeholder-shown:-translate-y-[50%] peer-placeholder-shown:pl-[0rem]  peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:-translate-y-[100%] peer-focus:pl-0 peer-focus:text-sm peer-focus:text-secondary"
         }
       >
         {placeholder}

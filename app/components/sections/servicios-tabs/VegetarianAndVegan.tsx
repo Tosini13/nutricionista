@@ -1,4 +1,4 @@
-import Button from "~/components/form/Button";
+import { ButtonLink } from "~/components/form/Button";
 import nutritionist from "../../../../public/images/mejora_composicion.png";
 import badge from "../../../../public/images/opcion_vegana.png";
 
@@ -30,12 +30,12 @@ const VegetarianAndVegan: React.FC<TVegetarianAndVeganProps> = () => {
           vida.
         </Paragraph>
         <div className="mt-8 flex items-end justify-between md:mt-0">
-          <Button
+          <ButtonLink
             className="min-w-full sm:mx-auto sm:min-w-0 md:mx-0"
             href="#contact"
           >
             pide cita
-          </Button>
+          </ButtonLink>
           <img
             src={badge}
             alt="fruits vegetables nutritionist diet"

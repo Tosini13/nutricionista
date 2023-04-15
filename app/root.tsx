@@ -11,15 +11,18 @@ import {
 
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import themeStylesheetUrl from "./styles/theme.css";
-import { getUser } from "./session.server";
 
 export const links: LinksFunction = () => {
   return [
+    {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
+    },
     { rel: "stylesheet", href: tailwindStylesheetUrl },
     { rel: "stylesheet", href: themeStylesheetUrl },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900",
+      href: "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900",
       type: "text/css",
     },
     {
@@ -36,16 +39,11 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Nutricionista Esther Zamora",
+  title: "Nutricionista - Esther Zamora",
   viewport: "width=device-width,initial-scale=1",
-  description: "Pedir cita a mantener tu salud con nutricionista",
+  description:
+    "¿Estás buscando un Dietista Nutricionista online o en Valencia? Puedo ayudarte a mejorar tu salud, mediante un plan de alimentación personalizado. Visita nuestros servicios: sobrepeso, obesidad, diabetes y otras patologías, embarazo y lactancia, alimentación vegetariana y vegana… ¡Aprovecha los descuentos especiales al reservar hoy la cita!",
 });
-
-export async function loader({ request }: LoaderArgs) {
-  return json({
-    user: await getUser(request),
-  });
-}
 
 export default function App() {
   return (
@@ -54,7 +52,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-[#FFF] font-poppins text-base text-[#313131] ">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

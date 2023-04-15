@@ -1,14 +1,4 @@
-import Footer from "~/components/footer/Footer";
-import Header from "~/components/header/Header";
-import Contact from "~/components/sections/Contact";
-import Faqs from "~/components/sections/faq";
-import Home from "~/components/sections/Home";
-import OnlineVisits from "~/components/sections/OnlineVisits";
-import Packs from "~/components/sections/Packs";
-import Servicios from "~/components/sections/Servicios";
-import SobreMi from "~/components/sections/SobreMi";
-import Visits from "~/components/sections/Visits";
-import { json } from "@remix-run/node";
+import { json, LoaderFunction } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getFaqs } from "~/models/faq.server";
@@ -16,6 +6,15 @@ import { sendEmail } from "~/utils/email.server";
 import invariant from "tiny-invariant";
 import { sendSelfEmail } from "~/utils/self-email.server";
 import { verifyReCaptcha } from "~/utils/reCaptcha.server";
+import HeaderModule from "~/modules/HeaderModule";
+import HomeModule from "~/modules/HomeModule";
+import AboutMeModule from "~/modules/AboutMeModule";
+import ServicesModule from "~/modules/ServicesModule";
+import VisitsModule from "~/modules/VisitsModule";
+import PacksModule from "~/modules/PacksModule";
+import FaqModule from "~/modules/FaqModule";
+import ContactModule from "~/modules/ContactModule";
+import FooterModule from "~/modules/FooterModule";
 
 export type ActionData = {
   errors?: {
@@ -42,7 +41,7 @@ export const action: ActionFunction = async ({ request }) => {
     name: name ? null : "Name is required",
     surname: surname ? null : "Surname is required",
     content: content ? null : "Content is required",
-    reCaptcha: reCaptcha ? null : "required",
+    reCaptcha: reCaptcha ? null : "Este campo es obligatorio",
   };
 
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
@@ -101,14 +100,18 @@ export const action: ActionFunction = async ({ request }) => {
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;
   siteKey?: string;
+  serviceId: string | null;
 };
 
-export const loader = async () => {
-  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+export const loader: LoaderFunction = async ({ request }) => {
+  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY ?? "MOCK_SITE_KEY";
+  const url = new URL(request.url);
+  const serviceId = url.searchParams.get("serviceId");
 
   return json<LoaderData>({
     faqs: await getFaqs(),
     siteKey: SITE_KEY,
+    serviceId,
   });
 };
 
@@ -116,18 +119,17 @@ export default function Index() {
   const { faqs } = useLoaderData() as LoaderData;
   return (
     <>
-      <Header />
-      <main className="relative min-h-screen max-w-screen-xl overflow-x-hidden bg-white xl:mx-auto">
-        <Home />
-        <SobreMi />
-        <Servicios />
-        <OnlineVisits />
-        <Packs />
-        <Visits />
-        <Faqs faqs={faqs} />
-        <Contact />
+      <HeaderModule />
+      <main className="relative min-h-screen max-w-none">
+        <HomeModule />
+        <AboutMeModule />
+        <ServicesModule />
+        <VisitsModule />
+        <PacksModule />
+        <FaqModule faqs={faqs} />
+        <ContactModule />
       </main>
-      <Footer />
+      <FooterModule />
     </>
   );
 }

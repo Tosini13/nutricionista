@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
@@ -9,9 +10,21 @@ module.exports = {
         'md': '0 0px 6px -1px rgb(0 0 0 / 0.1), 0 4px 4px -2px rgb(0 0 0 / 0.1)',
         'xl': '0 0px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
       },
+      maxWidth: {
+        'theme': '1200px'
+      },
       colors: {
-        'main': '#67a957',
-        'main-light': '#68A957',
+        "primary": '#F18FA1',
+        "primary-light": '#FFF3F6',
+        "secondary": '#719257',
+        "secondary-light": 'rgba(143, 182, 112, 0.1)',
+        "neutral": '#313131',
+        "neutral-light": '#575757',
+        "neutral-contrast": '#E27488',
+        "neutral-contrast-dark": '#FFF9FA',
+        "price": "#7E70B6",
+        'main': '#E27488',
+        'main-light': '#E27488',
         'black': '#1E1E1E',
         'gray-dark': '#E3E8E9',
         'gray-light': '#C9CECE',
@@ -27,8 +40,14 @@ module.exports = {
         'gray-light-opacity0': 'rgba(201, 206, 206, 0)'
       },
       screens: {
+        'semi-md': '900px',
+        'large': '1024px',
         'hover-hover': { 'raw': '(hover: hover)' },
-      }
+        'hover-none': { 'raw': '(hover: none)' },
+      },
+      fontFamily: {
+        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans]
+      },
     },
   },
   plugins: [
