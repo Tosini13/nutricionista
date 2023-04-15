@@ -91,7 +91,7 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
         </div>
         <div className="relative mx-auto pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
           <div
-            className="relative flex flex-col justify-evenly gap-y-6 rounded-xl bg-white p-8 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]
+            className="relative flex flex-col justify-between gap-y-6 rounded-xl bg-white p-8 shadow-[0px_4px_40px_rgba(0,_0,_0,_0.08)]
             md:flex-row md:items-center md:gap-y-0"
           >
             {FEATURES.map((feature, i) => (
