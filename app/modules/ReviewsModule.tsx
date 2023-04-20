@@ -57,7 +57,7 @@ const ReviewsModule: React.FC<ReviewsModulePropsType> = ({}) => {
           spaceBetween={15}
           breakpoints={SLIDER_BREAK_POINTS}
           pagination
-          className="swiper-reviews secondary pb-[50px]"
+          className="swiper-reviews pb-[50px]"
           initialSlide={INITIAL_SLIDE}
           onRealIndexChange={({ isBeginning, isEnd }) => {
             setIsFirstSlide(isBeginning);
@@ -140,7 +140,9 @@ const Review: React.FC<ReviewPropsType> = ({ review }) => {
       href={review.review_url}
       target="_blank"
     >
-      <Paragraph className="leading-none">{review.author_name}</Paragraph>
+      <Paragraph className="font-medium leading-none">
+        {review.author_name}
+      </Paragraph>
       <div className="flex items-center">
         {Array.from(Array(review.rating)).map((_, i) => (
           <StarGained key={i} />
@@ -152,7 +154,7 @@ const Review: React.FC<ReviewPropsType> = ({ review }) => {
       <Paragraph className="grow leading-normal webkit-line-clamp-5">
         {review.text}
       </Paragraph>
-      <Paragraph className="leading-none">
+      <Paragraph className="font-medium leading-none">
         {review.relative_time_description}
       </Paragraph>
     </a>
