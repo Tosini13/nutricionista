@@ -7,10 +7,13 @@ import secure_icon from "../../public/img/icons/secure.svg";
 import howTo from "../../public/img/icons/how_to.svg";
 import changeCircle from "../../public/img/icons/change_circle.svg";
 import underline from "../../public/img/photos/underline.svg";
+import carlaSanjuan from "../../public/img/photos/carlaSanjuan.png";
 import Feature from "~/components/home/Feature";
 import React from "react";
-import { ArrowLeftIcon } from "~/components/icons";
+import { ArrowLeftIcon, GoogleIcon, StarGained } from "~/components/icons";
 import Img from "~/components/Img";
+import { reviews } from "~/data/reviewsData.json";
+import ReviewShort from "~/components/reviews/ReviewShort";
 
 export type FeatureType = {
   id: string;
@@ -43,6 +46,7 @@ const FEATURES: Array<FeatureType> = [
 type HomeModulePropsType = {};
 
 const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
+  const review = reviews[2];
   return (
     <Section
       data-test-id="home_module"
@@ -87,6 +91,9 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               width={"100%"}
               height={"100%"}
             />
+            <div className="absolute bottom-10 right-0">
+              <ReviewShort review={{ ...review, author_url: carlaSanjuan }} />
+            </div>
           </div>
         </div>
         <div className="relative mx-auto pb-10 before:absolute before:left-1/2 before:bottom-0 before:h-1/2 before:w-screen before:-translate-x-1/2 before:bg-primary-light">
