@@ -71,7 +71,13 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormPropsType>(
           type="submit"
           className="mx-auto w-fit px-5 uppercase hover-hover:hover:bg-primary hover-hover:hover:text-white"
         >
-          <img className="mr-2" src={sendIcon} alt={"send icon"} />
+          <img
+            className="mr-2"
+            src={sendIcon}
+            alt={"send icon"}
+            width="25px"
+            height="23px"
+          />
           envía tu mensaje
         </Button>
       </Form>
