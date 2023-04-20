@@ -1,52 +1,51 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
     extend: {
       boxShadow: {
-        'md': '0 0px 6px -1px rgb(0 0 0 / 0.1), 0 4px 4px -2px rgb(0 0 0 / 0.1)',
-        'xl': '0 0px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        md: "0 0px 6px -1px rgb(0 0 0 / 0.1), 0 4px 4px -2px rgb(0 0 0 / 0.1)",
+        xl: "0 0px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       },
       maxWidth: {
-        'theme': '1200px'
+        theme: "1200px",
       },
       colors: {
-        "primary": '#F18FA1',
-        "primary-light": '#FFF3F6',
-        "secondary": '#719257',
-        "secondary-light": 'rgba(143, 182, 112, 0.1)',
-        "neutral": '#313131',
-        "neutral-light": '#575757',
-        "neutral-contrast": '#E27488',
-        "neutral-contrast-dark": '#FFF9FA',
-        "price": "#7E70B6",
-        'main': '#E27488',
-        'main-light': '#E27488',
-        'black': '#1E1E1E',
-        'gray-dark': '#E3E8E9',
-        'gray-light': '#C9CECE',
-        'gray-very-light': 'rgba(37, 37, 37, 0.1)',
-        'gray': 'rgba(0, 0, 0, 0.4)',
-        'button-disabled-bg': 'rgba(104, 169, 87, 0.2);',
-        'button-disabled-text': '#68A957'
-
+        primary: "#F18FA1",
+        "primary-light": "#FFF3F6",
+        secondary: "#719257",
+        "secondary-light": "rgba(143, 182, 112, 0.1)",
+        neutral: "#313131",
+        "neutral-light": "#575757",
+        "neutral-contrast": "#E27488",
+        "neutral-contrast-dark": "#FFF9FA",
+        price: "#7E70B6",
+        main: "#E27488",
+        "main-light": "#E27488",
+        black: "#1E1E1E",
+        "gray-dark": "#E3E8E9",
+        "gray-light": "#C9CECE",
+        "gray-very-light": "rgba(37, 37, 37, 0.1)",
+        gray: "rgba(0, 0, 0, 0.4)",
+        "button-disabled-bg": "rgba(104, 169, 87, 0.2);",
+        "button-disabled-text": "#68A957",
       },
       gradientColorStops: {
-        'button-from-bg': '#68A957',
-        'button-to-bg': '#74B463',
-        'gray-light-opacity0': 'rgba(201, 206, 206, 0)'
+        "button-from-bg": "#68A957",
+        "button-to-bg": "#74B463",
+        "gray-light-opacity0": "rgba(201, 206, 206, 0)",
       },
       screens: {
-        'semi-md': '900px',
-        'large': '1024px',
-        'hover-hover': { 'raw': '(hover: hover)' },
-        'hover-none': { 'raw': '(hover: none)' },
+        "semi-md": "900px",
+        large: "1024px",
+        "hover-hover": { raw: "(hover: hover)" },
+        "hover-none": { raw: "(hover: none)" },
       },
       fontFamily: {
-        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans]
+        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans],
       },
     },
   },
@@ -68,7 +67,13 @@ module.exports = {
           "-ms-user-select": "none",
           "user-select": "none",
         },
+        ".webkit-line-clamp-5": {
+          display: "-webkit-box",
+          "-webkit-line-clamp": "4",
+          "-webkit-box-orient": "vertical",
+          overflow: "hidden",
+        },
       });
-    })
+    }),
   ],
 };

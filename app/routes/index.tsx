@@ -15,6 +15,7 @@ import PacksModule from "~/modules/PacksModule";
 import FaqModule from "~/modules/FaqModule";
 import ContactModule from "~/modules/ContactModule";
 import FooterModule from "~/modules/FooterModule";
+import ReviewsModule from "~/modules/ReviewsModule";
 
 export type ActionData = {
   errors?: {
@@ -99,8 +100,10 @@ export const action: ActionFunction = async ({ request }) => {
 
 export type LoaderData = {
   faqs: Awaited<ReturnType<typeof getFaqs>>;
-  siteKey?: string;
   serviceId: string | null;
+  siteKey?: string;
+  placeId?: string;
+  apiKey?: string;
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -125,6 +128,7 @@ export default function Index() {
         <AboutMeModule />
         <ServicesModule />
         <VisitsModule />
+        <ReviewsModule />
         <PacksModule />
         <FaqModule faqs={faqs} />
         <ContactModule />
