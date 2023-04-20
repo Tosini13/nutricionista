@@ -64,6 +64,8 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
                   src={underline}
                   alt="underline"
                   className="absolute bottom-0 left-0 w-full"
+                  width="72px"
+                  height="72px"
                 />
               </span>
               ?
