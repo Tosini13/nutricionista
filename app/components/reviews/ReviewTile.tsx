@@ -29,7 +29,10 @@ const ReviewTile: React.FC<ReviewTilePropsType> = ({ review }) => {
         {review.text}
       </Paragraph>
       <Paragraph className="font-medium leading-none">
-        {review.relative_time_description}
+        {new Date(review.time).toLocaleDateString("es-ES", {
+          year: "numeric",
+          month: "long",
+        })}
       </Paragraph>
     </a>
   );

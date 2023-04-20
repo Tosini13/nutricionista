@@ -20,7 +20,10 @@ const ReviewShort: React.FC<ReviewShortPropsType> = ({ review }) => {
           {review.author_name}
         </Paragraph>
         <Paragraph className="font-extralight leading-none">
-          {review.relative_time_description}
+          {new Date(review.time).toLocaleDateString("es-ES", {
+            year: "numeric",
+            month: "short",
+          })}
         </Paragraph>
         <div className="flex items-center space-x-1">
           <StarGained />
