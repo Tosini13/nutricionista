@@ -14,7 +14,12 @@ const ReviewShort: React.FC<ReviewShortPropsType> = ({ review }) => {
       href={review.review_url}
       target="_blank"
     >
-      <img src={review.author_url} alt="review author's photo" />
+      <img
+        src={review.author_url}
+        alt="review author's photo"
+        width="72"
+        height="72"
+      />
       <div className="ml-2 flex h-full flex-col justify-between">
         <Paragraph className="font-medium leading-none">
           {review.author_name}

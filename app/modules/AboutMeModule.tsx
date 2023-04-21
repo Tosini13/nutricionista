@@ -76,7 +76,8 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
           </div>
           <div className="relative order-1 mb-10 h-fit translate-x-[10%] md:order-3 md:mb-0 md:min-w-[30%] md:max-w-[30%] md:translate-x-0">
             <Img
-              width={"100%"}
+              width="100%"
+              height="100%"
               src={esther}
               webPsrc={estherWebP}
               alt="Nutricionista Esther"

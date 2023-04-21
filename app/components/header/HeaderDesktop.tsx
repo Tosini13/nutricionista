@@ -4,7 +4,7 @@ import { TLinkType } from "~/modules/HeaderModule";
 import { PHONE_NUMBER } from "~/utils/media";
 import { ButtonLink } from "../form/Button";
 import Link from "../form/Link";
-import Logo from "../Logo";
+import { LogoIcon } from "../icons";
 
 const headerThemeClassName =
   "sticky top-0 left-0 w-full z-[50] bg-[rgba(255,255,255,0.96)] transition-shadow duration-300 ease-out w-full";
@@ -57,7 +57,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links, actions }) => {
     <div data-testid="header_desktop" ref={ref} className={headerClassName}>
       <div className="mx-auto flex max-w-screen-xl items-center px-2 py-4 transition-all duration-300 xl:px-0">
         <a href="/#home">
-          <Logo />
+          <LogoIcon />
         </a>
         <div className="mx-1 flex grow items-center justify-center space-x-2 semi-md:space-x-8 large:space-x-14">
           {links.map((link) => (
