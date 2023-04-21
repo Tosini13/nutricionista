@@ -14,6 +14,7 @@ import { ArrowLeftIcon, GoogleIcon, StarGained } from "~/components/icons";
 import Img from "~/components/Img";
 import { reviews } from "~/data/reviewsData.json";
 import ReviewShort from "~/components/reviews/ReviewShort";
+import { setAutomaticMessageContent } from "~/components/contact/utils";
 
 export type FeatureType = {
   id: string;
@@ -76,6 +77,9 @@ const HomeModule: React.FC<HomeModulePropsType> = ({}) => {
               bigger
               className={"group mx-auto w-full sm:w-fit md:ml-0"}
               href="#contact"
+              onClick={() =>
+                setAutomaticMessageContent("I want to set this text!!!")
+              }
             >
               Pide Cita
               <ArrowLeftIcon className="ml-3 h-4 w-4 rotate-180 transition-all duration-300 group-hover:ml-5 group-hover:-mr-2 [&_path]:fill-[#FFF]" />

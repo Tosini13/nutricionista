@@ -5,6 +5,7 @@ import Paragraph from "./sections/Paragraph";
 import { ArrowLeftIcon } from "./icons";
 import React from "react";
 import Img from "./Img";
+import { setAutomaticMessageContent } from "./contact/utils";
 
 type ServicePropsType = ServiceType & {
   handleClickGoBack?: () => void;
@@ -39,6 +40,9 @@ const Service: React.FC<ServicePropsType> = ({
           <ButtonLink
             href="/#contact"
             className="mx-auto w-full sm:w-fit md:mx-0"
+            onClick={() =>
+              setAutomaticMessageContent("I want to set this text")
+            }
           >
             Pide Cita
           </ButtonLink>
