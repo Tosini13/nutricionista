@@ -15,7 +15,13 @@ const PackFeatureList: React.FC<PackFeatureListPropsType> = ({
     <ul className="space-y-2" data-test-id="pack_feature_list">
       {duration && (
         <li className="flex items-center">
-          <img src={circleOkIcon} alt="circle ok icon" className="mr-3" />
+          <img
+            src={circleOkIcon}
+            alt="circle ok icon"
+            className="mr-3"
+            width="19px"
+            height="20px"
+          />
           <Paragraph className="font-bold leading-6 text-[#7E70B6]">
             {duration}
           </Paragraph>
@@ -23,7 +29,13 @@ const PackFeatureList: React.FC<PackFeatureListPropsType> = ({
       )}
       {features.map((feature) => (
         <li key={feature.id} className="flex items-center">
-          <img src={circleOkIcon} alt="circle ok icon" className="mr-3" />
+          <img
+            src={circleOkIcon}
+            alt="circle ok icon"
+            className="mr-3"
+            width="19px"
+            height="20px"
+          />
           <Paragraph className="font-semibold leading-6">
             {feature.title}
           </Paragraph>

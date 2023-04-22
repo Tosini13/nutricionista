@@ -1,6 +1,6 @@
 import { useSwiper } from "swiper/react";
 import { ArrowLeftIcon } from "~/components/icons";
-import ButtonIcon from "~/components/form/ButtonIcon";
+import { ButtonIcon } from "~/components/form/ButtonIcon";
 import { twMerge } from "tailwind-merge";
 
 const arrowButtonContainerClassName =
@@ -29,6 +29,7 @@ const ArrowsNavigation: React.FC<ArrowsNavigationPropsType> = ({
           className="swiper-button-prev-custom cursor-pointer highlight-none"
           icon={<ArrowLeftIcon />}
           onClick={() => swiper.slidePrev()}
+          aria-label="Show previous slide"
         />
       </div>
       <div
@@ -42,6 +43,7 @@ const ArrowsNavigation: React.FC<ArrowsNavigationPropsType> = ({
           className="swiper-button-next-custom cursor-pointer highlight-none"
           icon={<ArrowLeftIcon className="rotate-180" />}
           onClick={() => swiper.slideNext()}
+          aria-label="Show next slide"
         />
       </div>
     </>

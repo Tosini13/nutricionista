@@ -2,42 +2,44 @@ import Section from "~/components/sections/Section";
 import SectionTitle from "~/components/sections/SectionTitle";
 import esther from "../../public/img/photos/esther_web_bg.png";
 import estherWebP from "../../public/img/photos/esther_web_bg.webp";
-import universityIcon from "../../public/img/icons/university.icon.svg";
-import orderIcon from "../../public/img/icons/order.icon.svg";
-import laboratoryIcon from "../../public/img/icons/laboratory.icon.svg";
-import healthIcon from "../../public/img/icons/health.icon.svg";
 import AboutMeParagraph from "~/components/AboutMeParagraph";
 import { ButtonLink } from "~/components/form/Button";
 import Img from "~/components/Img";
+import {
+  HealthIcon,
+  LaboratoryIcon,
+  OrderIcon,
+  UniversityIcon,
+} from "~/components/icons";
 
 export type MyInfo = {
   id: string;
-  iconUrl: string;
+  icon: React.ReactNode;
   description: string;
 };
 
 const myInfos: Array<MyInfo> = [
   {
     id: "1",
-    iconUrl: universityIcon,
+    icon: <UniversityIcon className="text-transparent" />,
     description:
       "Soy Esther Zamora, Dietista-nutricionista especializada en nutrición clínica, graduada por la Universidad de Valencia, aunque cursé un año de mis estudios en la Universidad de Milán, Italia (Università degli studi di Milano).",
   },
   {
     id: "2",
-    iconUrl: laboratoryIcon,
+    icon: <LaboratoryIcon className="text-transparent" />,
     description:
       "Pienso que es muy importante individualizar cada caso para lograr el éxito en el tratamiento así como colaborar con otros profesionales de la salud si fuera necesario como: psicólogos, fisioterapeutas, médicos, entrenadores personales, etc.",
   },
   {
     id: "3",
-    iconUrl: healthIcon,
+    icon: <HealthIcon className="text-transparent" />,
     description:
       "He realizado numerosos cursos formativos enfocados en nutrición clínica para el manejo de las enfermedades con la alimentación. He trabajado en varias clínicas de nutrición abordando distintos objetivos, que me han brindado el conocimiento y la experiencia para poder ayudarte a lograr tus metas desde un enfoque científico, eficaz y seguro.",
   },
   {
     id: "4",
-    iconUrl: orderIcon,
+    icon: <OrderIcon className="text-transparent" />,
     description:
       "Estoy colegiada por el CODINUCOVA (Colegio de Dietistas-Nutricionistas de la Comunidad Valenciana). Nº: CV01045",
   },
@@ -74,7 +76,8 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
           </div>
           <div className="relative order-1 mb-10 h-fit translate-x-[10%] md:order-3 md:mb-0 md:min-w-[30%] md:max-w-[30%] md:translate-x-0">
             <Img
-              width={"100%"}
+              width="100%"
+              height="100%"
               src={esther}
               webPsrc={estherWebP}
               alt="Nutricionista Esther"

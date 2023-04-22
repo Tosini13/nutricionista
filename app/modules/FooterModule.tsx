@@ -1,9 +1,9 @@
 import FooterLink from "~/components/FooterLink";
-import Logo from "~/components/Logo";
 import Paragraph from "~/components/sections/Paragraph";
 import SocialBar from "~/components/SocialBar";
 import { links } from "./HeaderModule";
 import { SERVICES } from "./ServicesModule";
+import { LogoIcon } from "~/components/icons";
 
 type FooterModulePropsType = {};
 
@@ -13,8 +13,8 @@ const FooterModule: React.FC<FooterModulePropsType> = ({}) => {
       <div className="relative mx-auto max-w-theme px-2">
         <div className="relative flex flex-col flex-wrap justify-between space-y-12 py-10 md:flex-row md:space-y-0">
           <address className="flex min-w-max basis-full flex-col items-center space-y-8 text-center not-italic sm:block sm:basis-auto sm:text-left md:mx-4">
-            <a href="/#home">
-              <Logo secondary />
+            <a href="/#home" aria-label="Go to homepage">
+              <LogoIcon secondary />
             </a>
             <Paragraph className="mt-6">
               <span className="font-semibold md:font-normal">

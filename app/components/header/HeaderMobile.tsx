@@ -3,8 +3,7 @@ import { twMerge } from "tailwind-merge";
 import type { TLinkType } from "~/modules/HeaderModule";
 import HamburgerButton from "./Hamburger";
 import Link from "../form/Link";
-import Logo from "../Logo";
-import LOGO from "../../../public/img/logos/logo.svg";
+import { LogoIcon } from "../icons";
 
 const headerThemeClassName =
   "relative px-4 py-4 bg-white transition-shadow duration-150 ease-out overflow-hidden";
@@ -49,7 +48,9 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ links }) => {
   return (
     <div ref={ref} data-testid="header_mobile" className={headerClassName}>
       <div className="relative flex items-center justify-between ">
-        <Logo />
+        <a href="/#home" aria-label="Go to homepage">
+          <LogoIcon />
+        </a>
         <HamburgerButton open={open} onClick={() => setOpen((bool) => !bool)} />
       </div>
       <div className="relative mt-10 flex flex-col items-center space-y-8">

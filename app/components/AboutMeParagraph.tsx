@@ -4,12 +4,12 @@ import Paragraph from "./sections/Paragraph";
 type AboutMeParagraphPropsType = MyInfo;
 
 const AboutMeParagraph: React.FC<AboutMeParagraphPropsType> = ({
-  iconUrl,
+  icon,
   description,
 }) => {
   return (
     <div data-test-id="about_me_paragraph" className="space-y-4">
-      <img className="mx-auto md:ml-0" src={iconUrl} alt="icon" />
+      <div className="mx-auto md:ml-0">{icon}</div>
       <Paragraph>{description}</Paragraph>
     </div>
   );

@@ -2,6 +2,7 @@ import arrowRightIcon from "../../public/img/icons/arrow_right.svg";
 import { ServiceType } from "~/modules/ServicesModule";
 import { Button } from "./form/Button";
 import Img from "./Img";
+import { ArrowLeftIcon } from "./icons";
 
 type ServiceTilePropsType = Omit<ServiceType, "description">;
 
@@ -24,11 +25,7 @@ const ServiceTile: React.FC<ServiceTilePropsType> = ({ photos, title }) => {
       </div>
       <Button className="mx-auto w-fit bg-transparent text-primary hover-hover:hover:bg-transparent hover-hover:hover:text-primary hover-hover:hover:shadow-none">
         Leer mas{" "}
-        <img
-          src={arrowRightIcon}
-          alt="arrow right"
-          className="ml-2 transition-all  duration-300 hover-hover:group-hover:ml-4"
-        />
+        <ArrowLeftIcon className="ml-2 h-4 w-4 rotate-180 text-primary transition-all duration-300 hover-hover:group-hover:ml-4" />
       </Button>
     </div>
   );
