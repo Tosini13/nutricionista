@@ -56,7 +56,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ links, actions }) => {
   return (
     <div data-testid="header_desktop" ref={ref} className={headerClassName}>
       <div className="mx-auto flex max-w-screen-xl items-center px-2 py-4 transition-all duration-300 xl:px-0">
-        <a href="/#home">
+        <a href="/#home" aria-label="Go to homepage">
           <LogoIcon />
         </a>
         <div className="mx-1 flex grow items-center justify-center space-x-2 semi-md:space-x-8 large:space-x-14">

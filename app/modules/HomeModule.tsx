@@ -10,7 +10,7 @@ import underline from "../../public/img/photos/underline.svg";
 import carlaSanjuan from "../../public/img/photos/carlaSanjuan.png";
 import Feature from "~/components/home/Feature";
 import React from "react";
-import { ArrowLeftIcon, GoogleIcon, StarGained } from "~/components/icons";
+import { ArrowLeftIcon } from "~/components/icons";
 import Img from "~/components/Img";
 import { reviews } from "~/data/reviewsData.json";
 import ReviewShort from "~/components/reviews/ReviewShort";

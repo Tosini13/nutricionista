@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, SwiperOptions } from "swiper";
 import Section from "~/components/sections/Section";
 import { reviews } from "~/data/reviewsData.json";
