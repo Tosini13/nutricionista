@@ -16,15 +16,15 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap",
+      type: "text/css",
+    },
+    {
+      rel: "stylesheet",
       href: "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
     },
     { rel: "stylesheet", href: tailwindStylesheetUrl },
     { rel: "stylesheet", href: themeStylesheetUrl },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900",
-      type: "text/css",
-    },
     {
       rel: "preconnect",
       href: "https://www.google.com",
