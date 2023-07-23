@@ -33,6 +33,10 @@ export const links: Array<TLinkType> = [
     title: "Contacto",
     href: "/#contact",
   },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
 ];
 
 type HeaderModuleProps = {};
