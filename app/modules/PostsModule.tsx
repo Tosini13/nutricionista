@@ -3,7 +3,7 @@ import PostTile from "~/components/blog/PostTile";
 import { Button } from "~/components/form/Button";
 import Paragraph from "~/components/sections/Paragraph";
 import SectionTitle from "~/components/sections/SectionTitle";
-import type { PostCategory, PostType } from "~/routes/blog";
+import { PostCategory, PostType } from "~/routes/blog";
 import { getBlogImage } from "~/utils/assets";
 import { formatDate } from "~/utils/formatDate";
 
@@ -73,7 +73,6 @@ const PostsModule: React.FC<PostsModulePropsType> = ({
   hasNext,
 }) => {
   const [currentTab, setCurrentTab] = useState("all");
-  console.log("currentTab !log!", currentTab);
   return (
     <div data-testid="posts_module">
       <SectionTitle className="text-left">My articles</SectionTitle>
@@ -88,7 +87,11 @@ const PostsModule: React.FC<PostsModulePropsType> = ({
             (post) => currentTab === "all" || post.category === currentTab
           )
           .map((post) => (
-            <a key={post.id} href={`/blog/${post.id}`} className="block h-full">
+            <a
+              key={post.id}
+              href={`/blog/posts/${post.id}`}
+              className="block h-full"
+            >
               <PostTile post={post} className="h-full" />
             </a>
           ))}

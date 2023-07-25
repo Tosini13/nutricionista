@@ -51,7 +51,12 @@ const HeaderModule: React.FC<HeaderModuleProps> = () => {
         <HeaderDesktop
           links={links}
           actions={
-            <ButtonLink href="#contact" data-size="large" data-headerlink="xx">
+            <ButtonLink
+              href="#contact"
+              data-size="large"
+              data-headerlink="xx"
+              className="whitespace-nowrap"
+            >
               Pide Cita
             </ButtonLink>
           }

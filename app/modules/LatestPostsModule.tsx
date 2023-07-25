@@ -57,7 +57,7 @@ const LatestPostsModule: React.FC<LatestPostsModulePropsType> = ({
             <SwiperSlide key={post.id} className="h-auto">
               <a
                 className="block h-full highlight-none"
-                href={`/blog/${post.id}`}
+                href={`/blog/posts/${post.id}`}
               >
                 <PostTile
                   post={post}

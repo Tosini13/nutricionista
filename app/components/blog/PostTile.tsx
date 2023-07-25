@@ -1,7 +1,7 @@
-import { PostType } from "~/routes/blog";
 import Paragraph from "../sections/Paragraph";
 import { formatDate } from "~/utils/formatDate";
 import { twMerge } from "tailwind-merge";
+import { PostType } from "~/routes/blog";
 
 type PostTilePropsType = {
   className?: string;

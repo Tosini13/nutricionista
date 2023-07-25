@@ -2,7 +2,6 @@ import { ButtonLink } from "~/components/form/Button";
 import { ArrowLeftIcon } from "~/components/icons";
 import Paragraph from "~/components/sections/Paragraph";
 import { PostType } from "~/routes/blog";
-import { getBlogImage } from "~/utils/assets";
 import { formatDate } from "~/utils/formatDate";
 
 type NewestPostModulePropsType = {
