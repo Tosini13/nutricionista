@@ -67,7 +67,7 @@ const BlogPage: React.FC = () => {
   return (
     <>
       <HeaderModule />
-      <main className="relative min-h-screen max-w-none space-y-10">
+      <main className="relative min-h-screen max-w-none">
         <Section id="post_content" className="max-w-3xl md:mx-auto">
           <SectionTitle>{data.post?.title}</SectionTitle>
           <Paragraph className="font-medium text-secondary">
