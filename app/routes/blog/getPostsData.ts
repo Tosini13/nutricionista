@@ -4,13 +4,12 @@ import { PostType } from ".";
  * @description
  * for now posts have to be imported manually here
  *  */
-import * as firstArticle from "./posts/my-first-article.md";
-import * as secondArticle from "./posts/my-second-article.md";
 import * as perderPeso from "./posts/perder-peso-perder-grasa.md";
+import * as glucose from "./posts/glucose-levels-recommendations.md";
 
 const BLOG_IMAGES_URL = "/img/blog";
 
-const postsFiles = [firstArticle, secondArticle, perderPeso];
+const postsFiles = [perderPeso, glucose];
 
 export type PostMetaType = PostType;
 
