@@ -60,9 +60,9 @@ const Blog: React.FC<BlogPropsType> = ({}) => {
         </Section>
         <Section
           id="latestPosts"
-          className="mx-0 max-w-none bg-primary-light px-4"
+          className="mx-0 px-0 max-w-none bg-primary-light lg:px-4"
         >
-          <div className="mx-2 max-w-screen-xl md:mx-auto">
+          <div className="mx-0 max-w-screen-xl lg:mx-auto">
             <LatestPostsModule latestPosts={postsData.slice(0, 4)} />
           </div>
         </Section>

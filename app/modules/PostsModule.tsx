@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import PostTile from "~/components/blog/PostTile";
 import { Button } from "~/components/form/Button";
-import Paragraph from "~/components/sections/Paragraph";
 import SectionTitle from "~/components/sections/SectionTitle";
 import { PostCategory, PostType } from "~/routes/blog";
-import { getBlogImage } from "~/utils/assets";
-import { formatDate } from "~/utils/formatDate";
+import { AnimatePresence, motion } from "framer-motion";
 
 type PostsNavPropsType = {
   tabs: PostCategory[];
@@ -88,19 +86,26 @@ const PostsModule: React.FC<PostsModulePropsType> = ({
         onClickCategory={setCurrentTab}
       />
       <div className="xs:grid-cols-2 mt-10 grid grid-flow-row grid-cols-1 gap-2 overflow-x-auto md:grid-cols-3 md:gap-8 lg:grid-cols-4">
-        {posts
-          .filter(
-            (post) => currentTab === "all" || post.category === currentTab
-          )
-          .map((post) => (
-            <a
-              key={post.id}
-              href={`/blog/posts/${post.id}`}
-              className="block h-full"
-            >
-              <PostTile post={post} className="h-full" />
-            </a>
-          ))}
+        <AnimatePresence initial={false}>
+          {posts
+            .filter(
+              (post) => currentTab === "all" || post.category === currentTab
+            )
+            .map((post) => (
+              <motion.div
+                key={post.id}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{duration: 0.2}}
+              >
+                <a href={`/blog/posts/${post.id}`} className="block h-full">
+                  <PostTile post={post} className="h-full" />
+                </a>
+              </motion.div>
+            ))}
+        </AnimatePresence>
       </div>
       {hasNext && <Button secondary>Ver mas</Button>}
     </div>

@@ -44,7 +44,7 @@ const LatestPostsModule: React.FC<LatestPostsModulePropsType> = ({
 }) => {
   return (
     <div data-testid="latest_posts_module">
-      <SectionTitle className="text-primary">The latest</SectionTitle>
+      <SectionTitle className="text-primary mx-2">The latest</SectionTitle>
       <div>
         <Swiper
           modules={[Pagination]}
