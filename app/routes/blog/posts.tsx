@@ -82,7 +82,9 @@ const BlogPage: React.FC = () => {
             alt="post image"
             className="my-10 w-full rounded-3xl"
           />
-          <Outlet />
+          <div className="space-y-4 [&>p]:leading-8 [&>p]:tracking-wide">
+            <Outlet />
+          </div>
         </Section>
 
         <div className="mx-auto w-full max-w-3xl border-b border-primary-light" />

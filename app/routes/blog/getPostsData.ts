@@ -6,10 +6,11 @@ import { PostType } from ".";
  *  */
 import * as firstArticle from "./posts/my-first-article.md";
 import * as secondArticle from "./posts/my-second-article.md";
+import * as perderPeso from "./posts/perder-peso-perder-grasa.md";
 
 const BLOG_IMAGES_URL = "/img/blog";
 
-const postsFiles = [firstArticle, secondArticle];
+const postsFiles = [firstArticle, secondArticle, perderPeso];
 
 export type PostMetaType = PostType;
 
