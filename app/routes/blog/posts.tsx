@@ -75,7 +75,8 @@ const BlogPage: React.FC = () => {
           </Paragraph>
           <Paragraph className="font-normal  text-gray">
             Written by: <span className="font-medium">{data.post?.author}</span>{" "}
-            / 9 min. reading
+            <br className="inline sm:hidden"/>
+            <span className="hidden sm:inline">/</span> 9 min. reading
           </Paragraph>
           <img
             src={data.post.imgSrc}
