@@ -35,27 +35,33 @@ const PostsNav: React.FC<PostsNavPropsType> = ({
   }, [ref.current, category]);
 
   return (
-    <div data-testid="posts_nav" className="w-fit" ref={containerRef}>
-      <div className="flex gap-x-4">
-        {tabs.map((tab) => (
-          <h2
-            ref={category === tab.title ? ref : undefined}
-            key={tab.title}
-            className="relative cursor-pointer text-lg font-medium capitalize"
-            onClick={() => onClickCategory(tab.title)}
-          >
-            {tab.title}
-          </h2>
-        ))}
-      </div>
-      <div className="mt-2 h-1 w-full bg-primary-light">
-        <div
-          className="h-full w-4 bg-primary transition-all duration-300"
-          style={{
-            width: bar.width,
-            transform: `translateX(${bar.left}px)`,
-          }}
-        />
+    <div
+      data-testid="posts_nav"
+      className="w-full overflow-x-auto pb-3"
+      ref={containerRef}
+    >
+      <div className="w-fit">
+        <div className="flex gap-x-4 whitespace-nowrap">
+          {tabs.map((tab) => (
+            <h2
+              ref={category === tab.title ? ref : undefined}
+              key={tab.title}
+              className="relative cursor-pointer text-lg font-medium capitalize"
+              onClick={() => onClickCategory(tab.title)}
+            >
+              {tab.title}
+            </h2>
+          ))}
+        </div>
+        <div className="mt-2 h-1 w-full bg-primary-light">
+          <div
+            className="h-full w-4 bg-primary transition-all duration-300"
+            style={{
+              width: bar.width,
+              transform: `translateX(${bar.left}px)`,
+            }}
+          />
+        </div>
       </div>
     </div>
   );
@@ -81,7 +87,7 @@ const PostsModule: React.FC<PostsModulePropsType> = ({
         category={currentTab}
         onClickCategory={setCurrentTab}
       />
-      <div className="mt-10 grid grid-flow-row grid-cols-4 gap-8">
+      <div className="xs:grid-cols-2 mt-10 grid grid-flow-row grid-cols-1 gap-2 overflow-x-auto md:grid-cols-3 md:gap-8 lg:grid-cols-4">
         {posts
           .filter(
             (post) => currentTab === "all" || post.category === currentTab
