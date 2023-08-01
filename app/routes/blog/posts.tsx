@@ -75,8 +75,10 @@ const BlogPage: React.FC = () => {
           </Paragraph>
           <Paragraph className="font-normal  text-gray">
             Written by: <span className="font-medium">{data.post?.author}</span>{" "}
-            <br className="inline sm:hidden"/>
-            <span className="hidden sm:inline">/</span> 9 min. reading
+            <br className="inline sm:hidden" />
+            {/* 
+            TODO: enable when can compute the reading time automatically: 200 words/min
+            <span className="hidden sm:inline">/</span> 9 min. reading */}
           </Paragraph>
           <img
             src={data.post.imgSrc}
@@ -121,7 +123,7 @@ const BlogPage: React.FC = () => {
         </Section>
         <Section
           id="latestPosts"
-          className="mx-0 px-0 max-w-none bg-primary-light lg:px-4"
+          className="mx-0 max-w-none bg-primary-light px-0 lg:px-4"
         >
           <div className="mx-0 max-w-screen-xl lg:mx-auto">
             <LatestPostsModule latestPosts={data.latestPosts} />
