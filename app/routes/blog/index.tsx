@@ -3,7 +3,6 @@ import { useLoaderData } from "@remix-run/react";
 import FooterModule from "~/modules/FooterModule";
 import HeaderModule from "~/modules/HeaderModule";
 import LatestPostsModule from "~/modules/LatestPostsModule";
-import mockPostsData from "~/data/mockLatestPosts.json";
 import NewestPostModule from "~/modules/NewestPostModule";
 import Section from "~/components/sections/Section";
 import PostsModule from "~/modules/PostsModule";
@@ -24,7 +23,6 @@ export type PostType = {
 
 export type LoaderData = {
   postsData: PostType[];
-  categories: PostCategory[];
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -35,9 +33,6 @@ export const loader: LoaderFunction = async ({ request }) => {
   );
 
   return json<LoaderData>({
-    categories: [...new Set(mockPostsData.map(({ category }) => category))].map(
-      (category) => ({ title: category })
-    ),
     postsData,
   });
 };
@@ -60,7 +55,7 @@ const Blog: React.FC<BlogPropsType> = ({}) => {
         </Section>
         <Section
           id="latestPosts"
-          className="mx-0 px-0 max-w-none bg-primary-light lg:px-4"
+          className="mx-0 max-w-none bg-primary-light px-0 lg:px-4"
         >
           <div className="mx-0 max-w-screen-xl lg:mx-auto">
             <LatestPostsModule latestPosts={postsData.slice(0, 4)} />
