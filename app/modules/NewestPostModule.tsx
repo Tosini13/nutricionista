@@ -34,7 +34,7 @@ const NewestPostModule: React.FC<NewestPostModulePropsType> = ({ post }) => {
         </Paragraph>
         <ButtonLink
           className={"group mx-auto w-full sm:w-fit md:ml-0"}
-          href="#contact"
+          href={`/blog/posts/${post.id}`}
         >
           Leer mas
           <ArrowLeftIcon className="ml-3 h-4 w-4 rotate-180 transition-all duration-300 group-hover:ml-5 group-hover:-mr-2 [&_path]:fill-[#FFF]" />
