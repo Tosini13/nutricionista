@@ -15,7 +15,7 @@ const PackContainer: React.FC<PackContainerPropsType> = ({
   const className = React.useMemo(
     () =>
       twMerge(
-        "max-w-[300px] mx-auto h-full flex flex-col border border-[#FFDCE2] relative flex h-full w-full flex-col rounded-3xl bg-white p-9",
+        "max-w-[300px] mx-auto flex flex-col border border-[#FFDCE2] relative flex h-full w-full flex-col rounded-3xl bg-white p-9",
         recommended ? "border-primary" : ""
       ),
     [recommended]

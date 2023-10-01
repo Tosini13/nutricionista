@@ -1,9 +1,30 @@
+html{
+    scroll-snap-type: none;
+    scroll-padding-top: 84px;
+}
+
+@media (max-width: 767px) {
+    html{
+        scroll-padding-top: 71px;
+    }
+}
+
+section{
+    scroll-snap-align: start;
+}
+
+
 h1.title{
     line-height: 1.2em;
 }
 
 p{
     letter-spacing: 0.05em;
+}
+
+.blog > p{
+    line-height: 2rem; /*leading-8*/
+    letter-spacing: 0.025em; /*leading-8*/
 }
 
 main{

@@ -1,8 +1,8 @@
 import { ButtonLink } from "~/components/form/Button";
 import Paragraph from "~/components/sections/Paragraph";
 import Section from "~/components/sections/Section";
-import estherImg from "../../public/img/photos/esther_no_background.png";
-import estherImgWebP from "../../public/img/photos/esther_no_background.webp";
+import estherImg from "../../public/img/esther/esther_no_background.png";
+import estherImgWebP from "../../public/img/esther/esther_no_background.webp";
 import secure_icon from "../../public/img/icons/secure.svg";
 import howTo from "../../public/img/icons/how_to.svg";
 import changeCircle from "../../public/img/icons/change_circle.svg";
