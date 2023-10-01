@@ -86,7 +86,7 @@ const PostsModule: React.FC<PostsModulePropsType> = ({
         onClickCategory={setCurrentTab}
       />
       <div className="xs:grid-cols-2 mt-10 grid grid-flow-row grid-cols-1 gap-2 overflow-x-auto md:grid-cols-3 md:gap-8 lg:grid-cols-4">
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} mode="wait">
           {posts
             .filter(
               (post) => currentTab === "all" || post.category === currentTab
@@ -98,7 +98,7 @@ const PostsModule: React.FC<PostsModulePropsType> = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{duration: 0.2}}
+                transition={{ duration: 0.2 }}
               >
                 <a href={`/blog/posts/${post.id}`} className="block h-full">
                   <PostTile post={post} className="h-full" />
