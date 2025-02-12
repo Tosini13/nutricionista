@@ -1,5 +1,5 @@
 # base node image
-FROM node:16-bullseye-slim as base
+FROM node:16-bullseye-slim AS base
 
 # Install openssl for Prisma
 RUN apt-get update && apt-get install -y openssl
@@ -7,36 +7,36 @@ RUN apt-get update && apt-get install -y openssl
 ENV NODE_ENV production
 
 # Install all node_modules, including dev dependencies
-FROM base as deps
+FROM base AS deps
 
 RUN mkdir /app
 WORKDIR /app
 
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install --production=false
 
 # Setup production node_modules
-FROM base as production-deps
+FROM base AS production-deps
 
 RUN mkdir /app
 WORKDIR /app
 
 COPY --from=deps /app/node_modules /app/node_modules
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm prune --production
 
 # Build the app
-FROM base as build
+FROM base AS build
 
 RUN mkdir /app
 WORKDIR /app
 
 COPY --from=deps /app/node_modules /app/node_modules
 
-ADD prisma .
+COPY prisma .
 RUN npx prisma generate
 
-ADD . .
+COPY . .
 RUN npm run build
 
 # Finally, build the production image with minimal footprint
@@ -51,7 +51,7 @@ COPY --from=production-deps /app/node_modules /app/node_modules
 COPY --from=build /app/node_modules/.prisma /app/node_modules/.prisma
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
-ADD . .
+COPY . .
 
 ENV PORT 3000
 CMD ["npm", "run", "start"]
