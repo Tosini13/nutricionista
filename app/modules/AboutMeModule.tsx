@@ -65,8 +65,8 @@ const AboutMeModule: React.FC<AboutMeModulePropsType> = ({}) => {
         </SectionTitle>
         <div className="flex flex-col justify-between md:flex-row">
           <div className="order-2 grid grid-cols-1 space-y-8 md:max-w-[60%] md:grid-cols-2 md:gap-x-14 md:space-y-0">
-            {halves.map((half) => (
-              <div className="space-y-8">
+            {halves.map((half, i) => (
+              <div key={i} className="space-y-8">
                 {half.map((myInfo) => (
                   <AboutMeParagraph key={myInfo.id} {...myInfo} />
                 ))}
