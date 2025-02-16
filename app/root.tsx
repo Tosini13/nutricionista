@@ -1,5 +1,4 @@
-import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -37,23 +36,34 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Nutricionista - Esther Zamora",
-  viewport: "width=device-width,initial-scale=1",
-  description:
-    "¿Estás buscando un Dietista Nutricionista online o en Valencia? Puedo ayudarte a mejorar tu salud, mediante un plan de alimentación personalizado. Visita nuestros servicios: sobrepeso, obesidad, diabetes y otras patologías, embarazo y lactancia, alimentación vegetariana y vegana… ¡Aprovecha los descuentos especiales al reservar hoy la cita!",
-});
+export const meta: MetaFunction = ({ data }) => {
+	return [
+		{ title: "Nutricionista - Esther Zamora" },
+		{ name: 'description', content: "¿Estás buscando un Dietista Nutricionista online o en Valencia? Puedo ayudarte a mejorar tu salud, mediante un plan de alimentación personalizado. Visita nuestros servicios: sobrepeso, obesidad, diabetes y otras patologías, embarazo y lactancia, alimentación vegetariana y vegana… ¡Aprovecha los descuentos especiales al reservar hoy la cita!" },
+	]
+}
 
-export default function App() {
+export default function App({
+	children,
+	nonce,
+	env = {},
+}: {
+	children: React.ReactNode
+	nonce: string
+	env?: Record<string, string | undefined>
+}) {
   return (
     <html lang="en">
       <head>
         <Meta />
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width,initial-scale=1" />
+				<meta name="robots" content="noindex, nofollow" />
         <Links />
       </head>
       <body className="bg-[#FFF] font-poppins text-base text-[#313131] ">
         <Outlet />
+        {/* {children} */}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

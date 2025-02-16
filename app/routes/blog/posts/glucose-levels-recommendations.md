@@ -1,10 +1,10 @@
 ---
 meta:
-  title: Recomendaciones niveles altos glucosa en sangre
-  category: glucosa
-  imgSrc: blog_mock_image.webp
-  date: 07-27-2023
-  author: Esther Zamora
+  - {title: Recomendaciones niveles altos glucosa en sangre}
+  - {category: glucosa}
+  - {imgSrc: blog_mock_image.webp}
+  - {date: 07-27-2023}
+  - {author: Esther Zamora}
 ---
 
 Si una persona tiene niveles altos de glucosa en sangre, es importante que adopte un enfoque integral para controlar su dieta y estilo de vida. Aquí hay algunas recomendaciones alimenticias que pueden ayudar:

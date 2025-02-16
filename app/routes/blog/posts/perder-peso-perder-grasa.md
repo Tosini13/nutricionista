@@ -1,10 +1,10 @@
 ---
 meta:
-  title: ¿Perder peso o perder grasa?
-  category: perder peso
-  imgSrc: blog_mock_image.webp
-  date: 05-15-2023
-  author: Esther Zamora
+  - {title: ¿Perder peso o perder grasa?}
+  - {category: perder peso}
+  - {imgSrc: blog_mock_image.webp}
+  - {date: 05-15-2023}
+  - {author: Esther Zamora}
 ---
 
 En general, nos preocupa tener exceso de kilos pero no todos son iguales. No es lo mismo perder grasa que perder peso. La diferencia está en un tercer elemento, el músculo.

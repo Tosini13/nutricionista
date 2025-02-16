@@ -1,4 +1,4 @@
-import { json, LoaderArgs } from "@remix-run/node";
+import { json, LoaderFunctionArgs } from "@remix-run/node";
 import { PostType } from ".";
 /**
  * @description
@@ -39,7 +39,7 @@ const postsData = postsFiles
     imgSrc: `${BLOG_IMAGES_URL}/${post.imgSrc}`,
   }));
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
 

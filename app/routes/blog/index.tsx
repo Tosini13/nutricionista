@@ -1,5 +1,5 @@
-import { json, LoaderFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import type { LoaderFunction } from "@remix-run/node";
+import { json, useLoaderData } from "@remix-run/react";
 import FooterModule from "~/modules/FooterModule";
 import HeaderModule from "~/modules/HeaderModule";
 import LatestPostsModule from "~/modules/LatestPostsModule";
@@ -32,14 +32,13 @@ export const loader: LoaderFunction = async ({ request }) => {
     res.json()
   );
 
-  return json<LoaderData>({
+  return json({
     postsData,
   });
 };
 
-type BlogPropsType = {};
 
-const Blog: React.FC<BlogPropsType> = ({}) => {
+const Blog: React.FC = () => {
   const { postsData } = useLoaderData() as LoaderData;
 
   const categories = [
