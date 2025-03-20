@@ -1,5 +1,4 @@
 import { defineConfig } from "cypress";
-
 export default defineConfig({
   e2e: {
     setupNodeEvents: (on, config) => {
@@ -24,4 +23,8 @@ export default defineConfig({
       return { ...config, ...configOverrides };
     },
   },
+  env: {
+    RECAPTCHA_SITE_KEY: 'xxx',
+    RECAPTCHA_SECRET_KEY: 'xxy'
+  }
 });
